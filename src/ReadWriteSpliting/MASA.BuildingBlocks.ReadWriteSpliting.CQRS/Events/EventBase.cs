@@ -10,6 +10,6 @@ namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.Events
     {
         public Guid Id { get; private set; }
 
-        public DateTime CreateionTime { get; private set; }
+        public DateTime CreationTime { get; private set; }
     }
 }
