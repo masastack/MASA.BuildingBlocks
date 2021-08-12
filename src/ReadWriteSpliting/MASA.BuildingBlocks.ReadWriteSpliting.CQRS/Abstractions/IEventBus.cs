@@ -1,6 +1,4 @@
-﻿using MASA.BuildingBlocks.ReadWriteSpliting.CQRS.Events;
-
-namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.Abstractions
+﻿namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.Abstractions
 {
     public interface IEventBus
     {
