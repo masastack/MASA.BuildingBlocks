@@ -2,8 +2,8 @@
 {
     public class Event
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get; private set; } = Guid.NewGuid();
 
-        public DateTime CreationTime { get; private set; }
+        public DateTime CreationTime { get; private set; } = DateTime.Now;
     }
 }

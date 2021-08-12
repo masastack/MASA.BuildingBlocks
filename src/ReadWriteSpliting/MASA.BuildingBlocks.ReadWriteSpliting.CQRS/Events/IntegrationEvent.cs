@@ -2,6 +2,6 @@
 {
     public class IntegrationEvent : Event
     {
-        public string Topic { get; set; }
+        public string? Topic { get; set; } = null;
     }
 }
