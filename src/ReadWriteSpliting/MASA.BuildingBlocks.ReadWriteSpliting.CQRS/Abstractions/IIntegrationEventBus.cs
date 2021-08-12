@@ -2,9 +2,9 @@
 
 namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.Abstractions
 {
-    public interface IEventHandler<TEvent>
-        where TEvent : Event
+    public interface IIntegrationEventBus
     {
-        Task HandleAsync(TEvent @event);
+        Task PublishAsync<TEvent>(TEvent @event)
+            where TEvent : IntegrationEvent;
     }
 }

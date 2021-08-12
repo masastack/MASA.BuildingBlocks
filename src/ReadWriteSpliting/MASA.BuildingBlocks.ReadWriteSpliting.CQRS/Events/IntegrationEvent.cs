@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.Events
+﻿namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.Events
 {
     public class IntegrationEvent : Event
     {
