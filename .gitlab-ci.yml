@@ -1,4 +1,4 @@
-image: mcr.microsoft.com/dotnet/sdk:6.0
+image: mcr.microsoft.com/dotnet/sdk:6.0.100-preview.7
 
 stages:
   - build
