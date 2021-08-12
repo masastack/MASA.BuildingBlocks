@@ -10,6 +10,7 @@ build:
   only:
     - branches
   script:
+    - dotnet --version
     - dotnet build
   retry: 2
 
