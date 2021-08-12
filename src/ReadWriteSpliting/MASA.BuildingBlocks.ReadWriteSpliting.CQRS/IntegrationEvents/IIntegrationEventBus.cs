@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.Abstractions
+﻿namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.IntegrationEvents
 {
     public interface IIntegrationEventBus
     {

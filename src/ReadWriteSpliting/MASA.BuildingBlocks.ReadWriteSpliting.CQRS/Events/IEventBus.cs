@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.Abstractions
+﻿namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.Events
 {
     public interface IEventBus
     {

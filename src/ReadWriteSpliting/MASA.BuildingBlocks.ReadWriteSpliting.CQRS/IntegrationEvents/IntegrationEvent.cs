@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.Events
+﻿namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.IntegrationEvents
 {
     public class IntegrationEvent : Event
     {

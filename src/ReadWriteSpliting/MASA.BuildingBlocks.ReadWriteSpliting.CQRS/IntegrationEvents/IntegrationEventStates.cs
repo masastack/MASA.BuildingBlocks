@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.EventLogs
+﻿namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.IntegrationEvents
 {
     public enum IntegrationEventStates
     {
