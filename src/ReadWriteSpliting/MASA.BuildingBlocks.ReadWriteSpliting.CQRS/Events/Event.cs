@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.Events
 {
-    public class EventBase
+    public class Event
     {
         public Guid Id { get; private set; }
 

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.Abstractions
 {
     public interface IEventHandler<TEvent>
-        where TEvent : EventBase
+        where TEvent : Event
     {
         Task HandleAsync(TEvent @event);
     }
