@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.Events
+﻿namespace MASA.BuildingBlocks.Dispatcher.InMemory
 {
     public interface IEventBus
     {

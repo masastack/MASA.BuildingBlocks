@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.IntegrationEvents
+﻿namespace MASA.BuildingBlocks.Dispatcher.Remoting
 {
     public class IntegrationEvent : Event
     {

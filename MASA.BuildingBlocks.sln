@@ -23,7 +23,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{593A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testable", "Testable", "{57AD498B-D9AF-4479-8C14-45507F6509F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASA.BuildingBlocks.ReadWriteSpliting.CQRS", "src\ReadWriteSpliting\MASA.BuildingBlocks.ReadWriteSpliting.CQRS\MASA.BuildingBlocks.ReadWriteSpliting.CQRS.csproj", "{1A971A14-C535-4E55-89C8-0481F8EAA3EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MASA.BuildingBlocks.ReadWriteSpliting.CQRS", "src\ReadWriteSpliting\MASA.BuildingBlocks.ReadWriteSpliting.CQRS\MASA.BuildingBlocks.ReadWriteSpliting.CQRS.csproj", "{1A971A14-C535-4E55-89C8-0481F8EAA3EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASA.BuildingBlocks.Dispatcher.InMemory", "src\Dispatcher\MASA.BuildingBlocks.Dispatcher.InMemory\MASA.BuildingBlocks.Dispatcher.InMemory.csproj", "{5ED192E5-CC37-4B21-A963-E589F440CCC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASA.BuildingBlocks.Dispatcher.Remoting", "src\Dispatcher\MASA.BuildingBlocks.Dispatcher.Remoting\MASA.BuildingBlocks.Dispatcher.Remoting.csproj", "{95C99D92-E378-4FE4-BDCA-5DF04D98E950}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,12 +39,22 @@ Global
 		{1A971A14-C535-4E55-89C8-0481F8EAA3EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A971A14-C535-4E55-89C8-0481F8EAA3EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A971A14-C535-4E55-89C8-0481F8EAA3EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ED192E5-CC37-4B21-A963-E589F440CCC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED192E5-CC37-4B21-A963-E589F440CCC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED192E5-CC37-4B21-A963-E589F440CCC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED192E5-CC37-4B21-A963-E589F440CCC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95C99D92-E378-4FE4-BDCA-5DF04D98E950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95C99D92-E378-4FE4-BDCA-5DF04D98E950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95C99D92-E378-4FE4-BDCA-5DF04D98E950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95C99D92-E378-4FE4-BDCA-5DF04D98E950}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1A971A14-C535-4E55-89C8-0481F8EAA3EC} = {509BDB5A-5D32-478F-BF27-F0470C18C7C9}
+		{5ED192E5-CC37-4B21-A963-E589F440CCC6} = {FBD326D3-E59C-433E-A88E-14E179E3093D}
+		{95C99D92-E378-4FE4-BDCA-5DF04D98E950} = {FBD326D3-E59C-433E-A88E-14E179E3093D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40383055-CC50-4600-AD9A-53C14F620D03}
