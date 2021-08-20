@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.Dispatcher.Remoting
+﻿namespace MASA.BuildingBlocks.Dispatcher.Remoting.Logs
 {
     public interface IIntegrationEventLogService
     {
