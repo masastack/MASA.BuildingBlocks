@@ -1,9 +1,8 @@
-﻿namespace MASA.BuildingBlocks.Dispatcher.Remoting
-{
-    public class Event
-    {
-        public Guid Id { get; private set; } = Guid.NewGuid();
+﻿namespace MASA.BuildingBlocks.Dispatcher.Remoting;
 
-        public DateTime CreationTime { get; private set; } = DateTime.Now;
-    }
+public class Event
+{
+    public Guid Id { get; private set; } = Guid.NewGuid();
+
+    public DateTime CreationTime { get; private set; } = DateTime.Now;
 }

@@ -1,8 +1,7 @@
-﻿namespace MASA.BuildingBlocks.Dispatcher.InMemory
+﻿namespace MASA.BuildingBlocks.Dispatcher.InMemory;
+
+public interface IEventBus
 {
-    public interface IEventBus
-    {
-        Task PublishAsync<TEvent>(TEvent @event)
-            where TEvent : Event;
-    }
+    Task PublishAsync<TEvent>(TEvent @event)
+        where TEvent : Event;
 }

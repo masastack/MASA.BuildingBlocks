@@ -1,8 +1,7 @@
-﻿namespace MASA.BuildingBlocks.Dispatcher.Remoting
+﻿namespace MASA.BuildingBlocks.Dispatcher.Remoting;
+
+public interface IIntegrationEventBus
 {
-    public interface IIntegrationEventBus
-    {
-        Task PublishAsync<TEvent>(TEvent @event)
-            where TEvent : IntegrationEvent;
-    }
+    Task PublishAsync<TEvent>(TEvent @event)
+        where TEvent : IntegrationEvent;
 }
