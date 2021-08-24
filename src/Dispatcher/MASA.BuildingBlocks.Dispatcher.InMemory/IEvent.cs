@@ -1,8 +1,8 @@
 ﻿namespace MASA.BuildingBlocks.Dispatcher.InMemory;
 
-public interface IEvent<TId>
+public interface IEvent
 {
-    TId Id { get; }
+    Guid Id { get; }
 
     DateTime CreationTime { get; }
 }
