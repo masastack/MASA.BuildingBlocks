@@ -4,7 +4,7 @@ public interface IUnitOfWork : IDisposable
 {
     bool DisableRollbackOnFailure { get; set; }
 
-    Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+    Task SaveChangesAsync(CancellationToken cancellationToken = default);
 
     Task CommitAsync(CancellationToken cancellationToken = default);
 
