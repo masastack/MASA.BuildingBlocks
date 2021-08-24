@@ -5,4 +5,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dispatcher\MASA.BuildingBlocks.Dispatcher.InMemory\MASA.BuildingBlocks.Dispatcher.InMemory.csproj" />
+  </ItemGroup>
+
 </Project>

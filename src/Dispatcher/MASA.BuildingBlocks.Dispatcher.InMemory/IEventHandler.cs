@@ -1,7 +1,7 @@
 ﻿namespace MASA.BuildingBlocks.Dispatcher.InMemory;
 
 public interface IEventHandler<TEvent>
-        where TEvent : Event
+        where TEvent : IEvent
 {
     Task HandleAsync(TEvent @event);
 }
