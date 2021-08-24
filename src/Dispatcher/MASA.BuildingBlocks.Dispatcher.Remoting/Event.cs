@@ -1,5 +1,4 @@
 ﻿namespace MASA.BuildingBlocks.Dispatcher.Remoting;
-
 public class Event
 {
     public Guid Id { get; private set; } = Guid.NewGuid();
