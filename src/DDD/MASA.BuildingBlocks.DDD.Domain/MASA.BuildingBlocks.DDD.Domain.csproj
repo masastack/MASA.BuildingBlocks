@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dispatcher\MASA.BuildingBlocks.Dispatcher.InMemory\MASA.BuildingBlocks.Dispatcher.InMemory.csproj" />
+    <ProjectReference Include="..\..\Dispatcher\MASA.BuildingBlocks.Dispatcher.Remoting\MASA.BuildingBlocks.Dispatcher.Remoting.csproj" />
+  </ItemGroup>
+
+</Project>
