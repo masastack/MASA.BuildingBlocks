@@ -2,10 +2,8 @@
 {
     public interface IDomainEvent
     {
-        EventTypes Type { get; set; }
+        public Guid Id { get; set; }
 
-        IEvent Event { get; set; }
-
-        IntegrationEvent IntegrationEvent { get; set; }
+        public DateTime CreationTime { get; set; }
     }
 }
