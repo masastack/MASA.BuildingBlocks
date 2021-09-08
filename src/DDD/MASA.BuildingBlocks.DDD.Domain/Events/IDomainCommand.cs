@@ -1,5 +1,5 @@
 ﻿namespace MASA.BuildingBlocks.DDD.Domain.Events;
-public interface IDomainCommand : ICommand
+public interface IDomainCommand : ICommand, IDomainEvent
 {
 
 }

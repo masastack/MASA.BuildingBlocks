@@ -1,5 +1,5 @@
 ﻿namespace MASA.BuildingBlocks.DDD.Domain.Events;
-public interface IDomainQuery<TResult> : IQuery<TResult>
+public interface IDomainQuery<TResult> : IDomainEvent, IQuery<TResult>
 {
 
 }
