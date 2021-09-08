@@ -1,7 +1,7 @@
 ﻿namespace MASA.BuildingBlocks.DDD.Domain.Events
 {
-    public interface IIntegrationDomainEvent : IDomainEvent
+    public interface IIntegrationDomainEvent : IIntegrationEvent, IDomainEvent
     {
-        public string Topic { get; set; }
+
     }
 }
