@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{64FB8703-E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASA.BuildingBlocks.Data.Contracts", "src\Data\MASA.BuildingBlocks.Data.Contracts\MASA.BuildingBlocks.Data.Contracts.csproj", "{C1D3B7E1-38BE-46AD-9B74-34A22A4E38CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASA.BuildingBlocks.Service.MinimalAPIs", "src\Service\MASA.BuildingBlocks.Service.MinimalAPIs\MASA.BuildingBlocks.Service.MinimalAPIs.csproj", "{A0CC0F0F-7285-4D3B-B962-083F5C04A8D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{C1D3B7E1-38BE-46AD-9B74-34A22A4E38CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1D3B7E1-38BE-46AD-9B74-34A22A4E38CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1D3B7E1-38BE-46AD-9B74-34A22A4E38CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0CC0F0F-7285-4D3B-B962-083F5C04A8D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0CC0F0F-7285-4D3B-B962-083F5C04A8D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0CC0F0F-7285-4D3B-B962-083F5C04A8D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0CC0F0F-7285-4D3B-B962-083F5C04A8D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{95C99D92-E378-4FE4-BDCA-5DF04D98E950} = {FBD326D3-E59C-433E-A88E-14E179E3093D}
 		{F7FAC01A-9EC0-46A8-9516-63C7C16463AE} = {9CB643CA-AA09-46E7-8CB9-E1D55E84B32B}
 		{C1D3B7E1-38BE-46AD-9B74-34A22A4E38CA} = {64FB8703-E922-45DE-9D01-3FE9EFE56727}
+		{A0CC0F0F-7285-4D3B-B962-083F5C04A8D5} = {593A3114-D1E0-47ED-BC37-58E08886175B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40383055-CC50-4600-AD9A-53C14F620D03}
