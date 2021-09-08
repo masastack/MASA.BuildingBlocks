@@ -1,9 +1,7 @@
 ﻿namespace MASA.BuildingBlocks.DDD.Domain.Entities.Auditing
 {
-    public interface IAuditEntity<TUserId>
+    public interface IAuditEntity<TUserId> : ISoftDelete
     {
-        bool IsDeleted { get; set; }
-
         TUserId Creator { get; set; }
 
         DateTime CreationTime { get; set; }
