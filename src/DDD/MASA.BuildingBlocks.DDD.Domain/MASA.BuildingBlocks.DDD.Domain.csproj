@@ -9,6 +9,7 @@
     <ProjectReference Include="..\..\Data\MASA.BuildingBlocks.Data.Contracts\MASA.BuildingBlocks.Data.Contracts.csproj" />
     <ProjectReference Include="..\..\Dispatcher\MASA.BuildingBlocks.Dispatcher.InMemory\MASA.BuildingBlocks.Dispatcher.InMemory.csproj" />
     <ProjectReference Include="..\..\Dispatcher\MASA.BuildingBlocks.Dispatcher.Remoting\MASA.BuildingBlocks.Dispatcher.Remoting.csproj" />
+    <ProjectReference Include="..\..\ReadWriteSpliting\MASA.BuildingBlocks.ReadWriteSpliting.CQRS\MASA.BuildingBlocks.ReadWriteSpliting.CQRS.csproj" />
   </ItemGroup>
 
 </Project>
