@@ -15,9 +15,7 @@
 
         public override bool Equals(object? obj)
         {
-            var keys = GetKeys().ToArray();
-
-            if (this is null || obj is null) return false;
+            if (this is null ^ obj is null) return false;
 
             if (obj is Entity entity)
             {
