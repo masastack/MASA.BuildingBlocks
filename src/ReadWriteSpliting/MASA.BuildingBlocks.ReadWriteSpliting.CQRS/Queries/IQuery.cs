@@ -1,4 +1,4 @@
 ﻿namespace MASA.BuildingBlocks.ReadWriteSpliting.CQRS.Queries;
-public interface IQuery<TResult> : IEvent
+public interface IQuery : IEvent<TResult>
 {
 }

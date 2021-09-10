@@ -5,3 +5,8 @@ public interface IEvent
 
     DateTime CreationTime { get; }
 }
+
+public interface IEvent<TResult> : IEvent
+{
+    TResult Result { get; set; }
+}
