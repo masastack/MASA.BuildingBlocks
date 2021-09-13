@@ -17,6 +17,7 @@ public class TestEntity
         MasaEntity y = new() { Id = id };
 
         Assert.IsTrue(x.Equals(y));
+        Assert.IsTrue(x.Equals((object)y));
     }
 
     [TestMethod]

@@ -1,6 +1,8 @@
-﻿namespace MASA.BuildingBlocks.DDD.Domain.Entities
+﻿using System;
+
+namespace MASA.BuildingBlocks.DDD.Domain.Entities
 {
-    public abstract class Entity : IEntity
+    public abstract class Entity : IEntity, IEquatable<Entity>, IEquatable<object>
     {
         public abstract IEnumerable<(string Name, object Value)> GetKeys();
 
@@ -17,9 +19,9 @@
         {
             if (this is null ^ obj is null) return false;
 
-            if (obj is Entity entity)
+            if (obj is Entity other)
             {
-                return entity.GetKeys().Select(key => key.Value).SequenceEqual(GetKeys().Select(key => key.Value));
+                return other.GetKeys().Select(key => key.Value).SequenceEqual(GetKeys().Select(key => key.Value));
             }
             else
             {
@@ -27,19 +29,30 @@
             }
         }
 
+        public bool Equals(Entity? other)
+        {
+            if (this is null ^ other is null) return false;
+
+            return other!.GetKeys().Select(key => key.Value).SequenceEqual(GetKeys().Select(key => key.Value));
+        }
+
         public override int GetHashCode()
         {
             return GetKeys().Select(key => key.Value).Aggregate(0, (hashCode, next) => HashCode.Combine(hashCode, next));
         }
 
-        public static bool operator ==(Entity x, Entity y)
+        public static bool operator ==(Entity? x, Entity? y)
         {
-            return x.Equals(y);
+            if (x is null ^ y is null) return false;
+
+            return x!.Equals(y);
         }
 
-        public static bool operator !=(Entity x, Entity y)
+        public static bool operator !=(Entity? x, Entity? y)
         {
-            return !x.Equals(y);
+            if (x is null ^ y is null) return false;
+
+            return !x!.Equals(y);
         }
     }
 
