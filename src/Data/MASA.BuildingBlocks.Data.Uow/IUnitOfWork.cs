@@ -1,5 +1,5 @@
-﻿namespace MASA.BuildingBlocks.Dispatcher.InMemory;
-public interface IUnitOfWork : IDisposable
+﻿namespace MASA.BuildingBlocks.Data.Uow;
+public interface IUnitOfWork : IAsyncDisposable
 {
     bool DisableRollbackOnFailure { get; set; }
 
