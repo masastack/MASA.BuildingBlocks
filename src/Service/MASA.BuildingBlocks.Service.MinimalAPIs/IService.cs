@@ -1,7 +1,7 @@
 ﻿namespace MASA.BuildingBlocks.Service.MinimalAPIs;
 public interface IService
 {
-    WebApplication App { get; }
+    static WebApplication App { get; } = default!;
 
     IServiceCollection Services { get; }
 
