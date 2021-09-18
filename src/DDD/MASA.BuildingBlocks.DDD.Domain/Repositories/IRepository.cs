@@ -1,6 +1,6 @@
 ﻿namespace MASA.BuildingBlocks.DDD.Domain.Repositories;
-public interface IRepository<TAggregateRoot>
-    where TAggregateRoot : class, IAggregateRoot
+public interface IRepository<TEntity>
+    where TEntity : class, IAggregateRoot
 {
     IUnitOfWork UnitOfWork { get; }
 

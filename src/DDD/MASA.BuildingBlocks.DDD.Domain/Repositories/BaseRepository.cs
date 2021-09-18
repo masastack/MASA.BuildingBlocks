@@ -1,6 +1,6 @@
 ﻿namespace MASA.BuildingBlocks.DDD.Domain.Repositories;
-public abstract class RepositoryBase<TEntity> : IRepository<TEntity>, IUnitOfWork
-    where TEntity : class, IEntity
+public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWork
+    where TEntity : class, IAggregateRoot
 {
     #region IRepository<TEntity>
 
@@ -102,6 +102,10 @@ public abstract class RepositoryBase<TEntity> : IRepository<TEntity>, IUnitOfWor
 
     public bool DisableRollbackOnFailure { get; set; }
 
+    public abstract DbTransaction Transaction { get; }
+
+    public abstract IUnitOfWork UnitOfWork { get; }
+
     public abstract Task CommitAsync(CancellationToken cancellationToken = default);
 
     public abstract ValueTask DisposeAsync();
@@ -109,6 +113,8 @@ public abstract class RepositoryBase<TEntity> : IRepository<TEntity>, IUnitOfWor
     public abstract Task RollbackAsync(CancellationToken cancellationToken = default);
 
     public abstract Task SaveChangesAsync(CancellationToken cancellationToken = default);
+
+    public abstract Task<DbTransaction> BeginTransaction(CancellationToken cancellationToken = default);
 
     #endregion
 }

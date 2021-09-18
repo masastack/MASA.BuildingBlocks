@@ -1,4 +1,7 @@
 ﻿namespace MASA.BuildingBlocks.DDD.Domain.SeedWork;
+/// <summary>
+/// Reference from https://docs.microsoft.com/zh-cn/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/enumeration-classes-over-enum-types
+/// </summary>
 public abstract class Enumeration : IComparable
 {
     public string Name { get; private set; }
