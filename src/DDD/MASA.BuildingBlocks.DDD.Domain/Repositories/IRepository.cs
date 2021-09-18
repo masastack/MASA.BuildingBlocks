@@ -2,6 +2,8 @@
 public interface IRepository<TEntity>
     where TEntity : class, IEntity
 {
+    IUnitOfWork UnitOfWork {  get; }
+
     #region Add
 
     Task<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken = default);
