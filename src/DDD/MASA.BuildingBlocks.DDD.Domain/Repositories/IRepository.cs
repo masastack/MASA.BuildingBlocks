@@ -1,8 +1,8 @@
 ﻿namespace MASA.BuildingBlocks.DDD.Domain.Repositories;
-public interface IRepository<TEntity>
-    where TEntity : class, IEntity
+public interface IRepository<TAggregateRoot>
+    where TAggregateRoot : class, IAggregateRoot
 {
-    IUnitOfWork UnitOfWork {  get; }
+    IUnitOfWork UnitOfWork { get; }
 
     #region Add
 
@@ -61,8 +61,8 @@ public interface IRepository<TEntity>
     #endregion
 }
 
-public interface IRepository<TEntity, TKey> : IRepository<TEntity>
-    where TEntity : class, IEntity<TKey>
+public interface IRepository<TAggregateRoot, TKey> : IRepository<TAggregateRoot>
+    where TAggregateRoot : class, IAggregateRoot<TKey>
 {
 
 }
