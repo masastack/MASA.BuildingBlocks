@@ -1,5 +1,5 @@
 ﻿namespace MASA.BuildingBlocks.Dispatcher.Remoting;
-public interface IIntegrationEvent
+public interface IIntegrationEvent : ITransaction
 {
     Guid Id { get; }
 

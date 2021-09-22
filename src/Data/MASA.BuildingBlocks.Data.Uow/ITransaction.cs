@@ -1,5 +1,6 @@
 ﻿namespace MASA.BuildingBlocks.Data.Uow;
 public interface ITransaction
 {
-    DbTransaction Transaction { get; }
+    [JsonIgnore]
+    IUnitOfWork UnitOfWork { get; }
 }

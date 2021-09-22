@@ -1,6 +1,6 @@
 ﻿namespace MASA.BuildingBlocks.DDD.Domain.Events
 {
-    public interface IDomainEvent : ITransactionalEvent
+    public interface IDomainEvent : IEvent, ITransaction
     {
 
     }

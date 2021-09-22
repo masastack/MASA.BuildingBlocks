@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\MASA.BuildingBlocks.Data.Uow\MASA.BuildingBlocks.Data.Uow.csproj" />
+  </ItemGroup>
+
 </Project>

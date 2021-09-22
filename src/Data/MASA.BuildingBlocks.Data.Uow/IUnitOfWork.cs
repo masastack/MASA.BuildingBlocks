@@ -1,9 +1,9 @@
 ﻿namespace MASA.BuildingBlocks.Data.Uow;
-public interface IUnitOfWork : IAsyncDisposable, ITransaction
+public interface IUnitOfWork : IAsyncDisposable
 {
-    bool DisableRollbackOnFailure { get; set; }
+    DbTransaction Transaction { get; }
 
-    Task<DbTransaction> BeginTransaction(CancellationToken cancellationToken = default);
+    bool DisableRollbackOnFailure { get; set; }
 
     Task SaveChangesAsync(CancellationToken cancellationToken = default);
 
