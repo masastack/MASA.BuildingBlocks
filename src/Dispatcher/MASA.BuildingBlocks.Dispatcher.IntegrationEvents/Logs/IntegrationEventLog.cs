@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.Dispatcher.Remoting.Logs;
+﻿namespace MASA.BuildingBlocks.Dispatcher.IntegrationEvents.Logs;
 
 public class IntegrationEventLog
 {

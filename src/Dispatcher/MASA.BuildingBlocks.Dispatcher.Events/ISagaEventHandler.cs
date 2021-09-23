@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.Dispatcher.InMemory;
+﻿namespace MASA.BuildingBlocks.Dispatcher.Events;
 public interface ISagaEventHandler<TEvent> : IEventHandler<TEvent>
         where TEvent : IEvent
 {

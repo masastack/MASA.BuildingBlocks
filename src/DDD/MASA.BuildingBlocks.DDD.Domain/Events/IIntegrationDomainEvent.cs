@@ -1,7 +1,5 @@
-﻿namespace MASA.BuildingBlocks.DDD.Domain.Events
+﻿namespace MASA.BuildingBlocks.DDD.Domain.Events;
+public interface IIntegrationDomainEvent : IDomainEvent, IIntegrationEvent
 {
-    public interface IIntegrationDomainEvent : IIntegrationEvent, IDomainEvent
-    {
 
-    }
 }

@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Dispatcher\MASA.BuildingBlocks.Dispatcher.InMemory\MASA.BuildingBlocks.Dispatcher.InMemory.csproj" />
+    <ProjectReference Include="..\..\Dispatcher\MASA.BuildingBlocks.Dispatcher.Events\MASA.BuildingBlocks.Dispatcher.Events.csproj" />
   </ItemGroup>
 
 </Project>

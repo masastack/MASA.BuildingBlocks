@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.Dispatcher.Remoting;
+﻿namespace MASA.BuildingBlocks.Dispatcher.IntegrationEvents;
 public enum IntegrationEventStates
 {
     NotPublished = 0,

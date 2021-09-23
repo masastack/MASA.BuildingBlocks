@@ -1,12 +1,10 @@
-﻿namespace MASA.BuildingBlocks.DDD.Domain.Entities
+﻿namespace MASA.BuildingBlocks.DDD.Domain.Entities;
+public abstract class AggregateRoot : Entity, IAggregateRoot
 {
-    public abstract class AggregateRoot : Entity, IAggregateRoot
-    {
 
-    }
+}
 
-    public class AggregateRoot<TKey> : Entity<TKey>, IAggregateRoot<TKey>
-    {
-        
-    }
+public class AggregateRoot<TKey> : Entity<TKey>, IAggregateRoot<TKey>
+{
+
 }

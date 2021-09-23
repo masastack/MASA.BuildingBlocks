@@ -102,9 +102,11 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
 
     public bool DisableRollbackOnFailure { get; set; }
 
-    public abstract DbTransaction Transaction { get; }
+    public abstract DbTransaction Transaction { get; set; }
 
-    public abstract IUnitOfWork UnitOfWork { get; }
+    public abstract IUnitOfWork UnitOfWork { get; set; }
+
+    public bool TransactionHasBegun { get; set; }
 
     public abstract Task CommitAsync(CancellationToken cancellationToken = default);
 
@@ -113,8 +115,6 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
     public abstract Task RollbackAsync(CancellationToken cancellationToken = default);
 
     public abstract Task SaveChangesAsync(CancellationToken cancellationToken = default);
-
-    public abstract Task<DbTransaction> BeginTransaction(CancellationToken cancellationToken = default);
 
     #endregion
 }
