@@ -2,5 +2,5 @@
 public interface ITransaction
 {
     [JsonIgnore]
-    IUnitOfWork UnitOfWork { get; }
+    IUnitOfWork UnitOfWork { get; set; }
 }
