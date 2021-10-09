@@ -4,7 +4,7 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
 {
     #region IRepository<TEntity>
 
-    public abstract Task<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken = default);
+    public abstract ValueTask<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken = default);
 
     public virtual async Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
     {
@@ -14,12 +14,12 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
         }
     }
 
-    public virtual async Task<TEntity?> FindAsync(params object?[]? keyValues)
+    public virtual async ValueTask<TEntity?> FindAsync(params object?[]? keyValues)
     {
         return await FindAsync(keyValues, default);
     }
 
-    public abstract Task<TEntity?> FindAsync(object?[]? keyValues, CancellationToken cancellationToken);
+    public abstract ValueTask<TEntity?> FindAsync(object?[]? keyValues, CancellationToken cancellationToken);
 
     public abstract Task<TEntity?> FindAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
