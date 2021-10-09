@@ -6,7 +6,7 @@ public interface IRepository<TEntity>
 
     #region Add
 
-    Task<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken = default);
+    ValueTask<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken = default);
 
     Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default);
 
@@ -32,9 +32,9 @@ public interface IRepository<TEntity>
 
     #region Find
 
-    Task<TEntity?> FindAsync(params object?[]? keyValues);
+    ValueTask<TEntity?> FindAsync(params object?[]? keyValues);
 
-    Task<TEntity?> FindAsync(object?[]? keyValues, CancellationToken cancellationToken);
+    ValueTask<TEntity?> FindAsync(object?[]? keyValues, CancellationToken cancellationToken);
 
     Task<TEntity?> FindAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
