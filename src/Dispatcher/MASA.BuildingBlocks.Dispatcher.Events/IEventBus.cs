@@ -5,4 +5,6 @@ public interface IEventBus
         where TEvent : IEvent;
 
     IEnumerable<Type> GetAllEventTypes();
+
+    Task CommitAsync(CancellationToken cancellationToken = default);
 }

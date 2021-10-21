@@ -4,6 +4,8 @@ public class IntegrationEventLog
 {
     public Guid Id { get; private set; }
 
+    public Guid EventId { get; private set; }
+
     public string EventTypeName { get; private set; } = null!;
 
     [NotMapped]
@@ -22,14 +24,17 @@ public class IntegrationEventLog
 
     public Guid TransactionId { get; private set; } = Guid.Empty;
 
-    private IntegrationEventLog() { }
-
-    public IntegrationEventLog(IIntegrationEvent @event, Guid transactionId)
+    private IntegrationEventLog()
     {
-        Id = @event.Id;
+        Id = Guid.NewGuid();
+    }
+
+    public IntegrationEventLog(IIntegrationEvent @event, Guid transactionId) : this()
+    {
+        EventId = @event.Id;
         CreationTime = @event.CreationTime;
         EventTypeName = @event.GetType().FullName!;
-        Content = System.Text.Json.JsonSerializer.Serialize(@event);
+        Content = System.Text.Json.JsonSerializer.Serialize((object)@event);
         State = IntegrationEventStates.NotPublished;
         TimesSent = 0;
         TransactionId = transactionId;
