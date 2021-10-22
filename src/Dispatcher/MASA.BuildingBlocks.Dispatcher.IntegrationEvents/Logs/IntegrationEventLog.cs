@@ -1,5 +1,4 @@
 ﻿namespace MASA.BuildingBlocks.Dispatcher.IntegrationEvents.Logs;
-
 public class IntegrationEventLog
 {
     public Guid Id { get; private set; }

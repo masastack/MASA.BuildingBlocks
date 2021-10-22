@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MASA.BuildingBlocks.Dispatcher.Events;
+﻿namespace MASA.BuildingBlocks.Dispatcher.Events;
 public interface IEventHandler<TEvent>
         where TEvent : IEvent
 {

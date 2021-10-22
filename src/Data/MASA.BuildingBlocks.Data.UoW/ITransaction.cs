@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.Data.Uow;
+﻿namespace MASA.BuildingBlocks.Data.UoW;
 public interface ITransaction
 {
     [JsonIgnore]
