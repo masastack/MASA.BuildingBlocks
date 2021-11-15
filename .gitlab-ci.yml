@@ -1,33 +1,52 @@
+# You can override the included template(s) by including variable overrides
+# SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings
+# Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/#customizing-settings
+# Dependency Scanning customization: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#customizing-the-dependency-scanning-settings
+# Note that environment variables can be set in several places
+# See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
 image: mcr.microsoft.com/dotnet/sdk:6.0.100-preview.7
-
 stages:
-  - build
-  - tests
-  - nuget
-
+- build
+- tests
+- nuget
+- test
+- deploy
+- review
+- dast
+- staging
+- canary
+- production
+- incremental rollout 10%
+- incremental rollout 25%
+- incremental rollout 50%
+- incremental rollout 100%
+- performance
+- cleanup
 build:
   stage: build
   only:
-    - branches
+  - branches
   script:
-    - dotnet --version
-    - dotnet build
+  - dotnet --version
+  - dotnet build
   retry: 2
-
 tests:
   stage: tests
   only:
-    - branches
+  - branches
   script:
-    - dotnet test --collect:"XPlat Code Coverage"
+  - dotnet test --collect:"XPlat Code Coverage"
   retry: 2
-
 nuget:
   stage: nuget
   only:
-    - branches
+  - branches
   script:
-    - dotnet build
-    - dotnet pack --include-symbols -p:PackageVersion=0.0.$CI_PIPELINE_ID
-    - dotnet nuget push "**/*.symbols.nupkg" --source gitlab
+  - dotnet build
+  - dotnet pack --include-symbols -p:PackageVersion=0.0.$CI_PIPELINE_ID
+  - dotnet nuget push "**/*.symbols.nupkg" --source gitlab
   retry: 2
+sast:
+  stage: test
+include:
+- template: Auto-DevOps.gitlab-ci.yml
