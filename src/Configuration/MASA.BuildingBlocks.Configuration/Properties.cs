@@ -1,5 +1,5 @@
-﻿namespace MASA.BuildingBlocks.Configuration;
-public class Properties
+namespace MASA.BuildingBlocks.Configuration;
+public class Properties : IEquatable<Properties>, IEquatable<object>
 {
     private readonly Dictionary<string, string> _dict;
 
@@ -22,4 +22,48 @@ public class Properties
     }
 
     public ISet<string> GetPropertyNames() => new HashSet<string>(_dict.Keys);
+
+    public override bool Equals(object? obj)
+    {
+        if (this is null ^ obj is null) return false;
+
+        if (obj is Properties other)
+        {
+            return Equals(other);
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool Equals(Properties? newProperties)
+    {
+        if (newProperties == null) return false;
+
+        return GetHashCode() == newProperties.GetHashCode();
+    }
+
+    public static bool operator ==(Properties? x, Properties? y)
+    {
+        if (x is null ^ y is null) return false;
+
+        if (x is null) return true;
+
+        return x.Equals(y);
+    }
+
+    public static bool operator !=(Properties? x, Properties? y)
+    {
+        if (x is null ^ y is null) return false;
+
+        if (x is null) return false;
+
+        return !x.Equals(y);
+    }
+
+    public override int GetHashCode()
+    {
+        return _dict.Select(key => key.Key + key.Value).Aggregate(0, (hashCode, next) => HashCode.Combine(hashCode, next));
+    }
 }

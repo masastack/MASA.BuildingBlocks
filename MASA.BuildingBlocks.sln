@@ -49,6 +49,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MASA.BuildingBlocks.Data.Uo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MASA.BuildingBlocks.Configuration", "src\Configuration\MASA.BuildingBlocks.Configuration\MASA.BuildingBlocks.Configuration.csproj", "{1B72DF2B-CD4A-4634-9E11-30DCAEA3C881}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASA.BuildingBlocks.Configuration.Tests", "test\MASA.BuildingBlocks.Configuration.Tests\MASA.BuildingBlocks.Configuration.Tests.csproj", "{C68DCC37-CBB0-4D1F-B83A-5353D6971A4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{1B72DF2B-CD4A-4634-9E11-30DCAEA3C881}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B72DF2B-CD4A-4634-9E11-30DCAEA3C881}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B72DF2B-CD4A-4634-9E11-30DCAEA3C881}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C68DCC37-CBB0-4D1F-B83A-5353D6971A4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C68DCC37-CBB0-4D1F-B83A-5353D6971A4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C68DCC37-CBB0-4D1F-B83A-5353D6971A4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C68DCC37-CBB0-4D1F-B83A-5353D6971A4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,6 +127,7 @@ Global
 		{DC8FFD2B-1A35-48AF-8CB9-5310E0BD1417} = {509BDB5A-5D32-478F-BF27-F0470C18C7C9}
 		{49A817E9-17E2-4F6C-A732-73BD10B5E74B} = {64FB8703-E922-45DE-9D01-3FE9EFE56727}
 		{1B72DF2B-CD4A-4634-9E11-30DCAEA3C881} = {77D17E30-CB7C-4DD7-8CF1-9D5350FF2304}
+		{C68DCC37-CBB0-4D1F-B83A-5353D6971A4C} = {6ED365E6-4A1A-499F-85FB-F22E865CA4BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40383055-CC50-4600-AD9A-53C14F620D03}
