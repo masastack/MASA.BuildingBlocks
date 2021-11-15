@@ -32,6 +32,6 @@ jobs:
         echo "------------------------------------------------------"
         ls
         dotnet build
-        dotnet pack  --include-symbols  -p:PackageVersion=0.0.$GITHUB_RUN_ID
+        dotnet pack  --include-symbols  -p:PackageVersion=$GITHUB_REF_TYPE
         dotnet nuget push "**/*.symbols.nupkg" -k  ${{secrets.NUGET_TOKEN}}  -s https://api.nuget.org/v3/index.json
         
