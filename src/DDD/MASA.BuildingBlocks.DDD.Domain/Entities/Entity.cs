@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.DDD.Domain.Entities;
+namespace MASA.BuildingBlocks.DDD.Domain.Entities;
 
 public abstract class Entity : IEntity, IEquatable<Entity>, IEquatable<object>
 {
@@ -50,7 +50,7 @@ public abstract class Entity : IEntity, IEquatable<Entity>, IEquatable<object>
 
     public static bool operator !=(Entity? x, Entity? y)
     {
-        if (x is null ^ y is null) return false;
+        if (x is null ^ y is null) return true;
 
         if (x is null) return false;
 
