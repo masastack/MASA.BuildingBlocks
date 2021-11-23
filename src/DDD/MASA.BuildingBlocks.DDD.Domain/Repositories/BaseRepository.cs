@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.DDD.Domain.Repositories;
+namespace MASA.BuildingBlocks.DDD.Domain.Repositories;
 public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWork
     where TEntity : class, IAggregateRoot
 {
@@ -14,12 +14,12 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
         }
     }
 
-    public virtual async ValueTask<TEntity?> FindAsync(params object?[]? keyValues)
+    public virtual async Task<TEntity?> FindAsync(params object?[]? keyValues)
     {
         return await FindAsync(keyValues, default);
     }
 
-    public abstract ValueTask<TEntity?> FindAsync(object?[]? keyValues, CancellationToken cancellationToken);
+    public abstract Task<TEntity?> FindAsync(object?[]? keyValues, CancellationToken cancellationToken);
 
     public abstract Task<TEntity?> FindAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
@@ -53,9 +53,9 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
 
     public abstract Task<long> GetCountAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken);
 
-    public abstract Task<List<TEntity>> GetPaginatedListAsync(int skip, int take, string? sorting, CancellationToken cancellationToken);
+    public abstract Task<List<TEntity>> GetPaginatedListAsync(int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken);
 
-    public abstract Task<List<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, int skip, int take, string? sorting, CancellationToken cancellationToken);
+    public abstract Task<List<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken);
 
     public virtual async Task<PaginatedList<TEntity>> GetPaginatedListAsync(PaginatedOptions options, CancellationToken cancellationToken)
     {
@@ -103,6 +103,8 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
     public bool DisableRollbackOnFailure { get; set; }
 
     public abstract DbTransaction Transaction { get; }
+
+    public abstract bool UseTransaction { get; set; }
 
     public abstract IUnitOfWork UnitOfWork { get; }
 

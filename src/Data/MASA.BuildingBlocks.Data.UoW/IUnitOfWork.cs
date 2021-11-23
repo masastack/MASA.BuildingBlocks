@@ -1,9 +1,11 @@
-﻿namespace MASA.BuildingBlocks.Data.UoW;
+namespace MASA.BuildingBlocks.Data.UoW;
 public interface IUnitOfWork : IAsyncDisposable
 {
     DbTransaction Transaction { get; }
 
     bool TransactionHasBegun { get; }
+
+    bool UseTransaction { get; set; }
 
     bool DisableRollbackOnFailure { get; set; }
 
