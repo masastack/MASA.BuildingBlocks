@@ -34,7 +34,7 @@ public interface IRepository<TEntity>
 
     Task<TEntity?> FindAsync(params object?[]? keyValues);
 
-    Task<TEntity?> FindAsync(object?[]? keyValues, CancellationToken cancellationToken);
+    Task<TEntity?> FindAsync(object?[]? keyValues, CancellationToken cancellationToken = default);
 
     Task<TEntity?> FindAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
@@ -42,21 +42,21 @@ public interface IRepository<TEntity>
 
     #region Get
 
-    Task<IEnumerable<TEntity>> GetListAsync(CancellationToken cancellationToken);
+    Task<IEnumerable<TEntity>> GetListAsync(CancellationToken cancellationToken = default);
 
-    Task<IEnumerable<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken);
+    Task<IEnumerable<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
-    Task<long> GetCountAsync(CancellationToken cancellationToken);
+    Task<long> GetCountAsync(CancellationToken cancellationToken = default);
 
-    Task<long> GetCountAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken);
+    Task<long> GetCountAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
-    Task<List<TEntity>> GetPaginatedListAsync(int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken);
+    Task<List<TEntity>> GetPaginatedListAsync(int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken = default);
 
-    Task<List<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken);
+    Task<List<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken = default);
 
-    Task<PaginatedList<TEntity>> GetPaginatedListAsync(PaginatedOptions options, CancellationToken cancellationToken);
+    Task<PaginatedList<TEntity>> GetPaginatedListAsync(PaginatedOptions options, CancellationToken cancellationToken = default);
 
-    Task<PaginatedList<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, PaginatedOptions options, CancellationToken cancellationToken);
+    Task<PaginatedList<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, PaginatedOptions options, CancellationToken cancellationToken = default);
 
     #endregion
 }

@@ -19,7 +19,7 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
         return await FindAsync(keyValues, default);
     }
 
-    public abstract Task<TEntity?> FindAsync(object?[]? keyValues, CancellationToken cancellationToken);
+    public abstract Task<TEntity?> FindAsync(object?[]? keyValues, CancellationToken cancellationToken = default);
 
     public abstract Task<TEntity?> FindAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
@@ -45,19 +45,19 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
         }
     }
 
-    public abstract Task<IEnumerable<TEntity>> GetListAsync(CancellationToken cancellationToken);
+    public abstract Task<IEnumerable<TEntity>> GetListAsync(CancellationToken cancellationToken = default);
 
     public abstract Task<IEnumerable<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken);
 
     public abstract Task<long> GetCountAsync(CancellationToken cancellationToken);
 
-    public abstract Task<long> GetCountAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken);
+    public abstract Task<long> GetCountAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
-    public abstract Task<List<TEntity>> GetPaginatedListAsync(int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken);
+    public abstract Task<List<TEntity>> GetPaginatedListAsync(int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken = default);
 
-    public abstract Task<List<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken);
+    public abstract Task<List<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken = default);
 
-    public virtual async Task<PaginatedList<TEntity>> GetPaginatedListAsync(PaginatedOptions options, CancellationToken cancellationToken)
+    public virtual async Task<PaginatedList<TEntity>> GetPaginatedListAsync(PaginatedOptions options, CancellationToken cancellationToken = default)
     {
         var result = await GetPaginatedListAsync(
             (options.Page - 1) * options.PageSize,
@@ -76,7 +76,7 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
         };
     }
 
-    public async Task<PaginatedList<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, PaginatedOptions options, CancellationToken cancellationToken)
+    public async Task<PaginatedList<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, PaginatedOptions options, CancellationToken cancellationToken = default)
     {
         var result = await GetPaginatedListAsync(
             predicate,
