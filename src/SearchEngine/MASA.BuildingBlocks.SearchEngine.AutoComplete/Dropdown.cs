@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.Data.AutoComplete;
+﻿namespace MASA.BuildingBlocks.SearchEngine.AutoComplete;
 
 public class Dropdown<TValue> where TValue : struct
 {
