@@ -15,14 +15,14 @@ public interface IAutoCompleteClient
         where TResponse : Dropdown<TValue>
         where TValue : struct;
 
-    SetResponse Set<TValue>(
+    Task<SetResponse[]> SetAsync<TValue>(
         Dropdown<TValue>[] results,
-        CancellationToken cancellationToken = default)
-        where TValue : struct;
+        SetOptions? options = null,
+        CancellationToken cancellationToken = default) where TValue : struct
+        => SetAsync<Dropdown<TValue>, TValue>(results, options, cancellationToken);
 
-    SetResponse Set<TResponse, TValue>(
-        TResponse[] results,
-        CancellationToken cancellationToken = default)
-        where TResponse : Dropdown<TValue>
-        where TValue : struct;
+    Task<SetResponse[]> SetAsync<TDocument, TValue>(
+        TDocument[] documents,
+        SetOptions? options = null,
+        CancellationToken cancellationToken = default) where TDocument : Dropdown<TValue> where TValue : struct;
 }

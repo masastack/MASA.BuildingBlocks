@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.SearchEngine.AutoComplete;
+﻿namespace MASA.BuildingBlocks.SearchEngine.AutoComplete.Options;
 
 public class AutoCompleteOptions
 {
