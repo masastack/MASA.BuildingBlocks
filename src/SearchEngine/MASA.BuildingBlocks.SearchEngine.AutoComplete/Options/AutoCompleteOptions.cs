@@ -1,5 +1,4 @@
 ﻿namespace MASA.BuildingBlocks.SearchEngine.AutoComplete.Options;
-
 public class AutoCompleteOptions
 {
     public string Field { get; private set; }
@@ -9,8 +8,6 @@ public class AutoCompleteOptions
     public int PageSize { get; private set; }
 
     public SearchType SearchType { get; }
-
-    public static AutoCompleteOptions Default = new AutoCompleteOptions();
 
     public AutoCompleteOptions(SearchType searchType = SearchType.Fuzzy)
     {

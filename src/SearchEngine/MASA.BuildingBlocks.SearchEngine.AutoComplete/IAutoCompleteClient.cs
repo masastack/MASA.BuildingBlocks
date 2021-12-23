@@ -1,5 +1,4 @@
 ﻿namespace MASA.BuildingBlocks.SearchEngine.AutoComplete;
-
 public interface IAutoCompleteClient
 {
     Task<GetResponse<Dropdown<TValue>, TValue>> GetAsync<TValue>(
@@ -18,8 +17,7 @@ public interface IAutoCompleteClient
     Task<SetResponse[]> SetAsync<TValue>(
         Dropdown<TValue>[] results,
         SetOptions? options = null,
-        CancellationToken cancellationToken = default) where TValue : struct
-        => SetAsync<Dropdown<TValue>, TValue>(results, options, cancellationToken);
+        CancellationToken cancellationToken = default) where TValue : struct;
 
     Task<SetResponse[]> SetAsync<TDocument, TValue>(
         TDocument[] documents,

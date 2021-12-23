@@ -1,5 +1,4 @@
 ﻿namespace MASA.BuildingBlocks.SearchEngine.AutoComplete.Response;
-
 public class ResponseBase
 {
     public bool IsValid { get; }

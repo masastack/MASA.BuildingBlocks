@@ -1,5 +1,4 @@
 ﻿namespace MASA.BuildingBlocks.SearchEngine.AutoComplete.Response;
-
 public class GetResponse<TResponse, TValue> : ResponseBase
     where TResponse : Dropdown<TValue>
     where TValue : struct

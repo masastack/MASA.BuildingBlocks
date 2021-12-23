@@ -1,5 +1,4 @@
 ﻿namespace MASA.BuildingBlocks.SearchEngine.AutoComplete;
-
 public class Dropdown<TValue> where TValue : struct
 {
     public string Id { get; set; }
