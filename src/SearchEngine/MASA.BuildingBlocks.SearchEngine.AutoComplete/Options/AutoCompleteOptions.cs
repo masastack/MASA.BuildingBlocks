@@ -11,7 +11,7 @@ public class AutoCompleteOptions
 
     public AutoCompleteOptions(SearchType searchType = SearchType.Fuzzy)
     {
-        this.Field = "Id";
+        this.Field = "id";
         this.PageIndex = 1;
         this.PageSize = 10;
         this.SearchType = searchType;
