@@ -12,12 +12,12 @@ public interface IAutoCompleteClient
         CancellationToken cancellationToken = default)
         where TResponse : Dropdown<TValue>;
 
-    Task<SetResponse[]> SetAsync<TValue>(
+    Task<SetResponse> SetAsync<TValue>(
         Dropdown<TValue>[] results,
         SetOptions? options = null,
         CancellationToken cancellationToken = default);
 
-    Task<SetResponse[]> SetAsync<TDocument, TValue>(
+    Task<SetResponse> SetAsync<TDocument, TValue>(
         TDocument[] documents,
         SetOptions? options = null,
         CancellationToken cancellationToken = default) where TDocument : Dropdown<TValue> ;

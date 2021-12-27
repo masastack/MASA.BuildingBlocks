@@ -2,10 +2,25 @@
 
 public class SetResponse : ResponseBase
 {
-    public string Id { get; }
+    public List<SetResponseItems> Items { get; set; }
 
-    public SetResponse(string id, bool isValid, string message) : base(isValid, message)
+    public SetResponse(bool isValid, string message) : base(isValid, message)
     {
-        Id = id;
+    }
+
+    public class SetResponseItems
+    {
+        public string Id { get; }
+
+        public bool IsValid { get; }
+
+        public string Message { get; }
+
+        public SetResponseItems(string id, bool isValid, string message)
+        {
+            Id = id;
+            IsValid = isValid;
+            Message = message;
+        }
     }
 }
