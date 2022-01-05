@@ -49,7 +49,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MASA.BuildingBlocks.Data.Uo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MASA.BuildingBlocks.Configuration", "src\Configuration\MASA.BuildingBlocks.Configuration\MASA.BuildingBlocks.Configuration.csproj", "{1B72DF2B-CD4A-4634-9E11-30DCAEA3C881}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASA.BuildingBlocks.Configuration.Tests", "test\MASA.BuildingBlocks.Configuration.Tests\MASA.BuildingBlocks.Configuration.Tests.csproj", "{C68DCC37-CBB0-4D1F-B83A-5353D6971A4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MASA.BuildingBlocks.Configuration.Tests", "test\MASA.BuildingBlocks.Configuration.Tests\MASA.BuildingBlocks.Configuration.Tests.csproj", "{C68DCC37-CBB0-4D1F-B83A-5353D6971A4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "design", "design", "{43157B67-5CDB-4D28-9095-9586C685CA6B}"
+	ProjectSection(SolutionItems) = preProject
+		design\CodeMap.dgml = design\CodeMap.dgml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
