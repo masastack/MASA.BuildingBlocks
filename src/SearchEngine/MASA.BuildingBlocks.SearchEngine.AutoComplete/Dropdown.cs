@@ -1,5 +1,5 @@
-﻿namespace MASA.BuildingBlocks.SearchEngine.AutoComplete;
-public class Dropdown<TValue>
+namespace MASA.BuildingBlocks.SearchEngine.AutoComplete;
+public class DropdownBox<TValue>
 {
     public string Id { get; set; }
 
@@ -7,19 +7,25 @@ public class Dropdown<TValue>
 
     public TValue Value { get; set; }
 
-    public Dropdown()
+
+    public DropdownBox()
     {
     }
 
-    public Dropdown(string text, TValue value) : this()
+    public DropdownBox(string text, TValue value) : this()
     {
-        Id = $"[{value}]{text}";
         Text = text;
         Value = value;
+        Id = GetId();
     }
 
-    public Dropdown(string id, string text, TValue value) : this(text, value)
+    public DropdownBox(string id, string text, TValue value) : this(text, value)
     {
         Id = id;
+    }
+
+    protected virtual string GetId()
+    {
+        return $"[{Value}]{Text}";
     }
 }

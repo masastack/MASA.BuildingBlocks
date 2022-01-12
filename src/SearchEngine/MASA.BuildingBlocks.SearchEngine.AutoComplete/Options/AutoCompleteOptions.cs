@@ -1,11 +1,35 @@
 ﻿namespace MASA.BuildingBlocks.SearchEngine.AutoComplete.Options;
 public class AutoCompleteOptions
 {
-    public string Field { get; private set; }
+    public string Field { get; set; }
 
-    public int PageIndex { get; private set; }
+    private int _pageIndex;
 
-    public int PageSize { get; private set; }
+    public int PageIndex
+    {
+        get => _pageIndex;
+        set
+        {
+            if (value <= 0)
+                throw new ArgumentException($"{nameof(PageIndex)} must be greater than or equal to 1", nameof(PageIndex));
+
+            _pageIndex = value;
+        }
+    }
+
+    private int _pageSize;
+
+    public int PageSize
+    {
+        get => _pageSize;
+        set
+        {
+            if (value <= 0)
+                throw new ArgumentException($"{nameof(PageSize)} must be greater than or equal to 1", nameof(PageSize));
+
+            _pageSize = value;
+        }
+    }
 
     public SearchType SearchType { get; }
 
@@ -15,32 +39,5 @@ public class AutoCompleteOptions
         this.PageIndex = 1;
         this.PageSize = 10;
         this.SearchType = searchType;
-    }
-
-    public AutoCompleteOptions UseField(string field)
-    {
-        if (string.IsNullOrWhiteSpace(field))
-            throw new ArgumentException($"{nameof(field)} cannot be empty", nameof(field));
-
-        Field = field;
-        return this;
-    }
-
-    public AutoCompleteOptions UsePageIndex(int pageIndex)
-    {
-        if (pageIndex <= 0)
-            throw new ArgumentException($"{nameof(pageIndex)} must be greater than or equal to 1", nameof(pageIndex));
-
-        PageIndex = pageIndex;
-        return this;
-    }
-
-    public AutoCompleteOptions UsePageSize(int pageSize)
-    {
-        if (pageSize <= 0)
-            throw new ArgumentException($"{nameof(pageSize)} must be greater than or equal to 1", nameof(pageSize));
-
-        PageSize = pageSize;
-        return this;
     }
 }

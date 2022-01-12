@@ -1,24 +1,24 @@
 ﻿namespace MASA.BuildingBlocks.SearchEngine.AutoComplete;
 public interface IAutoCompleteClient
 {
-    Task<GetResponse<Dropdown<TValue>, TValue>> GetAsync<TValue>(
+    Task<GetResponse<DropdownBox<TValue>, TValue>> GetAsync<TValue>(
         string value,
         AutoCompleteOptions? options = null,
         CancellationToken cancellationToken = default);
 
-    Task<GetResponse<TResponse, TValue>> GetAsync<TResponse, TValue>(
+    Task<GetResponse<TDropdownBox, TValue>> GetAsync<TDropdownBox, TValue>(
         string value,
         AutoCompleteOptions? options = null,
         CancellationToken cancellationToken = default)
-        where TResponse : Dropdown<TValue>;
+        where TDropdownBox : DropdownBox<TValue>;
 
     Task<SetResponse> SetAsync<TValue>(
-        Dropdown<TValue>[] results,
+        DropdownBox<TValue>[] results,
         SetOptions? options = null,
         CancellationToken cancellationToken = default);
 
-    Task<SetResponse> SetAsync<TDocument, TValue>(
-        TDocument[] documents,
+    Task<SetResponse> SetAsync<TDropdownBox, TValue>(
+        TDropdownBox[] documents,
         SetOptions? options = null,
-        CancellationToken cancellationToken = default) where TDocument : Dropdown<TValue> ;
+        CancellationToken cancellationToken = default) where TDropdownBox : DropdownBox<TValue> ;
 }

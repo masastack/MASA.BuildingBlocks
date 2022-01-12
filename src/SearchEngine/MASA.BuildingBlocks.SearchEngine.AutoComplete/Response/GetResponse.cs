@@ -1,12 +1,12 @@
 ﻿namespace MASA.BuildingBlocks.SearchEngine.AutoComplete.Response;
-public class GetResponse<TResponse, TValue> : ResponseBase
-    where TResponse : Dropdown<TValue>
+public class GetResponse<TDropdownBox, TValue> : ResponseBase
+    where TDropdownBox : DropdownBox<TValue>
 {
     public long Total { get; set; }
 
-    public int TotalPages { get; set; }
+    public long TotalPages { get; set; }
 
-    public List<TResponse> Data { get; set; }
+    public List<TDropdownBox> Data { get; set; }
 
     public GetResponse(bool isValid, string message) : base(isValid, message)
     {
