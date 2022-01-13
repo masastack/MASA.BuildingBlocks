@@ -1,7 +1,8 @@
 ﻿namespace MASA.BuildingBlocks.Dispatcher.IntegrationEvents.Logs;
+
 public interface IIntegrationEventLogService
 {
-    Task<IEnumerable<IntegrationEventLog>> RetrieveEventLogsPendingToPublishAsync(Guid transactionId);
+    Task<IEnumerable<IntegrationEventLog>> RetrieveEventLogsFailedToPublishAsync(int count);
 
     Task SaveEventAsync(IIntegrationEvent @event, DbTransaction transaction);
 
