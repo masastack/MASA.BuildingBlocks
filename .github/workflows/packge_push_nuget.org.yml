@@ -1,8 +1,7 @@
-
-name: Packege CI
+name: Package Push Nuget
 on:
   create:
-    ref_type: [ tag ]
+    ref_type: [ tags ]
   # push:
   #   branches: [ develop ]
   # pull_request:
