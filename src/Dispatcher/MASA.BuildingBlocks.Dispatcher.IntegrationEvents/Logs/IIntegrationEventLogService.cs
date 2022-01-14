@@ -2,7 +2,12 @@
 
 public interface IIntegrationEventLogService
 {
-    Task<IEnumerable<IntegrationEventLog>> RetrieveEventLogsFailedToPublishAsync(int count);
+    /// <summary>
+    /// Get messages to retry
+    /// </summary>
+    /// <param name="retryDepth">The size of a single event to be retried</param>
+    /// <returns></returns>
+    Task<IEnumerable<IntegrationEventLog>> RetrieveEventLogsFailedToPublishAsync(int retryDepth);
 
     Task SaveEventAsync(IIntegrationEvent @event, DbTransaction transaction);
 

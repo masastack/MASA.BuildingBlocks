@@ -7,17 +7,17 @@ public class IntegrationEventLog
 
     public string EventTypeName { get; private set; } = null!;
 
-    [NotMapped]
-    public string EventTypeShortName => EventTypeName.Split('.')?.Last()!;
+    [NotMapped] public string EventTypeShortName => EventTypeName.Split('.').Last();
 
-    [NotMapped]
-    public IIntegrationEvent Event { get; private set; } = null!;
+    [NotMapped] public IIntegrationEvent Event { get; private set; } = null!;
 
-    public IntegrationEventStates State { get; set; } = IntegrationEventStates.NotPublished;
+    public IntegrationEventStates State { get; set; }
 
-    public int TimesSent { get; set; } = 0;
+    public int TimesSent { get; set; }
 
-    public DateTime CreationTime { get; private set; } = DateTime.Now;
+    public DateTime CreationTime { get; private set; }
+
+    public DateTime? NextRetryTime { get; set; }
 
     public string Content { get; private set; } = null!;
 
@@ -26,6 +26,8 @@ public class IntegrationEventLog
     private IntegrationEventLog()
     {
         Id = Guid.NewGuid();
+        State = IntegrationEventStates.NotPublished;
+        TimesSent = 0;
     }
 
     public IntegrationEventLog(IIntegrationEvent @event, Guid transactionId) : this()
@@ -33,12 +35,9 @@ public class IntegrationEventLog
         EventId = @event.Id;
         CreationTime = @event.CreationTime;
         EventTypeName = @event.GetType().FullName!;
-        Content = System.Text.Json.JsonSerializer.Serialize((object)@event);
-        State = IntegrationEventStates.NotPublished;
-        TimesSent = 0;
+        Content = System.Text.Json.JsonSerializer.Serialize((object) @event);
         TransactionId = transactionId;
     }
-
 
     public IntegrationEventLog DeserializeJsonContent(Type type)
     {
