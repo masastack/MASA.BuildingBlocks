@@ -1,5 +1,5 @@
 namespace MASA.BuildingBlocks.SearchEngine.AutoComplete;
-public class DropdownBox<TValue>
+public class AudoCompleteDocument<TValue>
 {
     public string Id { get; set; }
 
@@ -8,18 +8,18 @@ public class DropdownBox<TValue>
     public TValue Value { get; set; }
 
 
-    public DropdownBox()
+    public AudoCompleteDocument()
     {
     }
 
-    public DropdownBox(string text, TValue value) : this()
+    public AudoCompleteDocument(string text, TValue value) : this()
     {
         Text = text;
         Value = value;
         Id = GetId();
     }
 
-    public DropdownBox(string id, string text, TValue value) : this(text, value)
+    public AudoCompleteDocument(string id, string text, TValue value) : this(text, value)
     {
         Id = id;
     }
