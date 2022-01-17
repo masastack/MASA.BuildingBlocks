@@ -5,11 +5,11 @@ public abstract class AuditEntity<TUserId> : Entity, IAuditEntity<TUserId>
 
     public TUserId Creator { get; set; } = default!;
 
-    public DateTime CreationTime { get; set; } = DateTime.Now;
+    public DateTime CreationTime { get; set; } = DateTime.UtcNow;
 
     public TUserId Modifier { get; set; } = default!;
 
-    public DateTime ModificationTime { get; set; } = DateTime.Now;
+    public DateTime ModificationTime { get; set; } = DateTime.UtcNow;
 }
 
 public class AuditEntity<TKey, TUserId> : Entity<TKey>, IAuditEntity<TUserId>
@@ -18,9 +18,9 @@ public class AuditEntity<TKey, TUserId> : Entity<TKey>, IAuditEntity<TUserId>
 
     public TUserId Creator { get; set; } = default!;
 
-    public DateTime CreationTime { get; set; } = DateTime.Now;
+    public DateTime CreationTime { get; set; } = DateTime.UtcNow;
 
     public TUserId Modifier { get; set; } = default!;
 
-    public DateTime ModificationTime { get; set; } = DateTime.Now;
+    public DateTime ModificationTime { get; set; } = DateTime.UtcNow;
 }

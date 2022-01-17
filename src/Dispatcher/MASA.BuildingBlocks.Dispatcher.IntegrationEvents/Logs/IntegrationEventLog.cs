@@ -17,7 +17,7 @@ public class IntegrationEventLog
 
     public int TimesSent { get; set; } = 0;
 
-    public DateTime CreationTime { get; private set; } = DateTime.Now;
+    public DateTime CreationTime { get; private set; } = DateTime.UtcNow;
 
     public string Content { get; private set; } = null!;
 
