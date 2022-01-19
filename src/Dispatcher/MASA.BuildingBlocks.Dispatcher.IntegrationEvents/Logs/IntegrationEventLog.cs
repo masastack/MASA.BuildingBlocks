@@ -14,9 +14,9 @@ public class IntegrationEventLog
     [NotMapped]
     public IIntegrationEvent Event { get; private set; } = null!;
 
-    public IntegrationEventStates State { get; set; }
+    public IntegrationEventStates State { get; set; } = IntegrationEventStates.NotPublished;
 
-    public int TimesSent { get; set; }
+    public int TimesSent { get; set; } = 0;
 
     public DateTime CreationTime { get; private set; }
 
@@ -29,8 +29,6 @@ public class IntegrationEventLog
     private IntegrationEventLog()
     {
         Id = Guid.NewGuid();
-        State = IntegrationEventStates.NotPublished;
-        TimesSent = 0;
     }
 
     public IntegrationEventLog(IIntegrationEvent @event, Guid transactionId) : this()

@@ -8,7 +8,7 @@ public interface IIntegrationEventLogService
     /// <param name="retryBatchSize">The size of a single event to be retried</param>
     /// <param name="maxRetryTimes"></param>
     /// <returns></returns>
-    Task<IEnumerable<IntegrationEventLog>> RetrieveEventLogsFailedToPublishAsync(int retryBatchSize,int maxRetryTimes);
+    Task<IEnumerable<IntegrationEventLog>> RetrieveEventLogsFailedToPublishAsync(int retryBatchSize, int maxRetryTimes);
 
     Task SaveEventAsync(IIntegrationEvent @event, DbTransaction transaction);
 
@@ -21,9 +21,9 @@ public interface IIntegrationEventLogService
     /// <summary>
     /// Delete successfully published and expired data
     /// </summary>
-    /// <param name="timeout">expire date</param>
+    /// <param name="expireDate"></param>
     /// <param name="batchCount"></param>
     /// <param name="token"></param>
     /// <returns></returns>
-    Task DeleteExpiresAsync(DateTime timeout, int batchCount = 1000, CancellationToken token = default);
+    Task DeleteExpiresAsync(DateTime expireDate, int batchCount = 1000, CancellationToken token = default);
 }
