@@ -6,8 +6,9 @@ public interface IIntegrationEventLogService
     /// Get messages to retry
     /// </summary>
     /// <param name="retryBatchSize">The size of a single event to be retried</param>
+    /// <param name="maxRetryTimes"></param>
     /// <returns></returns>
-    Task<IEnumerable<IntegrationEventLog>> RetrieveEventLogsFailedToPublishAsync(int retryBatchSize);
+    Task<IEnumerable<IntegrationEventLog>> RetrieveEventLogsFailedToPublishAsync(int retryBatchSize,int maxRetryTimes);
 
     Task SaveEventAsync(IIntegrationEvent @event, DbTransaction transaction);
 

@@ -1,4 +1,5 @@
 ﻿namespace MASA.BuildingBlocks.Dispatcher.IntegrationEvents.Logs;
+
 public class IntegrationEventLog
 {
     public Guid Id { get; private set; }
@@ -7,9 +8,11 @@ public class IntegrationEventLog
 
     public string EventTypeName { get; private set; } = null!;
 
-    [NotMapped] public string EventTypeShortName => EventTypeName.Split('.').Last();
+    [NotMapped]
+    public string EventTypeShortName => EventTypeName.Split('.').Last();
 
-    [NotMapped] public IIntegrationEvent Event { get; private set; } = null!;
+    [NotMapped]
+    public IIntegrationEvent Event { get; private set; } = null!;
 
     public IntegrationEventStates State { get; set; }
 
@@ -17,11 +20,11 @@ public class IntegrationEventLog
 
     public DateTime CreationTime { get; private set; }
 
-    public DateTime? NextRetryTime { get; set; }
-
     public string Content { get; private set; } = null!;
 
     public Guid TransactionId { get; private set; } = Guid.Empty;
+
+    public byte[] RowVersion { get; set; }
 
     private IntegrationEventLog()
     {
