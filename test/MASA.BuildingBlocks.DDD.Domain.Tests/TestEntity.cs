@@ -42,7 +42,7 @@ public class TestEntity
         Assert.IsTrue(x == y);
         Assert.IsTrue(x != z);
 
-        MasaEntity m = null;
+        MasaEntity? m = null;
         Assert.IsTrue(m == null);
         Assert.IsTrue(null == m);
         Assert.IsFalse(null != m);
