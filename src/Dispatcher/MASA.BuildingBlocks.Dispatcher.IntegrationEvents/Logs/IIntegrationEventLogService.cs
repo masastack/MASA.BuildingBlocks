@@ -21,9 +21,9 @@ public interface IIntegrationEventLogService
     /// <summary>
     /// Delete successfully published and expired data
     /// </summary>
-    /// <param name="expireDate"></param>
+    /// <param name="expiresAt"></param>
     /// <param name="batchCount"></param>
     /// <param name="token"></param>
     /// <returns></returns>
-    Task DeleteExpiresAsync(DateTime expireDate, int batchCount = 1000, CancellationToken token = default);
+    Task DeleteExpiresAsync(DateTime expiresAt, int batchCount = 1000, CancellationToken token = default);
 }
