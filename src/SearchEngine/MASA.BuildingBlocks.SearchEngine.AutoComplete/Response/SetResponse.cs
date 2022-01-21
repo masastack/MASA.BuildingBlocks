@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.SearchEngine.AutoComplete.Response;
+namespace MASA.BuildingBlocks.SearchEngine.AutoComplete.Response;
 
 public class SetResponse : ResponseBase
 {

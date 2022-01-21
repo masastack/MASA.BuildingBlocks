@@ -1,19 +1,19 @@
-﻿namespace MASA.BuildingBlocks.SearchEngine.AutoComplete.Options;
+namespace MASA.BuildingBlocks.SearchEngine.AutoComplete.Options;
 public class AutoCompleteOptions
 {
     public string Field { get; set; }
 
-    private int _pageIndex;
+    private int _page;
 
-    public int PageIndex
+    public int Page
     {
-        get => _pageIndex;
+        get => _page;
         set
         {
             if (value <= 0)
-                throw new ArgumentException($"{nameof(PageIndex)} must be greater than or equal to 1", nameof(PageIndex));
+                throw new ArgumentException($"{nameof(Page)} must be greater than 0", nameof(Page));
 
-            _pageIndex = value;
+            _page = value;
         }
     }
 
@@ -25,7 +25,7 @@ public class AutoCompleteOptions
         set
         {
             if (value <= 0)
-                throw new ArgumentException($"{nameof(PageSize)} must be greater than or equal to 1", nameof(PageSize));
+                throw new ArgumentException($"{nameof(PageSize)} must be greater than 0", nameof(PageSize));
 
             _pageSize = value;
         }
@@ -36,7 +36,7 @@ public class AutoCompleteOptions
     public AutoCompleteOptions(SearchType searchType = SearchType.Fuzzy)
     {
         this.Field = "id";
-        this.PageIndex = 1;
+        this.Page = 1;
         this.PageSize = 10;
         this.SearchType = searchType;
     }

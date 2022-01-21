@@ -1,6 +1,6 @@
 ﻿namespace MASA.BuildingBlocks.SearchEngine.AutoComplete.Response;
 public class GetResponse<TDropdownBox, TValue> : ResponseBase
-    where TDropdownBox : AudoCompleteDocument<TValue>
+    where TDropdownBox : AutoCompleteDocument<TValue>
 {
     public long Total { get; set; }
 
