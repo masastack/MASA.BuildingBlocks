@@ -29,4 +29,4 @@ jobs:
       run: dotnet pack --include-symbols  -p:PackageVersion=0.0.$GITHUB_RUN_ID 
       
     - name: package push
-      run: dotnet nuget push "**/*.symbols.nupkg"  --api-key ${{secrets.PACKAGE_NUGET_GITHUB}}  --source "github"
+      run: dotnet nuget push "**/*.symbols.nupkg"  --api-key ${{secrets.PACKAGE_NUGET_GITHUB}}  --source https://nuget.pkg.github.com/masastack/index.json
