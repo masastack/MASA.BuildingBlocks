@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.Dispatcher.IntegrationEvents.Logs;
+namespace MASA.BuildingBlocks.Dispatcher.IntegrationEvents.Logs;
 public class IntegrationEventLog
 {
     public Guid Id { get; private set; }
@@ -17,7 +17,7 @@ public class IntegrationEventLog
 
     public int TimesSent { get; set; } = 0;
 
-    public DateTime CreationTime { get; private set; } = DateTime.UtcNow;
+    public DateTime CreationTime { get; private set; }
 
     public string Content { get; private set; } = null!;
 
@@ -26,6 +26,7 @@ public class IntegrationEventLog
     private IntegrationEventLog()
     {
         Id = Guid.NewGuid();
+        Initialize();
     }
 
     public IntegrationEventLog(IIntegrationEvent @event, Guid transactionId) : this()
@@ -38,6 +39,13 @@ public class IntegrationEventLog
         TimesSent = 0;
         TransactionId = transactionId;
     }
+
+    public void Initialize()
+    {
+        this.CreationTime = this.GetCurrentTime();
+    }
+
+    public virtual DateTime GetCurrentTime() => DateTime.UtcNow;
 
 
     public IntegrationEventLog DeserializeJsonContent(Type type)

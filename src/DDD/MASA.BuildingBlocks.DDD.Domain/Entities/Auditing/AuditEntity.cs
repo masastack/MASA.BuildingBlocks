@@ -29,11 +29,11 @@ public class AuditEntity<TKey, TUserId> : Entity<TKey>, IAuditEntity<TUserId>
 
     public TUserId Creator { get; set; } = default!;
 
-    public DateTime CreationTime { get; set; } = DateTime.UtcNow;
+    public DateTime CreationTime { get; set; }
 
     public TUserId Modifier { get; set; } = default!;
 
-    public DateTime ModificationTime { get; set; } = DateTime.UtcNow;
+    public DateTime ModificationTime { get; set; }
 
     public AuditEntity() => Initialize();
 
