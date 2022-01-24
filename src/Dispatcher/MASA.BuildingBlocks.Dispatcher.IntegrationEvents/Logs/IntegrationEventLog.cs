@@ -8,7 +8,7 @@ public class IntegrationEventLog
     public string EventTypeName { get; private set; } = null!;
 
     [NotMapped]
-    public string EventTypeShortName => EventTypeName.Split('.')?.Last()!;
+    public string EventTypeShortName => EventTypeName.Split('.').Last();
 
     [NotMapped]
     public IIntegrationEvent Event { get; private set; } = null!;
@@ -23,6 +23,8 @@ public class IntegrationEventLog
 
     public Guid TransactionId { get; private set; } = Guid.Empty;
 
+    public byte[] RowVersion { get; set; }
+
     private IntegrationEventLog()
     {
         Id = Guid.NewGuid();
@@ -34,9 +36,7 @@ public class IntegrationEventLog
         EventId = @event.Id;
         CreationTime = @event.CreationTime;
         EventTypeName = @event.GetType().FullName!;
-        Content = System.Text.Json.JsonSerializer.Serialize((object)@event);
-        State = IntegrationEventStates.NotPublished;
-        TimesSent = 0;
+        Content = System.Text.Json.JsonSerializer.Serialize((object) @event);
         TransactionId = transactionId;
     }
 
@@ -46,7 +46,6 @@ public class IntegrationEventLog
     }
 
     public virtual DateTime GetCurrentTime() => DateTime.UtcNow;
-
 
     public IntegrationEventLog DeserializeJsonContent(Type type)
     {
