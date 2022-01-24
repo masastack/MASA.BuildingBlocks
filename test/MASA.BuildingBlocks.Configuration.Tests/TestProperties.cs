@@ -22,7 +22,7 @@ public class TestProperties
         });
         Assert.IsTrue(x.Equals(y));
         Assert.IsTrue(!x.Equals(null));
-        Assert.IsTrue(!x.Equals(z));
+        Assert.IsTrue(!x!.Equals(z));
         Assert.IsTrue(!z.Equals(x));
 
         var w = new Properties(new Dictionary<string, string>()
@@ -54,7 +54,7 @@ public class TestProperties
         Assert.IsTrue(x == y);
         Assert.IsTrue(x != z);
 
-        Properties m = null;
+        Properties? m = null;
         Assert.IsTrue(m == null);
         Assert.IsTrue(null == m);
         Assert.IsFalse(null != m);
