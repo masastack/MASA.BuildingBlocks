@@ -9,7 +9,7 @@ public interface IUnitOfWork : IDisposable, IAsyncDisposable
     bool TransactionHasBegun { get; }
 
     /// <summary>
-    /// Do you need to use transactions
+    /// Whether to use transaction
     /// </summary>
     bool UseTransaction { get; set; }
 
