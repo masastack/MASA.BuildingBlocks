@@ -100,19 +100,23 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
 
     #region IUnitOfWork
 
-    public bool DisableRollbackOnFailure { get; set; }
-
     public abstract DbTransaction Transaction { get; }
+
+    public abstract bool TransactionHasBegun { get; }
 
     public abstract bool UseTransaction { get; set; }
 
-    public abstract IUnitOfWork UnitOfWork { get; }
+    public bool DisableRollbackOnFailure { get; set; }
 
-    public abstract bool TransactionHasBegun { get; }
+    public EntityState EntityState { get; set; }
+
+    public abstract IUnitOfWork UnitOfWork { get; }
 
     public abstract Task CommitAsync(CancellationToken cancellationToken = default);
 
     public abstract ValueTask DisposeAsync();
+
+    public abstract void Dispose();
 
     public abstract Task RollbackAsync(CancellationToken cancellationToken = default);
 
