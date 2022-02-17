@@ -108,7 +108,11 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
 
     public bool DisableRollbackOnFailure { get; set; }
 
-    public EntityState EntityState { get; set; }
+    public virtual EntityState EntityState
+    {
+        get => UnitOfWork.EntityState;
+        set => UnitOfWork.EntityState = value;
+    }
 
     public abstract IUnitOfWork UnitOfWork { get; }
 

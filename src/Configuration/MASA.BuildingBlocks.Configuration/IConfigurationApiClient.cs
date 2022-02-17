@@ -1,5 +1,5 @@
 namespace MASA.BuildingBlocks.Configuration;
-public interface IConfigurationAPIClient
+public interface IConfigurationApiClient
 {
     Task<(string Raw, ConfigurationTypes ConfigurationType)> GetRawAsync(string environment, string cluster, string appId, string configObject, Action<string> valueChanged);
 
