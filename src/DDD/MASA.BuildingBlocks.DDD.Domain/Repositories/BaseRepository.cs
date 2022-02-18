@@ -114,6 +114,12 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
         set => UnitOfWork.EntityState = value;
     }
 
+    public virtual CommitState CommitState
+    {
+        get => UnitOfWork.CommitState;
+        set => UnitOfWork.CommitState = value;
+    }
+
     public abstract IUnitOfWork UnitOfWork { get; }
 
     public abstract Task CommitAsync(CancellationToken cancellationToken = default);

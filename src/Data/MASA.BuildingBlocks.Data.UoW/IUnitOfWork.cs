@@ -20,6 +20,8 @@ public interface IUnitOfWork : IDisposable, IAsyncDisposable
 
     EntityState EntityState { get; set; }
 
+    CommitState CommitState { get; set; }
+
     Task SaveChangesAsync(CancellationToken cancellationToken = default);
 
     Task CommitAsync(CancellationToken cancellationToken = default);
