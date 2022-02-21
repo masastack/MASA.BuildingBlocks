@@ -1,14 +1,15 @@
 ﻿namespace MASA.BuildingBlocks.Configuration;
+
 public abstract class AbstractConfigurationRepository : IConfigurationRepository
 {
-    private readonly ILogger<AbstractConfigurationRepository> _logger;
+    private readonly ILogger<AbstractConfigurationRepository>? _logger;
 
     private readonly List<IRepositoryChangeListener> _listeners = new();
 
     public abstract SectionTypes SectionType { get; init; }
 
-    public AbstractConfigurationRepository(ILoggerFactory loggerFactory)
-        => _logger = loggerFactory.CreateLogger<AbstractConfigurationRepository>();
+    public AbstractConfigurationRepository(ILoggerFactory? loggerFactory = null)
+        => _logger = loggerFactory?.CreateLogger<AbstractConfigurationRepository>();
 
     public abstract Properties Load();
 
@@ -31,7 +32,7 @@ public abstract class AbstractConfigurationRepository : IConfigurationRepository
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Failed to invoke repository change listener {listener.GetType()}", ex);
+                _logger?.LogError($"Failed to invoke repository change listener {listener.GetType()}", ex);
             }
         }
     }
