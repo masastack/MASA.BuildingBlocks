@@ -23,8 +23,6 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
 
     public abstract Task<TEntity?> FindAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
-    public  abstract Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
-
     public abstract Task<TEntity> RemoveAsync(TEntity entity, CancellationToken cancellationToken = default);
 
     public abstract Task RemoveAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
