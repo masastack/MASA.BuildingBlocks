@@ -1,21 +1,12 @@
 name: Package Push Nuget
 on:
-  create:
-    ref_type: [ tags ]
-  # push:
-  #   branches: [ develop ]
-  # pull_request:
-  #   branches: [ develop ]
-  workflow_dispatch:
+  release:
+    types: [ created ]
 
 jobs:
   packeg-build:
-    name: packeg build and push
-    runs-on: ${{matrix.os}}
-    strategy:
-      matrix:
-#         os: [ubuntu-latest, windows-latest, macOS-latest]
-        os: [ubuntu-latest]
+    name: package build and push
+    runs-on: ubuntu-latest
     steps:
     - name: git pull
       uses: actions/checkout@v2
