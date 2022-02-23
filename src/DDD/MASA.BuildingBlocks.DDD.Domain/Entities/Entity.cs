@@ -1,4 +1,5 @@
-﻿namespace MASA.BuildingBlocks.DDD.Domain.Entities;
+namespace MASA.BuildingBlocks.DDD.Domain.Entities;
+
 public abstract class Entity : IEntity, IEquatable<Entity>, IEquatable<object>
 {
     public abstract IEnumerable<(string Name, object Value)> GetKeys();
@@ -42,14 +43,18 @@ public abstract class Entity : IEntity, IEquatable<Entity>, IEquatable<object>
     {
         if (x is null ^ y is null) return false;
 
-        return x!.Equals(y);
+        if (x is null) return true;
+
+        return x.Equals(y);
     }
 
     public static bool operator !=(Entity? x, Entity? y)
     {
-        if (x is null ^ y is null) return false;
+        if (x is null ^ y is null) return true;
 
-        return !x!.Equals(y);
+        if (x is null) return false;
+
+        return !x.Equals(y);
     }
 }
 

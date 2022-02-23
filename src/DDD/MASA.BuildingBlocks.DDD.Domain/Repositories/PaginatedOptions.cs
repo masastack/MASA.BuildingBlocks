@@ -5,5 +5,5 @@ public class PaginatedOptions
 
     public int PageSize { get; set; }
 
-    public string? Sorting { get; set; }
+    public Dictionary<string,bool>? Sorting { get; set; }
 }

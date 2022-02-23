@@ -1,13 +1,15 @@
-﻿namespace MASA.BuildingBlocks.Dispatcher.IntegrationEvents.Logs;
+namespace MASA.BuildingBlocks.Dispatcher.IntegrationEvents.Logs;
 
 public class IntegrationEventLog
 {
     public Guid Id { get; private set; }
 
+    public Guid EventId { get; private set; }
+
     public string EventTypeName { get; private set; } = null!;
 
     [NotMapped]
-    public string EventTypeShortName => EventTypeName.Split('.')?.Last()!;
+    public string EventTypeShortName => EventTypeName.Split('.').Last();
 
     [NotMapped]
     public IIntegrationEvent Event { get; private set; } = null!;
@@ -16,25 +18,38 @@ public class IntegrationEventLog
 
     public int TimesSent { get; set; } = 0;
 
-    public DateTime CreationTime { get; private set; } = DateTime.Now;
+    public DateTime CreationTime { get; private set; }
+
+    public DateTime ModificationTime { get; set; }
 
     public string Content { get; private set; } = null!;
 
     public Guid TransactionId { get; private set; } = Guid.Empty;
 
-    private IntegrationEventLog() { }
+    public byte[] RowVersion { get; set; }
 
-    public IntegrationEventLog(IIntegrationEvent @event, Guid transactionId)
+    private IntegrationEventLog()
     {
-        Id = @event.Id;
+        Id = Guid.NewGuid();
+        Initialize();
+    }
+
+    public IntegrationEventLog(IIntegrationEvent @event, Guid transactionId) : this()
+    {
+        EventId = @event.Id;
         CreationTime = @event.CreationTime;
+        ModificationTime = @event.CreationTime;
         EventTypeName = @event.GetType().FullName!;
-        Content = System.Text.Json.JsonSerializer.Serialize(@event);
-        State = IntegrationEventStates.NotPublished;
-        TimesSent = 0;
+        Content = System.Text.Json.JsonSerializer.Serialize((object)@event);
         TransactionId = transactionId;
     }
 
+    public void Initialize()
+    {
+        this.CreationTime = this.GetCurrentTime();
+    }
+
+    public virtual DateTime GetCurrentTime() => DateTime.UtcNow;
 
     public IntegrationEventLog DeserializeJsonContent(Type type)
     {

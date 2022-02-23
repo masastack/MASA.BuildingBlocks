@@ -1,4 +1,4 @@
-﻿namespace MASA.BuildingBlocks.DDD.Domain.Repositories;
+namespace MASA.BuildingBlocks.DDD.Domain.Repositories;
 public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWork
     where TEntity : class, IAggregateRoot
 {
@@ -14,12 +14,12 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
         }
     }
 
-    public virtual async ValueTask<TEntity?> FindAsync(params object?[]? keyValues)
+    public virtual async Task<TEntity?> FindAsync(params object?[]? keyValues)
     {
         return await FindAsync(keyValues, default);
     }
 
-    public abstract ValueTask<TEntity?> FindAsync(object?[]? keyValues, CancellationToken cancellationToken);
+    public abstract Task<TEntity?> FindAsync(object?[]? keyValues, CancellationToken cancellationToken = default);
 
     public abstract Task<TEntity?> FindAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
@@ -45,19 +45,19 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
         }
     }
 
-    public abstract Task<IEnumerable<TEntity>> GetListAsync(CancellationToken cancellationToken);
+    public abstract Task<IEnumerable<TEntity>> GetListAsync(CancellationToken cancellationToken = default);
 
     public abstract Task<IEnumerable<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken);
 
     public abstract Task<long> GetCountAsync(CancellationToken cancellationToken);
 
-    public abstract Task<long> GetCountAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken);
+    public abstract Task<long> GetCountAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
-    public abstract Task<List<TEntity>> GetPaginatedListAsync(int skip, int take, string? sorting, CancellationToken cancellationToken);
+    public abstract Task<List<TEntity>> GetPaginatedListAsync(int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken = default);
 
-    public abstract Task<List<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, int skip, int take, string? sorting, CancellationToken cancellationToken);
+    public abstract Task<List<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken = default);
 
-    public virtual async Task<PaginatedList<TEntity>> GetPaginatedListAsync(PaginatedOptions options, CancellationToken cancellationToken)
+    public virtual async Task<PaginatedList<TEntity>> GetPaginatedListAsync(PaginatedOptions options, CancellationToken cancellationToken = default)
     {
         var result = await GetPaginatedListAsync(
             (options.Page - 1) * options.PageSize,
@@ -76,7 +76,7 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
         };
     }
 
-    public async Task<PaginatedList<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, PaginatedOptions options, CancellationToken cancellationToken)
+    public async Task<PaginatedList<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, PaginatedOptions options, CancellationToken cancellationToken = default)
     {
         var result = await GetPaginatedListAsync(
             predicate,
@@ -100,17 +100,33 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IUnitOfWor
 
     #region IUnitOfWork
 
+    public abstract DbTransaction Transaction { get; }
+
+    public abstract bool TransactionHasBegun { get; }
+
+    public abstract bool UseTransaction { get; set; }
+
     public bool DisableRollbackOnFailure { get; set; }
 
-    public abstract DbTransaction Transaction { get; set; }
+    public virtual EntityState EntityState
+    {
+        get => UnitOfWork.EntityState;
+        set => UnitOfWork.EntityState = value;
+    }
 
-    public abstract IUnitOfWork UnitOfWork { get; set; }
+    public virtual CommitState CommitState
+    {
+        get => UnitOfWork.CommitState;
+        set => UnitOfWork.CommitState = value;
+    }
 
-    public bool TransactionHasBegun { get; set; }
+    public abstract IUnitOfWork UnitOfWork { get; }
 
     public abstract Task CommitAsync(CancellationToken cancellationToken = default);
 
     public abstract ValueTask DisposeAsync();
+
+    public abstract void Dispose();
 
     public abstract Task RollbackAsync(CancellationToken cancellationToken = default);
 

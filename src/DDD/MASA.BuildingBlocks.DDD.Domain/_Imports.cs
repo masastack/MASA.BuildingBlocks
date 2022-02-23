@@ -1,5 +1,5 @@
 ﻿global using MASA.BuildingBlocks.Data.Contracts;
-global using MASA.BuildingBlocks.Data.Uow;
+global using MASA.BuildingBlocks.Data.UoW;
 global using MASA.BuildingBlocks.DDD.Domain.Entities;
 global using MASA.BuildingBlocks.DDD.Domain.Events;
 global using MASA.BuildingBlocks.Dispatcher.Events;
