@@ -5,15 +5,15 @@
     <Node Id="(@3 @7 @28 Member=(Name=BeginInvoke OverloadingParameters=[(@40 @41 Type=AsyncCallback),(@40 @41 Type=Object)]))" Category="CodeSchema_Method" Bounds="190.921608361034,-250.534163453928,106.796666666667,25.24" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="BeginInvoke" UseManualLocation="True" />
     <Node Id="@10" Category="CodeSchema_Namespace" Bounds="279.953333333333,290,347.27,250" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="4" Group="Expanded" Label="MASA‎.BuildingBlocks‎.Dispatcher‎.IntegrationEvents" UseManualLocation="True" />
     <Node Id="@11" Category="CodeSchema_Namespace" Bounds="60,120,377.176666666667,140" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Label="MASA‎.BuildingBlocks‎.Dispatcher‎.IntegrationEvents‎.Logs" UseManualLocation="True" />
-    <Node Id="@12" Category="CodeSchema_Namespace" Bounds="62.429260020812,166.031746173893,389.7,149.562813562287" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Label="MASA‎.BuildingBlocks‎.ReadWriteSpliting‎.CQRS‎.Commands" UseManualLocation="True" />
-    <Node Id="@13" Category="CodeSchema_Namespace" Bounds="62.307837499229,-185.054542803525,368.423333333333,159.055464274059" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Label="MASA‎.BuildingBlocks‎.ReadWriteSpliting‎.CQRS‎.Queries" UseManualLocation="True" />
+    <Node Id="@12" Category="CodeSchema_Namespace" Bounds="62.429260020812,166.031746173893,389.7,149.562813562287" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Label="MASA‎.BuildingBlocks‎.ReadWriteSpliting‎.Cqrs‎.Commands" UseManualLocation="True" />
+    <Node Id="@13" Category="CodeSchema_Namespace" Bounds="62.307837499229,-185.054542803525,368.423333333333,159.055464274059" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Label="MASA‎.BuildingBlocks‎.ReadWriteSpliting‎.Cqrs‎.Queries" UseManualLocation="True" />
     <Node Id="@14" Category="CodeSchema_Namespace" Bounds="150.941662492097,101.639475930514,191.306666666667,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Microsoft‎.CodeAnalysis" />
     <Node Id="@15" Category="CodeSchema_Namespace" Bounds="10.3355889849431,593.7505,191.306666666667,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Microsoft‎.CodeAnalysis" UseManualLocation="True" />
     <Node Id="@16" Category="CodeSchema_Namespace" Bounds="152.935,625,191.306666666667,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Microsoft‎.CodeAnalysis" UseManualLocation="True" />
     <Node Id="@17" Category="CodeSchema_Namespace" Bounds="121.017323370098,4.00097580263287,251.006666666667,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="System‎.Runtime‎.CompilerServices" />
     <Node Id="@18" Category="CodeSchema_Namespace" Bounds="-19.514411015057,538.7505,251.006666666667,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="System‎.Runtime‎.CompilerServices" UseManualLocation="True" />
     <Node Id="@19" Category="CodeSchema_Namespace" Bounds="123.085,570,251.006666666667,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="System‎.Runtime‎.CompilerServices" UseManualLocation="True" />
-    <Node Id="@2" Category="CodeSchema_Assembly" Bounds="42.3078374992291,-225.054543430725,429.821422521583,560.649103794106" CodeSchemaProperty_StrongName="Masa.BuildingBlocks.ReadWriteSpliting.CQRS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="4" FilePath="$(1a971a14-c535-4e55-89c8-0481f8eaa3ec.OutputPath)" Group="Expanded" Label="Masa.BuildingBlocks.ReadWriteSpliting.CQRS.dll" UseManualLocation="True" />
+    <Node Id="@2" Category="CodeSchema_Assembly" Bounds="42.3078374992291,-225.054543430725,429.821422521583,560.649103794106" CodeSchemaProperty_StrongName="Masa.BuildingBlocks.ReadWriteSpliting.Cqrs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="4" FilePath="$(1a971a14-c535-4e55-89c8-0481f8eaa3ec.OutputPath)" Group="Expanded" Label="Masa.BuildingBlocks.ReadWriteSpliting.Cqrs.dll" UseManualLocation="True" />
     <Node Id="@21" Category="CodeSchema_Interface" Bounds="130.044260020812,206.031746801093,254.47,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="0" Group="Collapsed" Label="ICommandHandler‎&lt;TCommand‎&gt;" UseManualLocation="True" />
     <Node Id="@22" Category="CodeSchema_Interface" Bounds="-81.3010776817238,243.7505,156.03,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IEvent‎&lt;TResult‎&gt;" />
     <Node Id="@23" Category="CodeSchema_Interface" Bounds="-67.3660776817238,408.7505,197.916666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IEventHandler‎&lt;TEvent‎&gt;" />
@@ -207,8 +207,8 @@
     <Alias n="9" Id="Namespace=Masa.BuildingBlocks.Dispatcher.IntegrationEvents" />
     <Alias n="10" Id="(@5 @9)" />
     <Alias n="11" Id="(@5 Namespace=Masa.BuildingBlocks.Dispatcher.IntegrationEvents.Logs)" />
-    <Alias n="12" Id="(@1 Namespace=Masa.BuildingBlocks.ReadWriteSpliting.CQRS.Commands)" />
-    <Alias n="13" Id="(@1 Namespace=Masa.BuildingBlocks.ReadWriteSpliting.CQRS.Queries)" />
+    <Alias n="12" Id="(@1 Namespace=Masa.BuildingBlocks.ReadWriteSpliting.Cqrs.Commands)" />
+    <Alias n="13" Id="(@1 Namespace=Masa.BuildingBlocks.ReadWriteSpliting.Cqrs.Queries)" />
     <Alias n="14" Id="(@1 Namespace=Microsoft.CodeAnalysis)" />
     <Alias n="15" Id="(@3 Namespace=Microsoft.CodeAnalysis)" />
     <Alias n="16" Id="(@5 Namespace=Microsoft.CodeAnalysis)" />
@@ -216,16 +216,16 @@
     <Alias n="18" Id="(@3 Namespace=System.Runtime.CompilerServices)" />
     <Alias n="19" Id="(@5 Namespace=System.Runtime.CompilerServices)" />
     <Alias n="20" Id="GenericParameterCount=1" />
-    <Alias n="21" Id="(@1 Namespace=Masa.BuildingBlocks.ReadWriteSpliting.CQRS.Commands Type=(Name=ICommandHandler @20))" />
+    <Alias n="21" Id="(@1 Namespace=Masa.BuildingBlocks.ReadWriteSpliting.Cqrs.Commands Type=(Name=ICommandHandler @20))" />
     <Alias n="22" Id="(@3 @7 Type=(Name=IEvent @20))" />
     <Alias n="23" Id="(@3 @7 Type=(Name=IEventHandler @20))" />
     <Alias n="24" Id="(@3 @7 Type=(Name=IMiddleware @20))" />
-    <Alias n="25" Id="(@1 Namespace=Masa.BuildingBlocks.ReadWriteSpliting.CQRS.Queries Type=(Name=IQuery @20))" />
+    <Alias n="25" Id="(@1 Namespace=Masa.BuildingBlocks.ReadWriteSpliting.Cqrs.Queries Type=(Name=IQuery @20))" />
     <Alias n="26" Id="(@3 @7 Type=(Name=ISagaEventHandler @20))" />
-    <Alias n="27" Id="(@1 Namespace=Masa.BuildingBlocks.ReadWriteSpliting.CQRS.Queries Type=(Name=IQueryHandler GenericParameterCount=2))" />
+    <Alias n="27" Id="(@1 Namespace=Masa.BuildingBlocks.ReadWriteSpliting.Cqrs.Queries Type=(Name=IQueryHandler GenericParameterCount=2))" />
     <Alias n="28" Id="Type=EventHandlerDelegate" />
     <Alias n="29" Id="(@3 @7 @28)" />
-    <Alias n="30" Id="(@1 Namespace=Masa.BuildingBlocks.ReadWriteSpliting.CQRS.Commands Type=ICommand)" />
+    <Alias n="30" Id="(@1 Namespace=Masa.BuildingBlocks.ReadWriteSpliting.Cqrs.Commands Type=ICommand)" />
     <Alias n="31" Id="(@3 @7 Type=IDispatcherOptions)" />
     <Alias n="32" Id="(@3 @7 Type=IEvent)" />
     <Alias n="33" Id="(@3 @7 Type=IEventBus)" />
@@ -460,8 +460,8 @@
     </Style>
   </Styles>
   <Paths>
-    <Path Id="1a971a14-c535-4e55-89c8-0481f8eaa3ec.OutputPath" Value="D:\Project\Masa\MASAStack\Masa.BuildingBlocks\src\ReadWriteSpliting\Masa.BuildingBlocks.ReadWriteSpliting.CQRS\bin\Debug\net6.0\Masa.BuildingBlocks.ReadWriteSpliting.CQRS.dll" />
-    <Path Id="1a971a14-c535-4e55-89c8-0481f8eaa3ec.OutputPathUri" Value="file:///D:/Project/Masa/MASAStack/Masa.BuildingBlocks/src/ReadWriteSpliting/Masa.BuildingBlocks.ReadWriteSpliting.CQRS/bin/Debug/net6.0/Masa.BuildingBlocks.ReadWriteSpliting.CQRS.dll" />
+    <Path Id="1a971a14-c535-4e55-89c8-0481f8eaa3ec.OutputPath" Value="D:\Project\Masa\MASAStack\Masa.BuildingBlocks\src\ReadWriteSpliting\Masa.BuildingBlocks.ReadWriteSpliting.Cqrs\bin\Debug\net6.0\Masa.BuildingBlocks.ReadWriteSpliting.Cqrs.dll" />
+    <Path Id="1a971a14-c535-4e55-89c8-0481f8eaa3ec.OutputPathUri" Value="file:///D:/Project/Masa/MASAStack/Masa.BuildingBlocks/src/ReadWriteSpliting/Masa.BuildingBlocks.ReadWriteSpliting.Cqrs/bin/Debug/net6.0/Masa.BuildingBlocks.ReadWriteSpliting.Cqrs.dll" />
     <Path Id="9b3f0b73-f87e-4725-99c9-ac0041af27a2.OutputPath" Value="D:\Project\Masa\MASAStack\Masa.BuildingBlocks\src\Dispatcher\Masa.BuildingBlocks.Dispatcher.Events\bin\Debug\net6.0\Masa.BuildingBlocks.Dispatcher.Events.dll" />
     <Path Id="9b3f0b73-f87e-4725-99c9-ac0041af27a2.OutputPathUri" Value="file:///D:/Project/Masa/MASAStack/Masa.BuildingBlocks/src/Dispatcher/Masa.BuildingBlocks.Dispatcher.Events/bin/Debug/net6.0/Masa.BuildingBlocks.Dispatcher.Events.dll" />
     <Path Id="ac54dc88-9a0b-4219-82a1-e7b7ff3a8ae9.OutputPath" Value="D:\Project\Masa\MASAStack\Masa.BuildingBlocks\src\Dispatcher\Masa.BuildingBlocks.Dispatcher.IntegrationEvents\bin\Debug\net6.0\Masa.BuildingBlocks.Dispatcher.IntegrationEvents.dll" />
