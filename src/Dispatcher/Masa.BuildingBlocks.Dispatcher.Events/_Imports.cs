@@ -1,2 +1,6 @@
-﻿global using Microsoft.Extensions.DependencyInjection;
-global using System.Text.Json.Serialization;
+namespace Masa.BuildingBlocks.Dispatcher.Events;
+
+public class _Imports
+{
+    
+}
