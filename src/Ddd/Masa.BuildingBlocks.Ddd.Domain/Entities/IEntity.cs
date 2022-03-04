@@ -1,4 +1,4 @@
-﻿namespace Masa.BuildingBlocks.Ddd.Domain.Entities;
+namespace Masa.BuildingBlocks.Ddd.Domain.Entities;
 public interface IEntity
 {
     IEnumerable<(string Name, object Value)> GetKeys();
@@ -6,5 +6,5 @@ public interface IEntity
 
 public interface IEntity<TKey> : IEntity
 {
-    TKey Id { get; set; }
+    TKey Id { get; }
 }
