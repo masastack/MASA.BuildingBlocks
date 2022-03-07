@@ -60,7 +60,7 @@ public abstract class Entity : IEntity, IEquatable<Entity>, IEquatable<object>
 
 public class Entity<TKey> : Entity, IEntity<TKey>
 {
-    public TKey Id { get; set; } = default!;
+    public TKey Id { get; protected set; } = default!;
 
     public override IEnumerable<(string Name, object Value)> GetKeys()
     {
