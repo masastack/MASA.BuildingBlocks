@@ -1,13 +1,13 @@
 namespace Masa.BuildingBlocks.Ddd.Domain.Repositories;
-public abstract class BaseRepository<TAggregateRoot> :
-    IRepository<TAggregateRoot>, IUnitOfWork
-    where TAggregateRoot : class, IAggregateRoot
+public abstract class BaseRepository<TEntity> :
+    IRepository<TEntity>, IUnitOfWork
+    where TEntity : class,IEntity
 {
     #region IRepository<TEntity>
 
-    public abstract ValueTask<TAggregateRoot> AddAsync(TAggregateRoot entity, CancellationToken cancellationToken = default);
+    public abstract ValueTask<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken = default);
 
-    public virtual async Task AddRangeAsync(IEnumerable<TAggregateRoot> entities, CancellationToken cancellationToken = default)
+    public virtual async Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
     {
         foreach (var entity in entities)
         {
@@ -15,15 +15,15 @@ public abstract class BaseRepository<TAggregateRoot> :
         }
     }
 
-    public abstract Task<TAggregateRoot?> FindAsync(IEnumerable<KeyValuePair<string, object>> keyValues, CancellationToken cancellationToken = default);
+    public abstract Task<TEntity?> FindAsync(IEnumerable<KeyValuePair<string, object>> keyValues, CancellationToken cancellationToken = default);
 
-    public abstract Task<TAggregateRoot?> FindAsync(Expression<Func<TAggregateRoot, bool>> predicate, CancellationToken cancellationToken = default);
+    public abstract Task<TEntity?> FindAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
-    public abstract Task<TAggregateRoot> RemoveAsync(TAggregateRoot entity, CancellationToken cancellationToken = default);
+    public abstract Task<TEntity> RemoveAsync(TEntity entity, CancellationToken cancellationToken = default);
 
-    public abstract Task RemoveAsync(Expression<Func<TAggregateRoot, bool>> predicate, CancellationToken cancellationToken = default);
+    public abstract Task RemoveAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
-    public virtual async Task RemoveRangeAsync(IEnumerable<TAggregateRoot> entities, CancellationToken cancellationToken = default)
+    public virtual async Task RemoveRangeAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
     {
         foreach (var entity in entities)
         {
@@ -31,9 +31,9 @@ public abstract class BaseRepository<TAggregateRoot> :
         }
     }
 
-    public abstract Task<TAggregateRoot> UpdateAsync(TAggregateRoot entity, CancellationToken cancellationToken = default);
+    public abstract Task<TEntity> UpdateAsync(TEntity entity, CancellationToken cancellationToken = default);
 
-    public virtual async Task UpdateRangeAsync(IEnumerable<TAggregateRoot> entities, CancellationToken cancellationToken = default)
+    public virtual async Task UpdateRangeAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
     {
         foreach (var entity in entities)
         {
@@ -41,19 +41,19 @@ public abstract class BaseRepository<TAggregateRoot> :
         }
     }
 
-    public abstract Task<IEnumerable<TAggregateRoot>> GetListAsync(CancellationToken cancellationToken = default);
+    public abstract Task<IEnumerable<TEntity>> GetListAsync(CancellationToken cancellationToken = default);
 
-    public abstract Task<IEnumerable<TAggregateRoot>> GetListAsync(Expression<Func<TAggregateRoot, bool>> predicate, CancellationToken cancellationToken = default);
+    public abstract Task<IEnumerable<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
     public abstract Task<long> GetCountAsync(CancellationToken cancellationToken = default);
 
-    public abstract Task<long> GetCountAsync(Expression<Func<TAggregateRoot, bool>> predicate, CancellationToken cancellationToken = default);
+    public abstract Task<long> GetCountAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
-    public abstract Task<List<TAggregateRoot>> GetPaginatedListAsync(int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken = default);
+    public abstract Task<List<TEntity>> GetPaginatedListAsync(int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken = default);
 
-    public abstract Task<List<TAggregateRoot>> GetPaginatedListAsync(Expression<Func<TAggregateRoot, bool>> predicate, int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken = default);
+    public abstract Task<List<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken = default);
 
-    public virtual async Task<PaginatedList<TAggregateRoot>> GetPaginatedListAsync(PaginatedOptions options, CancellationToken cancellationToken = default)
+    public virtual async Task<PaginatedList<TEntity>> GetPaginatedListAsync(PaginatedOptions options, CancellationToken cancellationToken = default)
     {
         var result = await GetPaginatedListAsync(
             (options.Page - 1) * options.PageSize,
@@ -64,7 +64,7 @@ public abstract class BaseRepository<TAggregateRoot> :
 
         var total = await GetCountAsync(cancellationToken);
 
-        return new PaginatedList<TAggregateRoot>()
+        return new PaginatedList<TEntity>()
         {
             Total = total,
             Result = result,
@@ -72,7 +72,7 @@ public abstract class BaseRepository<TAggregateRoot> :
         };
     }
 
-    public async Task<PaginatedList<TAggregateRoot>> GetPaginatedListAsync(Expression<Func<TAggregateRoot, bool>> predicate, PaginatedOptions options, CancellationToken cancellationToken = default)
+    public async Task<PaginatedList<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, PaginatedOptions options, CancellationToken cancellationToken = default)
     {
         var result = await GetPaginatedListAsync(
             predicate,
@@ -84,7 +84,7 @@ public abstract class BaseRepository<TAggregateRoot> :
 
         var total = await GetCountAsync(predicate, cancellationToken);
 
-        return new PaginatedList<TAggregateRoot>()
+        return new PaginatedList<TEntity>()
         {
             Total = total,
             Result = result,
