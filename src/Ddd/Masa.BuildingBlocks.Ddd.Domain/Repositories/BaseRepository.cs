@@ -1,7 +1,7 @@
 namespace Masa.BuildingBlocks.Ddd.Domain.Repositories;
 public abstract class BaseRepository<TEntity> :
     IRepository<TEntity>, IUnitOfWork
-    where TEntity : class,IEntity
+    where TEntity : class, IEntity
 {
     #region IRepository<TEntity>
 
