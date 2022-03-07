@@ -1,11 +1,11 @@
 ﻿namespace Masa.BuildingBlocks.Ddd.Domain.Entities.Auditing;
 public interface IAuditEntity<TUserId> : ISoftDelete
 {
-    TUserId Creator { get; set; }
+    TUserId Creator { get; }
 
-    DateTime CreationTime { get; set; }
+    DateTime CreationTime { get; }
 
-    TUserId Modifier { get; set; }
+    TUserId Modifier { get; }
 
-    DateTime ModificationTime { get; set; }
+    DateTime ModificationTime { get; }
 }

@@ -1,14 +1,13 @@
 namespace Masa.BuildingBlocks.Ddd.Domain.Entities.Auditing;
-
 public abstract class AuditEntity<TUserId> : Entity, IAuditEntity<TUserId>
 {
-    public bool IsDeleted { get; set; }
+    public bool IsDeleted { get; protected set; }
 
-    public TUserId Creator { get; set; } = default!;
+    public TUserId Creator { get; protected set; } = default!;
 
-    public DateTime CreationTime { get; set; }
+    public DateTime CreationTime { get; protected set; }
 
-    public TUserId Modifier { get; set; } = default!;
+    public TUserId Modifier { get; protected set; } = default!;
 
     public DateTime ModificationTime { get; set; }
 
@@ -25,15 +24,15 @@ public abstract class AuditEntity<TUserId> : Entity, IAuditEntity<TUserId>
 
 public class AuditEntity<TKey, TUserId> : Entity<TKey>, IAuditEntity<TUserId>
 {
-    public bool IsDeleted { get; set; }
+    public bool IsDeleted { get; protected set; }
 
-    public TUserId Creator { get; set; } = default!;
+    public TUserId Creator { get; protected set; } = default!;
 
-    public DateTime CreationTime { get; set; }
+    public DateTime CreationTime { get; protected set; }
 
-    public TUserId Modifier { get; set; } = default!;
+    public TUserId Modifier { get; protected set; } = default!;
 
-    public DateTime ModificationTime { get; set; }
+    public DateTime ModificationTime { get; protected set; }
 
     public AuditEntity() => Initialize();
 
