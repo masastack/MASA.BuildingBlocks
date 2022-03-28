@@ -26,7 +26,7 @@ public class IntegrationEventLog
 
     public Guid TransactionId { get; private set; } = Guid.Empty;
 
-    public byte[] RowVersion { get; set; }
+    public string RowVersion { get;private set; }
 
     private IntegrationEventLog()
     {
@@ -42,6 +42,7 @@ public class IntegrationEventLog
         EventTypeName = @event.GetType().FullName!;
         Content = System.Text.Json.JsonSerializer.Serialize((object)@event);
         TransactionId = transactionId;
+        RowVersion = Guid.NewGuid().ToString();
     }
 
     public void Initialize()
