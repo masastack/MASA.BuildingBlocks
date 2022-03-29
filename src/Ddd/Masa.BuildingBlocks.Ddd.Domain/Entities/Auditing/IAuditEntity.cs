@@ -1,5 +1,5 @@
 ﻿namespace Masa.BuildingBlocks.Ddd.Domain.Entities.Auditing;
-public interface IAuditEntity<TUserId> : ISoftDelete
+public interface IAuditEntity<TUserId>
 {
     TUserId Creator { get; }
 
