@@ -1,8 +1,6 @@
 namespace Masa.BuildingBlocks.Ddd.Domain.Entities.Auditing;
 public abstract class AuditEntity<TUserId> : Entity, IAuditEntity<TUserId>
 {
-    public bool IsDeleted { get; protected set; }
-
     public TUserId Creator { get; protected set; } = default!;
 
     public DateTime CreationTime { get; protected set; }
@@ -24,8 +22,6 @@ public abstract class AuditEntity<TUserId> : Entity, IAuditEntity<TUserId>
 
 public class AuditEntity<TKey, TUserId> : Entity<TKey>, IAuditEntity<TUserId>
 {
-    public bool IsDeleted { get; protected set; }
-
     public TUserId Creator { get; protected set; } = default!;
 
     public DateTime CreationTime { get; protected set; }
