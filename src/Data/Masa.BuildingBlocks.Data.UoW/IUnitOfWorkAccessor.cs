@@ -2,7 +2,7 @@
 public interface IUnitOfWorkAccessor
 {
     /// <summary>
-    /// Only exists when a new DbContext is created through IUnitOfWorkManager or after IUnitOfWork is obtained
+    /// Only exists after the DbContext is confirmed to be created
     /// </summary>
     MasaDbContextConfigurationOptions? CurrentDbContextOptions { get; set; }
 }
