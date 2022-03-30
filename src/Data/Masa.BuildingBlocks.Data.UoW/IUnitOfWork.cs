@@ -1,6 +1,8 @@
 namespace Masa.BuildingBlocks.Data.UoW;
 public interface IUnitOfWork : IDisposable, IAsyncDisposable
 {
+    IServiceProvider ServiceProvider { get; }
+
     DbTransaction Transaction { get; }
 
     /// <summary>
