@@ -1,5 +1,5 @@
 ﻿namespace Masa.BuildingBlocks.Data.UoW;
-public abstract class BaseDataConnectionStringProvider : IDataConnectionStringProvider
+public abstract class BaseDbConnectionStringProvider : IDbConnectionStringProvider
 {
     private readonly List<MasaDbContextConfigurationOptions>? _dbContextOptionsList = null;
 

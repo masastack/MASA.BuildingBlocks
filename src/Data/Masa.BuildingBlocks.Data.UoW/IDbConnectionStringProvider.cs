@@ -1,5 +1,5 @@
 ﻿namespace Masa.BuildingBlocks.Data.UoW;
-public interface IDataConnectionStringProvider
+public interface IDbConnectionStringProvider
 {
     List<MasaDbContextConfigurationOptions> DbContextOptionsList { get; }
 }
