@@ -1,7 +1,7 @@
 ﻿namespace Masa.BuildingBlocks.Data.UoW;
 public interface IUnitOfWorkManager
 {
-    Task<IUnitOfWork> CreateDbContextAsync();
+    IUnitOfWork CreateDbContext();
 
-    Task<IUnitOfWork> CreateDbContextAsync(MasaDbContextConfigurationOptions dbContextOptions);
+    IUnitOfWork CreateDbContext(MasaDbContextConfigurationOptions dbContextOptions);
 }
