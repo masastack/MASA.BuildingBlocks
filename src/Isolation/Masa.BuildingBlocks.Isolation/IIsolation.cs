@@ -1,5 +1,5 @@
 ﻿namespace Masa.BuildingBlocks.Isolation;
-public interface IIsolation<TKey> : IMultiTenant<TKey>, IEnvironment
+public interface IIsolation<TKey> : IMultiTenant<TKey>, IMultiEnvironment
     where TKey : IComparable
 {
 }
