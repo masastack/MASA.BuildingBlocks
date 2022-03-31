@@ -1,5 +1,5 @@
 ﻿namespace Masa.BuildingBlocks.Isolation.Environment;
-public interface IEnvironment
+public interface IMultiEnvironment
 {
     /// <summary>
     /// The framework is responsible for the assignment operation, no manual assignment is required
