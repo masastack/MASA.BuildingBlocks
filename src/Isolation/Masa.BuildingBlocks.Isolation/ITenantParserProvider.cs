@@ -3,5 +3,5 @@ public interface ITenantParserProvider
 {
     string Name { get;}
 
-    Task<bool> ExecuteAsync(IServiceProvider serviceProvider);
+    Task<bool> ResolveAsync(IServiceProvider serviceProvider);
 }

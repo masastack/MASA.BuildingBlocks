@@ -3,9 +3,15 @@ public class Tenant
 {
     public string Id { get; set; }
 
-    public Tenant(object id) : this(id.ToString() ?? String.Empty)
+    public Tenant(object id) : this(id?.ToString() ?? throw new ArgumentNullException(nameof(id)))
     {
     }
 
-    public Tenant(string id) => Id = id;
+    public Tenant(string id)
+    {
+        if (string.IsNullOrEmpty(id))
+            throw new ArgumentNullException(nameof(id));
+
+        Id = id;
+    }
 }
