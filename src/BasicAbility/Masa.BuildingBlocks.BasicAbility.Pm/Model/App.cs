@@ -18,8 +18,8 @@ namespace Masa.BuildingBlocks.BasicAbility.Pm.Model
 
         public string Description { get; set; } = "";
 
-        public int Type { get; set; }
+        public AppTypes Type { get; set; }
 
-        public int ServiceType { get; set; }
+        public ServiceTypes ServiceType { get; set; }
     }
 }

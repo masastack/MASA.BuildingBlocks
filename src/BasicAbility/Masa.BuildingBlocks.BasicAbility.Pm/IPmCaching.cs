@@ -9,7 +9,6 @@ namespace Masa.BuildingBlocks.BasicAbility.Pm
 {
     public interface IPmCaching
     {
-
         Task<List<Project>> GetProjectListAsync(string envName);
 
         Task<List<App>> GetAppListAsync(string envName);
