@@ -96,6 +96,8 @@ public abstract class BaseRepository<TEntity> :
 
     #region IUnitOfWork
 
+    public IServiceProvider ServiceProvider { get; }
+
     public abstract DbTransaction Transaction { get; }
 
     public abstract bool TransactionHasBegun { get; }
@@ -129,4 +131,6 @@ public abstract class BaseRepository<TEntity> :
     public abstract Task SaveChangesAsync(CancellationToken cancellationToken = default);
 
     #endregion
+
+    protected BaseRepository(IServiceProvider serviceProvider) => ServiceProvider = serviceProvider;
 }
