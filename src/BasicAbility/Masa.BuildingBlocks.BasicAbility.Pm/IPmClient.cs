@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Masa.BuildingBlocks.BasicAbility.Pm
 {
-    public interface IPmCaching
+    public interface IPmClient
     {
         Task<List<ProjectModel>> GetProjectListAsync(string envName);
     }
