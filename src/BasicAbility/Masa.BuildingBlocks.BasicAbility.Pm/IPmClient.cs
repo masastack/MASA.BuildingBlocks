@@ -1,14 +1,14 @@
-using Masa.BuildingBlocks.BasicAbility.Pm.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Masa.BuildingBlocks.BasicAbility.Pm
 {
     public interface IPmClient
     {
-        Task<List<ProjectModel>> GetProjectListAsync(string envName);
+        public IEnvironmentService EnvironmentService { get; init; }
+
+        public IClusterService ClusterService { get; init; }
+
+        public IProjectService ProjectService { get; init; }
+
+        public IAppService AppService { get; init; }
     }
 }
