@@ -5,7 +5,7 @@ public class ConfigurationRelationOptions
 
     public string? ParentSection { get; set; }
 
-    public string Section { get; set; } = default!;
+    public string? Section { get; set; } = default!;
 
     /// <summary>
     /// Object type of mapping node relationship
