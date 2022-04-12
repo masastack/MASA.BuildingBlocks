@@ -5,13 +5,13 @@ public interface IClient
     /// Obtain temporary authorization credentials through STS service
     /// </summary>
     /// <returns></returns>
-    ResponseBase<TemporaryCredentialsResponse> GetSecurityToken();
+    TemporaryCredentialsResponse GetSecurityToken();
 
     /// <summary>
     /// Obtain temporary request token through authorization service
     /// </summary>
     /// <returns></returns>
-    ResponseBase<string> GetToken();
+    string GetToken();
 
     // Task GetObjectAsync(
     //     string bucketName,
