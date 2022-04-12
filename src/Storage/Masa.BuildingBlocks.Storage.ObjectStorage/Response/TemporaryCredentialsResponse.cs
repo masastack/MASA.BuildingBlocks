@@ -3,16 +3,16 @@ public class TemporaryCredentialsResponse
 {
     public string AccessKeyId { get; }
 
-    public string SecretAccessKey { get; }
+    public string AccessKeySecret { get; }
 
     public string SessionToken { get; }
 
-    public string Expiration { get; }
+    public DateTime? Expiration { get; }
 
-    public TemporaryCredentialsResponse(string accessKeyId, string secretAccessKey, string sessionToken, string expiration)
+    public TemporaryCredentialsResponse(string accessKeyId, string accessKeySecret, string sessionToken, DateTime? expiration)
     {
         AccessKeyId = accessKeyId;
-        SecretAccessKey = secretAccessKey;
+        AccessKeySecret = accessKeySecret;
         SessionToken = sessionToken;
         Expiration = expiration;
     }
