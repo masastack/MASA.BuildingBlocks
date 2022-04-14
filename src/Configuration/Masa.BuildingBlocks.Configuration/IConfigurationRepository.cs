@@ -1,7 +1,7 @@
 ﻿namespace Masa.BuildingBlocks.Configuration;
 public interface IConfigurationRepository
 {
-    SectionTypes SectionType { get; init; }
+    SectionTypes SectionType { get; }
 
     Properties Load();
 

@@ -6,7 +6,7 @@ public abstract class AbstractConfigurationRepository : IConfigurationRepository
 
     private readonly List<IRepositoryChangeListener> _listeners = new();
 
-    public abstract SectionTypes SectionType { get; init; }
+    public abstract SectionTypes SectionType { get; }
 
     public AbstractConfigurationRepository(ILoggerFactory? loggerFactory = null)
         => _logger = loggerFactory?.CreateLogger<AbstractConfigurationRepository>();
