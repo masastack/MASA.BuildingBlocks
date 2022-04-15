@@ -19,7 +19,7 @@ public class PaginatedOptions
     }
 
     /// <summary>
-    ///
+    /// Initialize a new instance of PaginatedOptions.
     /// </summary>
     /// <param name="page">page number</param>
     /// <param name="pageSize">returns per page</param>
