@@ -43,15 +43,60 @@ public abstract class BaseRepository<TEntity> :
 
     public abstract Task<IEnumerable<TEntity>> GetListAsync(CancellationToken cancellationToken = default);
 
+    public abstract Task<IEnumerable<TEntity>> GetListAsync(string sorting, bool isDescending = true, CancellationToken cancellationToken = default);
+
     public abstract Task<IEnumerable<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
+
+    public abstract Task<IEnumerable<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> predicate, string sorting, bool isDescending = true, CancellationToken cancellationToken = default);
 
     public abstract Task<long> GetCountAsync(CancellationToken cancellationToken = default);
 
     public abstract Task<long> GetCountAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
-    public abstract Task<List<TEntity>> GetPaginatedListAsync(int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken = default);
+    /// <summary>
+    /// Get a paginated list after sorting according to skip and take
+    /// </summary>
+    /// <param name="skip">The number of elements to skip before returning the remaining elements</param>
+    /// <param name="take">The number of elements to return</param>
+    /// <param name="sorting">sort parameters</param>
+    /// <param name="isDescending">true descending order, false ascending order, default: true</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    public abstract Task<List<TEntity>> GetPaginatedListAsync(int skip, int take, string sorting, bool isDescending, CancellationToken cancellationToken = default);
 
-    public abstract Task<List<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, int skip, int take, Dictionary<string, bool>? sorting, CancellationToken cancellationToken = default);
+    /// <summary>
+    /// Get a paginated list after sorting according to skip and take
+    /// </summary>
+    /// <param name="skip">The number of elements to skip before returning the remaining elements</param>
+    /// <param name="take">The number of elements to return</param>
+    /// <param name="sorting">Key: sort parameters, Value: true descending order, false ascending order</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    public abstract Task<List<TEntity>> GetPaginatedListAsync(int skip, int take, Dictionary<string, bool>? sorting = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a paginated list after sorting by condition
+    /// </summary>
+    /// <param name="predicate"> A function to test each element for a condition</param>
+    /// <param name="skip">The number of elements to skip before returning the remaining elements</param>
+    /// <param name="take">The number of elements to return</param>
+    /// <param name="sorting">sort parameters</param>
+    /// <param name="isDescending">true descending order, false ascending order, default: true</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    public abstract Task<List<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, int skip, int take, string sorting,
+        bool isDescending = true, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a paginated list after sorting by condition
+    /// </summary>
+    /// <param name="predicate"> A function to test each element for a condition</param>
+    /// <param name="skip">The number of elements to skip before returning the remaining elements</param>
+    /// <param name="take">The number of elements to return</param>
+    /// <param name="sorting">Key: sort parameters, Value: true descending order, false ascending order</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    public abstract Task<List<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, int skip, int take, Dictionary<string, bool>? sorting = null, CancellationToken cancellationToken = default);
 
     public virtual async Task<PaginatedList<TEntity>> GetPaginatedListAsync(PaginatedOptions options, CancellationToken cancellationToken = default)
     {
