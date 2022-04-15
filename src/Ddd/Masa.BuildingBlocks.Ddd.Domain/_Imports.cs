@@ -1,3 +1,4 @@
+global using Masa.BuildingBlocks.Data.Contracts.Paginated;
 global using Masa.BuildingBlocks.Data.UoW;
 global using Masa.BuildingBlocks.Ddd.Domain.Entities;
 global using Masa.BuildingBlocks.Ddd.Domain.Events;
