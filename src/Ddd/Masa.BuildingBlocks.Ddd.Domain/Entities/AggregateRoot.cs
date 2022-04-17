@@ -1,4 +1,4 @@
-﻿namespace Masa.BuildingBlocks.Ddd.Domain.Entities;
+namespace Masa.BuildingBlocks.Ddd.Domain.Entities;
 public abstract class AggregateRoot : Entity, IAggregateRoot
 {
     protected List<IDomainEvent> _domainEvents = new List<IDomainEvent>();
@@ -21,6 +21,15 @@ public abstract class AggregateRoot : Entity, IAggregateRoot
     public void ClearDomainEvents()
     {
         _domainEvents.Clear();
+    }
+
+    public async Task PublishDomainEventsAsync(IDomainEventBus eventBus)
+    {
+        while (_domainEvents.Any())
+        {
+            await eventBus.PublishAsync(_domainEvents.First());
+            _domainEvents.RemoveAt(0);
+        }
     }
 }
 
@@ -46,5 +55,14 @@ public class AggregateRoot<TKey> : Entity<TKey>, IAggregateRoot<TKey>
     public void ClearDomainEvents()
     {
         _domainEvents.Clear();
+    }
+
+    public async Task PublishDomainEventsAsync(IDomainEventBus eventBus)
+    {
+        while (_domainEvents.Any())
+        {
+            await eventBus.PublishAsync(_domainEvents.First());
+            _domainEvents.RemoveAt(0);
+        }
     }
 }

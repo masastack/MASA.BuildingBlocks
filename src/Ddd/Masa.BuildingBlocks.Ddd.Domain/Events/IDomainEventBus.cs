@@ -1,8 +1,8 @@
-﻿namespace Masa.BuildingBlocks.Ddd.Domain.Events;
+namespace Masa.BuildingBlocks.Ddd.Domain.Events;
 public interface IDomainEventBus : IEventBus
 {
-    Task Enqueue<TDomentEvent>(TDomentEvent @event)
-        where TDomentEvent : IDomainEvent;
+    Task Enqueue<TDomainEvent>(TDomainEvent @event)
+        where TDomainEvent : IDomainEvent;
 
     Task PublishQueueAsync();
 }
