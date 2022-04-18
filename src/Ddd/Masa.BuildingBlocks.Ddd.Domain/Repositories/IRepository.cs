@@ -42,11 +42,11 @@ public interface IRepository<TEntity>
 
     Task<IEnumerable<TEntity>> GetListAsync(CancellationToken cancellationToken = default);
 
-    Task<IEnumerable<TEntity>> GetListAsync(string sorting, bool isDescending = true, CancellationToken cancellationToken = default);
+    Task<IEnumerable<TEntity>> GetListAsync(string sortField, bool isDescending = true, CancellationToken cancellationToken = default);
 
     Task<IEnumerable<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
 
-    Task<IEnumerable<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> predicate, string sorting, bool isDescending = true, CancellationToken cancellationToken = default);
+    Task<IEnumerable<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> predicate, string sortField, bool isDescending = true, CancellationToken cancellationToken = default);
 
     Task<long> GetCountAsync(CancellationToken cancellationToken = default);
 
@@ -57,11 +57,11 @@ public interface IRepository<TEntity>
     /// </summary>
     /// <param name="skip">The number of elements to skip before returning the remaining elements</param>
     /// <param name="take">The number of elements to return</param>
-    /// <param name="sorting">sort parameters</param>
+    /// <param name="sortField">Sort field name</param>
     /// <param name="isDescending">true descending order, false ascending order, default: true</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<List<TEntity>> GetPaginatedListAsync(int skip, int take, string sorting, bool isDescending = true,
+    Task<List<TEntity>> GetPaginatedListAsync(int skip, int take, string sortField, bool isDescending = true,
         CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -69,7 +69,7 @@ public interface IRepository<TEntity>
     /// </summary>
     /// <param name="skip">The number of elements to skip before returning the remaining elements</param>
     /// <param name="take">The number of elements to return</param>
-    /// <param name="sorting">Key: sort parameters, Value: true descending order, false ascending order</param>
+    /// <param name="sorting">Key: sort field name, Value: true descending order, false ascending order</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
     Task<List<TEntity>> GetPaginatedListAsync(int skip, int take, Dictionary<string, bool>? sorting = null,
@@ -81,11 +81,11 @@ public interface IRepository<TEntity>
     /// <param name="predicate"> A function to test each element for a condition</param>
     /// <param name="skip">The number of elements to skip before returning the remaining elements</param>
     /// <param name="take">The number of elements to return</param>
-    /// <param name="sorting">sort parameters</param>
+    /// <param name="sortField">Sort field name</param>
     /// <param name="isDescending">true descending order, false ascending order, default: true</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<List<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, int skip, int take, string sorting,
+    Task<List<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, int skip, int take, string sortField,
         bool isDescending = true, CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -94,7 +94,7 @@ public interface IRepository<TEntity>
     /// <param name="predicate"> A function to test each element for a condition</param>
     /// <param name="skip">The number of elements to skip before returning the remaining elements</param>
     /// <param name="take">The number of elements to return</param>
-    /// <param name="sorting">Key: sort parameters, Value: true descending order, false ascending order</param>
+    /// <param name="sorting">Key: sort field name, Value: true descending order, false ascending order</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
     Task<List<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> predicate, int skip, int take,
