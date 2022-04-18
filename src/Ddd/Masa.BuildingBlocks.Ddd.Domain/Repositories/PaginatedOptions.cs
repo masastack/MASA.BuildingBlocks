@@ -23,10 +23,10 @@ public class PaginatedOptions
     /// </summary>
     /// <param name="page">page number</param>
     /// <param name="pageSize">returns per page</param>
-    /// <param name="sorting">sort parameters</param>
+    /// <param name="sortField">sort field name</param>
     /// <param name="isDescending">true descending order, false ascending order, default: true</param>
-    public PaginatedOptions(int page, int pageSize, string sorting, bool isDescending = true)
-        : this(page, pageSize, new Dictionary<string, bool>(new List<KeyValuePair<string, bool>> { new(sorting, isDescending) }))
+    public PaginatedOptions(int page, int pageSize, string sortField, bool isDescending = true)
+        : this(page, pageSize, new Dictionary<string, bool>(new List<KeyValuePair<string, bool>> { new(sortField, isDescending) }))
     {
     }
 }
