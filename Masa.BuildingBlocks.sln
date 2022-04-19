@@ -68,6 +68,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Storage", "Storage", "{4CC7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Masa.BuildingBlocks.Storage.ObjectStorage", "src\Storage\Masa.BuildingBlocks.Storage.ObjectStorage\Masa.BuildingBlocks.Storage.ObjectStorage.csproj", "{D52E223F-F406-47A7-BF3E-924DC2D74981}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masa.BuildingBlocks.SearchEngine.AutoComplete.Tests", "test\Masa.BuildingBlocks.SearchEngine.AutoComplete.Tests\Masa.BuildingBlocks.SearchEngine.AutoComplete.Tests.csproj", "{F8681808-45F3-4C2D-8A37-D24C0A3414A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -134,6 +136,10 @@ Global
 		{D52E223F-F406-47A7-BF3E-924DC2D74981}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D52E223F-F406-47A7-BF3E-924DC2D74981}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D52E223F-F406-47A7-BF3E-924DC2D74981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8681808-45F3-4C2D-8A37-D24C0A3414A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8681808-45F3-4C2D-8A37-D24C0A3414A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8681808-45F3-4C2D-8A37-D24C0A3414A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8681808-45F3-4C2D-8A37-D24C0A3414A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -167,6 +173,7 @@ Global
 		{5E3CAD7F-B036-4CA0-9473-4CCA4F5AC5A8} = {022D6FF5-4B65-4213-9A97-C69E2B2F99E1}
 		{4CC735F3-DB32-4D9D-863D-BB6E1BA362B9} = {77D17E30-CB7C-4DD7-8CF1-9D5350FF2304}
 		{D52E223F-F406-47A7-BF3E-924DC2D74981} = {4CC735F3-DB32-4D9D-863D-BB6E1BA362B9}
+		{F8681808-45F3-4C2D-8A37-D24C0A3414A5} = {6ED365E6-4A1A-499F-85FB-F22E865CA4BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40383055-CC50-4600-AD9A-53C14F620D03}

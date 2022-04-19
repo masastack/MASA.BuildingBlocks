@@ -31,11 +31,11 @@ public class AutoCompleteOptions
         }
     }
 
-    public SearchType SearchType { get; }
+    public SearchType? SearchType { get; }
 
-    public AutoCompleteOptions(SearchType searchType = SearchType.Fuzzy)
+    public AutoCompleteOptions(SearchType? searchType = null)
     {
-        this.Field = "id";
+        this.Field = "text";
         this.Page = 1;
         this.PageSize = 10;
         this.SearchType = searchType;
