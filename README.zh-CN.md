@@ -12,6 +12,12 @@ MASA Stack的构建块，提供统一的接口标准，用于[MASA Contrib](http
 
 
 
+## 了解MASA.BuildingBlocks
+* [发布版本](https://github.com/masastack/MASA.BuildingBlocks/releases)
+* [查看最新路线图](https://github.com/masastack/MASA.BuildingBlocks/issues/39)
+
+
+
 ## 特性
 * AutoComplete: 使搜索更简单
 * Configuration: 配置中心

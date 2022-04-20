@@ -12,6 +12,12 @@ Building blocks of the MASA Stack, provides a unified interface standard for [MA
 
 
 
+## Learn about MASA.BuildingBlocks
+* [Release version](https://github.com/masastack/MASA.BuildingBlocks/releases)
+* [View the latest roadmap](https://github.com/masastack/MASA.BuildingBlocks/issues/39)
+
+
+
 ## Features
 * AutoComplete: make searching easier
 * Configuration: Configuration Center
