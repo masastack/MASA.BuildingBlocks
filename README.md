@@ -58,7 +58,7 @@ This project adopts the Code of Conduct as defined by the Contributors Covenant 
 
 
 
-## License Statement
+## ☀️ License Statement
 
 [![MASA.BuildingBlocks](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](/LICENSE.txt)
 

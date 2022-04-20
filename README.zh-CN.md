@@ -58,7 +58,7 @@ MASA Stack的构建块，提供统一的接口标准，用于[MASA Contrib](http
 
 
 
-## 许可声明
+## ☀️ 许可声明
 
 [![MASA.BuildingBlocks](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](/LICENSE.txt)
 
