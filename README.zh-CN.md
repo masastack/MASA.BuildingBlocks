@@ -29,7 +29,7 @@ MASA Stack的构建块，提供统一的接口标准，用于[MASA Contrib](http
 
 1. Fork & Clone
 2. Create Feature_xxx branch
-3. Commit with commit message, like `feat:add MButton`
+3. Commit with commit message, like `feat(Isolation): Support physical isolation, logical isolation`
 4. Create Pull Request
 
 如果你希望参与贡献，欢迎 [Pull Request](https://github.com/masastack/MASA.BuildingBlocks/pulls)，或给我们 [报告 Bug](https://github.com/masastack/MASA.BuildingBlocks/issues/new) 。

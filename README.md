@@ -29,7 +29,7 @@ Building blocks of the MASA Stack, provides a unified interface standard for [MA
 
 1. Fork & Clone
 2. Create Feature_xxx branch
-3. Commit with commit message, like `feat:add MButton`
+3. Commit with commit message, like `feat(Isolation): Support physical isolation, logical isolation`
 4. Create Pull Request
 
 If you wish to contribute, please [Pull Request](https://github.com/masastack/MASA.BuildingBlocks/pulls), or send us a [Report Bug](https://github.com/masastack/MASA.BuildingBlocks/issues/new) .
