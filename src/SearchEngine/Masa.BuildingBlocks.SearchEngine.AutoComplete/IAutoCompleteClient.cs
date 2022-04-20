@@ -1,4 +1,5 @@
 ﻿namespace Masa.BuildingBlocks.SearchEngine.AutoComplete;
+
 public interface IAutoCompleteClient
 {
     Task<GetResponse<AutoCompleteDocument<Guid>, Guid>> GetAsync(
@@ -49,9 +50,9 @@ public interface IAutoCompleteClient
 
     Task<DeleteResponse> DeleteAsync(string id, CancellationToken cancellationToken = default);
 
-    Task<DeleteResponse> DeleteAsync<T>(T id, CancellationToken cancellationToken = default) where T : notnull;
+    Task<DeleteResponse> DeleteAsync<T>(T id, CancellationToken cancellationToken = default) where T : IComparable;
 
     Task<DeleteMultiResponse> DeleteAsync(IEnumerable<string> ids, CancellationToken cancellationToken = default);
 
-    Task<DeleteMultiResponse> DeleteAsync<T>(IEnumerable<T> ids, CancellationToken cancellationToken = default) where T : notnull;
+    Task<DeleteMultiResponse> DeleteAsync<T>(IEnumerable<T> ids, CancellationToken cancellationToken = default) where T : IComparable;
 }

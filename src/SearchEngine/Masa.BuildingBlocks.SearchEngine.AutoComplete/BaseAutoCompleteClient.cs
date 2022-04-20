@@ -40,12 +40,12 @@ public abstract class BaseAutoCompleteClient : IAutoCompleteClient
 
     public abstract Task<DeleteResponse> DeleteAsync(string id, CancellationToken cancellationToken = default);
 
-    public virtual Task<DeleteResponse> DeleteAsync<T>(T id, CancellationToken cancellationToken = default) where T : notnull
+    public virtual Task<DeleteResponse> DeleteAsync<T>(T id, CancellationToken cancellationToken = default) where T : IComparable
         => DeleteAsync(id!.ToString() ?? throw new ArgumentNullException($"{id} is not null", nameof(id)), cancellationToken);
 
     public abstract Task<DeleteMultiResponse> DeleteAsync(IEnumerable<string> ids, CancellationToken cancellationToken = default);
 
-    public virtual Task<DeleteMultiResponse> DeleteAsync<T>(IEnumerable<T> ids, CancellationToken cancellationToken = default) where T : notnull
+    public virtual Task<DeleteMultiResponse> DeleteAsync<T>(IEnumerable<T> ids, CancellationToken cancellationToken = default) where T : IComparable
     {
         var type = typeof(T);
         if (!type.IsPrimitive && type != typeof(Guid) && type != typeof(string))
