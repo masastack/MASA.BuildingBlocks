@@ -48,11 +48,11 @@ public interface IAutoCompleteClient
         SetOptions? options = null,
         CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument<TValue> where TValue : notnull;
 
-    Task<DeleteResponse> DeleteAsync(string id);
+    Task<DeleteResponse> DeleteAsync(string id, CancellationToken cancellationToken = default);
 
-    Task<DeleteResponse> DeleteAsync<T>(T id) where T : notnull;
+    Task<DeleteResponse> DeleteAsync<T>(T id, CancellationToken cancellationToken = default) where T : notnull;
 
-    Task<DeleteMultiResponse> DeleteMultiAsync(IEnumerable<string> ids);
+    Task<DeleteMultiResponse> DeleteMultiAsync(IEnumerable<string> ids, CancellationToken cancellationToken = default);
 
-    Task<DeleteMultiResponse> DeleteMultiAsync<T>(IEnumerable<T> ids) where T : notnull;
+    Task<DeleteMultiResponse> DeleteMultiAsync<T>(IEnumerable<T> ids, CancellationToken cancellationToken = default) where T : notnull;
 }
