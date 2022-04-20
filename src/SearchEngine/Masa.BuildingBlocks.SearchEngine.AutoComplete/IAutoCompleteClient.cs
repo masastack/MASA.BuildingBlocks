@@ -1,5 +1,4 @@
 ﻿namespace Masa.BuildingBlocks.SearchEngine.AutoComplete;
-
 public interface IAutoCompleteClient
 {
     Task<GetResponse<AutoCompleteDocument<Guid>, Guid>> GetAsync(
@@ -23,7 +22,7 @@ public interface IAutoCompleteClient
         SetOptions? options = null,
         CancellationToken cancellationToken = default);
 
-    Task<SetResponse> SetMultiAsync(
+    Task<SetResponse> SetAsync(
         IEnumerable<AutoCompleteDocument<Guid>> documents,
         SetOptions? options = null,
         CancellationToken cancellationToken = default);
@@ -33,7 +32,7 @@ public interface IAutoCompleteClient
         SetOptions? options = null,
         CancellationToken cancellationToken = default) where TValue : notnull;
 
-    Task<SetResponse> SetMultiAsync<TValue>(
+    Task<SetResponse> SetAsync<TValue>(
         IEnumerable<AutoCompleteDocument<TValue>> documents,
         SetOptions? options = null,
         CancellationToken cancellationToken = default) where TValue : notnull;
@@ -43,7 +42,7 @@ public interface IAutoCompleteClient
         SetOptions? options = null,
         CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument<TValue> where TValue : notnull;
 
-    Task<SetResponse> SetMultiAsync<TAudoCompleteDocument, TValue>(
+    Task<SetResponse> SetAsync<TAudoCompleteDocument, TValue>(
         IEnumerable<TAudoCompleteDocument> documents,
         SetOptions? options = null,
         CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument<TValue> where TValue : notnull;
@@ -52,7 +51,7 @@ public interface IAutoCompleteClient
 
     Task<DeleteResponse> DeleteAsync<T>(T id, CancellationToken cancellationToken = default) where T : notnull;
 
-    Task<DeleteMultiResponse> DeleteMultiAsync(IEnumerable<string> ids, CancellationToken cancellationToken = default);
+    Task<DeleteMultiResponse> DeleteAsync(IEnumerable<string> ids, CancellationToken cancellationToken = default);
 
-    Task<DeleteMultiResponse> DeleteMultiAsync<T>(IEnumerable<T> ids, CancellationToken cancellationToken = default) where T : notnull;
+    Task<DeleteMultiResponse> DeleteAsync<T>(IEnumerable<T> ids, CancellationToken cancellationToken = default) where T : notnull;
 }
