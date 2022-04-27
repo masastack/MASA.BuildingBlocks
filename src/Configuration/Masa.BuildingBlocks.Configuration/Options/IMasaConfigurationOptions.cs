@@ -1,4 +1,8 @@
-﻿namespace Masa.BuildingBlocks.Configuration.Options;
+// Copyright (c) MASA Stack All rights reserved.
+// Licensed under the MIT License. See LICENSE.txt in the project root for license information.
+
+namespace Masa.BuildingBlocks.Configuration.Options;
+
 /// <summary>
 /// Automatic mapping relationship specification.
 /// When ParentSection is Null or an empty string, the configuration will be mounted to the root node.
