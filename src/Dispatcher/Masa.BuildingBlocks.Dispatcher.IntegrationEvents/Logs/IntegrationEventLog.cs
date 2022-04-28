@@ -29,7 +29,7 @@ public class IntegrationEventLog
 
     public Guid TransactionId { get; private set; } = Guid.Empty;
 
-    public string RowVersion { get;private set; }
+    public string RowVersion { get; private set; }
 
     private IntegrationEventLog()
     {
@@ -39,9 +39,9 @@ public class IntegrationEventLog
 
     public IntegrationEventLog(IIntegrationEvent @event, Guid transactionId) : this()
     {
-        EventId = @event.Id;
-        CreationTime = @event.CreationTime;
-        ModificationTime = @event.CreationTime;
+        EventId = @event.GetEventId();
+        CreationTime = @event.GetCreationTime();
+        ModificationTime = @event.GetCreationTime();
         EventTypeName = @event.GetType().FullName!;
         Content = System.Text.Json.JsonSerializer.Serialize((object)@event);
         TransactionId = transactionId;
@@ -58,6 +58,8 @@ public class IntegrationEventLog
     public IntegrationEventLog DeserializeJsonContent(Type type)
     {
         Event = (System.Text.Json.JsonSerializer.Deserialize(Content, type) as IIntegrationEvent)!;
+        Event?.SetEventId(this.EventId);
+        Event?.SetCreationTime(this.CreationTime);
         return this;
     }
 }
