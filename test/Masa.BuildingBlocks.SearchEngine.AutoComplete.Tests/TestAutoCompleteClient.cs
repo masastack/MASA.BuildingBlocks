@@ -1,4 +1,7 @@
-﻿namespace Masa.BuildingBlocks.SearchEngine.AutoComplete.Tests;
+﻿// Copyright (c) MASA Stack All rights reserved.
+// Licensed under the MIT License. See LICENSE.txt in the project root for license information.
+
+namespace Masa.BuildingBlocks.SearchEngine.AutoComplete.Tests;
 
 [TestClass]
 public class TestAutoCompleteClient
@@ -7,30 +10,30 @@ public class TestAutoCompleteClient
     public async Task TestDeleteMultiAsyncReturnThrowNotSupportedException()
     {
         var client = new CustomAutoCompleteClient();
-        await Assert.ThrowsExceptionAsync<NotSupportedException>(() => client.DeleteMultiAsync(new List<AutoCompleteDocument<int>>()
+        List<int> ids = new List<int>()
         {
-            new("2", 2),
-            new("1", 1),
-        }));
+            1,2
+        };
+        await Assert.ThrowsExceptionAsync<NotSupportedException>(() => client.DeleteAsync(ids));
     }
 
     [TestMethod]
     public async Task TestDeleteMultiAsyncReturnSuccess()
     {
         var client = new CustomAutoCompleteClient();
-        var response = await client.DeleteMultiAsync(new[] { 1, 2 });
+        var response = await client.DeleteAsync(new[] { 1, 2 });
         Assert.IsTrue(response.IsValid);
 
-        response = await client.DeleteMultiAsync(new[] { "1", "2" });
+        response = await client.DeleteAsync(new[] { "1", "2" });
         Assert.IsTrue(response.IsValid);
 
-        response = await client.DeleteMultiAsync(new[] { 1d, 2d });
+        response = await client.DeleteAsync(new[] { 1d, 2d });
         Assert.IsTrue(response.IsValid);
 
-        response = await client.DeleteMultiAsync(new[] { 1l, 2l });
+        response = await client.DeleteAsync(new[] { 1L, 2L });
         Assert.IsTrue(response.IsValid);
 
-        response = await client.DeleteMultiAsync(new[] { Guid.NewGuid(), Guid.NewGuid() });
+        response = await client.DeleteAsync(new[] { Guid.NewGuid(), Guid.NewGuid() });
         Assert.IsTrue(response.IsValid);
     }
 }

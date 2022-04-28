@@ -1,4 +1,8 @@
-﻿namespace Masa.BuildingBlocks.Ddd.Domain.Specifications;
+// Copyright (c) MASA Stack All rights reserved.
+// Licensed under the MIT License. See LICENSE.txt in the project root for license information.
+
+namespace Masa.BuildingBlocks.Ddd.Domain.Specifications;
+
 public abstract class BaseSpecification<T> : ISpecification<T>
 {
     public BaseSpecification(Expression<Func<T, bool>> whereExpression)

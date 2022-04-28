@@ -1,13 +1,15 @@
-namespace Masa.BuildingBlocks.BasicAbility.Pm.Service
+// Copyright (c) MASA Stack All rights reserved.
+// Licensed under the MIT License. See LICENSE.txt in the project root for license information.
+
+namespace Masa.BuildingBlocks.BasicAbility.Pm.Service;
+
+public interface IClusterService
 {
-    public interface IClusterService
-    {
-        Task<List<ClusterModel>> GetListAsync();
+    Task<List<ClusterModel>> GetListAsync();
 
-        Task<List<ClusterModel>> GetListByEnvIdAsync(int envId);
+    Task<List<ClusterModel>> GetListByEnvIdAsync(int envId);
 
-        Task<ClusterDetailModel> GetAsync(int Id);
+    Task<ClusterDetailModel> GetAsync(int Id);
 
-        Task<List<EnvironmentClusterModel>> GetEnvironmentClustersAsync();
-    }
+    Task<List<EnvironmentClusterModel>> GetEnvironmentClustersAsync();
 }
