@@ -1,4 +1,5 @@
 [*.cs]
+file_header_template = Copyright (c) MASA Stack All rights reserved.\nLicensed under the MIT License. See LICENSE.txt in the project root for license information.
 
 # CS8618: When exiting the constructor, the non-nullable field must contain a non-null value. Please consider declaring as nullable。
 dotnet_diagnostic.CS8618.severity = none
