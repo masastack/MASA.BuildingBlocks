@@ -1,9 +1,11 @@
-namespace Masa.BuildingBlocks.BasicAbility.Pm.Service
-{
-    public interface IEnvironmentService
-    {
-        Task<List<EnvironmentModel>> GetListAsync();
+// Copyright (c) MASA Stack All rights reserved.
+// Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
-        Task<EnvironmentDetailModel> GetAsync(int Id);
-    }
+namespace Masa.BuildingBlocks.BasicAbility.Pm.Service;
+
+public interface IEnvironmentService
+{
+    Task<List<EnvironmentModel>> GetListAsync();
+
+    Task<EnvironmentDetailModel> GetAsync(int Id);
 }

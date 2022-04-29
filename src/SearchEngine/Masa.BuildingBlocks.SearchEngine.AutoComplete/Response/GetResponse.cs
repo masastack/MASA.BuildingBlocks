@@ -1,4 +1,8 @@
-﻿namespace Masa.BuildingBlocks.SearchEngine.AutoComplete.Response;
+// Copyright (c) MASA Stack All rights reserved.
+// Licensed under the MIT License. See LICENSE.txt in the project root for license information.
+
+namespace Masa.BuildingBlocks.SearchEngine.AutoComplete.Response;
+
 public class GetResponse<TDropdownBox, TValue> : ResponseBase
     where TDropdownBox : AutoCompleteDocument<TValue> where TValue : notnull
 {
@@ -14,7 +18,7 @@ public class GetResponse<TDropdownBox, TValue> : ResponseBase
 
     public GetResponse(bool isValid, string message, IEnumerable<TDropdownBox> data) : this(isValid, message)
     {
-        ArgumentNullException.ThrowIfNull(data,nameof(data));
+        ArgumentNullException.ThrowIfNull(data, nameof(data));
 
         Data = data.ToList();
     }
