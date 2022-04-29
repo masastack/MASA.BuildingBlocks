@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.Ddd.Domain.Entities.Auditing;
 
-public interface IAuditEntity<TUserId>
+public interface IAuditEntity<TUserId> : ISoftDelete
 {
     TUserId Creator { get; }
 
