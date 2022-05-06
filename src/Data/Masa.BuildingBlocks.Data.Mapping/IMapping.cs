@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.Data.Mapping;
 
-public interface IMapping
+public interface IMapper
 {
     TDestination Map<TSource, TDestination>(TSource source, MapOptions? options = null);
 
