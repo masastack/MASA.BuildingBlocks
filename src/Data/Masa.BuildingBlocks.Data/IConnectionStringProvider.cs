@@ -5,7 +5,17 @@ namespace Masa.BuildingBlocks.Data;
 
 public interface IConnectionStringProvider
 {
-    Task<string> GetConnectionStringAsync();
+    /// <summary>
+    /// Get database link string based on ConnectionName
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
+    Task<string> GetConnectionStringAsync(string name = ConnectionStrings.DEFAULT_CONNECTION_STRING_NAME);
 
-    string GetConnectionString();
+    /// <summary>
+    /// Get database link string based on ConnectionName
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
+    string GetConnectionString(string name = ConnectionStrings.DEFAULT_CONNECTION_STRING_NAME);
 }

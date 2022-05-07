@@ -6,3 +6,4 @@ global using Masa.BuildingBlocks.Isolation.MultiTenant;
 global using Microsoft.AspNetCore.Http;
 global using Microsoft.AspNetCore.Routing;
 global using Microsoft.Extensions.DependencyInjection;
+global using Masa.BuildingBlocks.Data;

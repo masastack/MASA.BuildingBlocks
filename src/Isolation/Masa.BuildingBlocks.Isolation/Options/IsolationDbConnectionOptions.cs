@@ -3,9 +3,7 @@
 
 namespace Masa.BuildingBlocks.Isolation.Options;
 
-public class IsolationDbConnectionOptions
+public class IsolationDbConnectionOptions : MasaDbConnectionOptions
 {
-    public string DefaultConnection { get; set; }
-
-    public List<DbConnectionOptions> Isolations { get; set; } = new();
+    public List<IsolationOptions> IsolationConnectionStrings { get; set; } = new();
 }
