@@ -77,6 +77,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Masa.BuildingBlocks.Data", "src\Data\Masa.BuildingBlocks.Data\Masa.BuildingBlocks.Data.csproj", "{4B9BF713-E0BC-4CAB-9D8D-353C18EDC855}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -151,6 +153,10 @@ Global
 		{EA5B1CAD-2275-43F3-9A50-7CE1FD94ACDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA5B1CAD-2275-43F3-9A50-7CE1FD94ACDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA5B1CAD-2275-43F3-9A50-7CE1FD94ACDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B9BF713-E0BC-4CAB-9D8D-353C18EDC855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B9BF713-E0BC-4CAB-9D8D-353C18EDC855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B9BF713-E0BC-4CAB-9D8D-353C18EDC855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B9BF713-E0BC-4CAB-9D8D-353C18EDC855}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -186,6 +192,7 @@ Global
 		{D52E223F-F406-47A7-BF3E-924DC2D74981} = {4CC735F3-DB32-4D9D-863D-BB6E1BA362B9}
 		{F8681808-45F3-4C2D-8A37-D24C0A3414A5} = {6ED365E6-4A1A-499F-85FB-F22E865CA4BA}
 		{EA5B1CAD-2275-43F3-9A50-7CE1FD94ACDB} = {64FB8703-E922-45DE-9D01-3FE9EFE56727}
+		{4B9BF713-E0BC-4CAB-9D8D-353C18EDC855} = {64FB8703-E922-45DE-9D01-3FE9EFE56727}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40383055-CC50-4600-AD9A-53C14F620D03}

@@ -13,6 +13,8 @@ public abstract class AuditEntity<TUserId> : Entity, IAuditEntity<TUserId>
 
     public DateTime ModificationTime { get; set; }
 
+    public bool IsDeleted { get; protected set; }
+
     public AuditEntity() => Initialize();
 
     public void Initialize()
@@ -33,6 +35,8 @@ public class AuditEntity<TKey, TUserId> : Entity<TKey>, IAuditEntity<TUserId>
     public TUserId Modifier { get; protected set; } = default!;
 
     public DateTime ModificationTime { get; protected set; }
+
+    public bool IsDeleted { get; protected set; }
 
     public AuditEntity() => Initialize();
 
