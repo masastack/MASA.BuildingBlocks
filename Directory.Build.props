@@ -1,5 +1,7 @@
 <Project>
   <PropertyGroup>
+    <MicrosoftPackageVersion>6.0.0</MicrosoftPackageVersion>
+	
     <PackageId>$(AssemblyName)</PackageId>
     <PackageIcon>packageIcon.png</PackageIcon>
     <Authors>masastack</Authors>
