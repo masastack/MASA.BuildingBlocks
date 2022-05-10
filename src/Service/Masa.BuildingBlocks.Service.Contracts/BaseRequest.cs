@@ -3,9 +3,6 @@
 
 namespace Masa.BuildingBlocks.Service.Contracts;
 
-/// <summary>
-/// Base class by API request
-/// </summary>
 public abstract class BaseRequest : BaseMessage
 {
 }

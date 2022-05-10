@@ -6,7 +6,7 @@ namespace Masa.BuildingBlocks.Service.Contracts;
 public class BaseMessage
 {
     /// <summary>
-    /// Unique Identifier used by logging
+    /// Unique Identifier
     /// </summary>
     protected Guid _correlationId = Guid.NewGuid();
 
