@@ -1,5 +1,10 @@
 <Project>
   <PropertyGroup>
+    <MicrosoftPackageVersion>6.0.0</MicrosoftPackageVersion>
+    <MSTestPackageVersion>2.2.3</MSTestPackageVersion>
+    <MicrosoftTeskSdkPackageVersion>16.9.4</MicrosoftTeskSdkPackageVersion>
+    <CoverletPackageVersion>3.0.2</CoverletPackageVersion>
+	
     <PackageId>$(AssemblyName)</PackageId>
     <PackageIcon>packageIcon.png</PackageIcon>
     <Authors>masastack</Authors>
