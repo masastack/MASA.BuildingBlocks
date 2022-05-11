@@ -12,4 +12,6 @@ public interface IClusterService
     Task<ClusterDetailModel> GetAsync(int Id);
 
     Task<List<EnvironmentClusterModel>> GetEnvironmentClustersAsync();
+
+    Task<List<EnvironmentClusterModel>> GetEnvironmentClustersByProjectIdAsync(int projectId);
 }
