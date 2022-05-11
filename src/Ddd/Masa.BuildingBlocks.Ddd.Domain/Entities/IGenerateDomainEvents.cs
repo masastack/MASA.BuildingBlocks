@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.Ddd.Domain.Entities;
 
-public interface IGeneratesDomainEvents
+public interface IGenerateDomainEvents
 {
     IEnumerable<IDomainEvent> GetDomainEvents();
 
