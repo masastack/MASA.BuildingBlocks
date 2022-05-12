@@ -42,7 +42,13 @@ public interface IClient
         string objectName,
         CancellationToken cancellationToken = default(CancellationToken));
 
-    Task DeleteObjectAsync(string bucketName, string objectName, CancellationToken cancellationToken = default(CancellationToken));
+    Task DeleteObjectAsync(
+        string bucketName,
+        string objectName,
+        CancellationToken cancellationToken = default(CancellationToken));
 
-    Task DeleteObjectAsync(string bucketName, IEnumerable<string> objectNames, CancellationToken cancellationToken = default(CancellationToken));
+    Task DeleteObjectAsync(
+        string bucketName,
+        IEnumerable<string> objectNames,
+        CancellationToken cancellationToken = default(CancellationToken));
 }
