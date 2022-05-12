@@ -4,13 +4,13 @@
 namespace Masa.BuildingBlocks.Ddd.Domain.Entities.Auditing;
 
 public abstract class FullAuditAggregateRoot<TUserId>
-    : AuditAggregateRoot<TUserId>, IFullAuditAggregateRoot<TUserId>, ISoftDelete
+    : AuditAggregateRoot<TUserId>, IFullAuditAggregateRoot<TUserId>
 {
     public bool IsDeleted { get; protected set; }
 }
 
 public abstract class FullAuditAggregateRoot<TKey, TUserId>
-    : AuditAggregateRoot<TKey, TUserId>, IFullAuditAggregateRoot<TKey, TUserId>, ISoftDelete
+    : AuditAggregateRoot<TKey, TUserId>, IFullAuditAggregateRoot<TKey, TUserId>
 {
     public bool IsDeleted { get; protected set; }
 }
