@@ -1,10 +1,10 @@
-﻿// Copyright (c) MASA Stack All rights reserved.
+// Copyright (c) MASA Stack All rights reserved.
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
-namespace Masa.BuildingBlocks.Ddd.Domain.Entities.Auditing;
+namespace Masa.BuildingBlocks.Ddd.Domain.Entities.Full;
 
-public abstract class FullAuditEntity<TUserId>
-    : AuditEntity<TUserId>, IFullAuditEntity<TUserId>
+public abstract class FullEntity<TUserId>
+    : AuditEntity<TUserId>, IFullEntity<TUserId>
 {
     public bool IsDeleted { get; protected set; }
 }
