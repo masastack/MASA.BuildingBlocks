@@ -3,12 +3,12 @@
 
 namespace Masa.BuildingBlocks.Ddd.Domain.Entities.Auditing;
 
-public abstract class AuditAggregateRoot<TUserId> : AuditEntity<TUserId>, IAggregateRoot
+public abstract class AuditAggregateRoot<TUserId> : AuditEntity<TUserId>, IAuditAggregateRoot<TUserId>
 {
 
 }
 
-public class AuditAggregateRoot<TKey, TUserId> : AuditEntity<TKey, TUserId>, IAggregateRoot<TKey>
+public abstract class AuditAggregateRoot<TKey, TUserId> : AuditEntity<TKey, TUserId>, IAuditAggregateRoot<TKey, TUserId>
 {
 
 }
