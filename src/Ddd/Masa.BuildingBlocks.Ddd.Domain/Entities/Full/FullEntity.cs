@@ -9,8 +9,8 @@ public abstract class FullEntity<TUserId>
     public bool IsDeleted { get; protected set; }
 }
 
-public abstract class FullAuditEntity<TKey, TUserId>
-    : AuditEntity<TKey, TUserId>, IFullAuditEntity<TKey, TUserId>
+public abstract class FullEntity<TKey, TUserId>
+    : AuditEntity<TKey, TUserId>, IFullEntity<TKey, TUserId>
 {
     public bool IsDeleted { get; protected set; }
 }

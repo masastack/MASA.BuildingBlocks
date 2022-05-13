@@ -9,8 +9,8 @@ public abstract class FullAggregateRoot<TUserId>
     public bool IsDeleted { get; protected set; }
 }
 
-public abstract class FullAuditAggregateRoot<TKey, TUserId>
-    : AuditAggregateRoot<TKey, TUserId>, IFullAuditAggregateRoot<TKey, TUserId>
+public abstract class FullAggregateRoot<TKey, TUserId>
+    : AuditAggregateRoot<TKey, TUserId>, IFullAggregateRoot<TKey, TUserId>
 {
     public bool IsDeleted { get; protected set; }
 }

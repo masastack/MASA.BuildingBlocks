@@ -8,7 +8,7 @@ public interface IFullAggregateRoot<TUserId> : IAuditAggregateRoot<TUserId>, ISo
 
 }
 
-public interface IFullAuditAggregateRoot<TKey, TUserId> : IAuditAggregateRoot<TKey, TUserId>, ISoftDelete
+public interface IFullAggregateRoot<TKey, TUserId> : IAuditAggregateRoot<TKey, TUserId>, ISoftDelete
 {
 
 }
