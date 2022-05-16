@@ -8,7 +8,7 @@ public interface IFullEntity<TUserId> : IAuditEntity<TUserId>, ISoftDelete
 
 }
 
-public interface IFullAuditEntity<TKey, TUserId> : IAuditEntity<TKey, TUserId>, ISoftDelete
+public interface IFullEntity<TKey, TUserId> : IAuditEntity<TKey, TUserId>, ISoftDelete
 {
 
 }
