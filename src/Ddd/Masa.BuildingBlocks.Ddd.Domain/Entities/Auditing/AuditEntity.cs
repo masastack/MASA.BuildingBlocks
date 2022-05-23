@@ -34,7 +34,15 @@ public abstract class AuditEntity<TKey, TUserId> : Entity<TKey>, IAuditEntity<TK
 
     public DateTime ModificationTime { get; protected set; }
 
-    public AuditEntity() => Initialize();
+    public AuditEntity() : base()
+    {
+        Initialize();
+    }
+
+    public AuditEntity(TKey id) : base(id)
+    {
+        Initialize();
+    }
 
     public void Initialize()
     {
