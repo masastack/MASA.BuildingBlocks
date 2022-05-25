@@ -3,12 +3,44 @@
 
 namespace Masa.BuildingBlocks.Ddd.Domain.Entities.Auditing;
 
-public abstract class AuditAggregateRoot<TUserId> : AuditEntity<TUserId>, IAggregateRoot
+public abstract class AuditAggregateRoot<TUserId> : AggregateRoot, IAuditAggregateRoot<TUserId>
 {
+    public TUserId Creator { get; protected set; } = default!;
 
+    public DateTime CreationTime { get; protected set; }
+
+    public TUserId Modifier { get; protected set; } = default!;
+
+    public DateTime ModificationTime { get; set; }
+
+    public AuditAggregateRoot() => Initialize();
+
+    public void Initialize()
+    {
+        this.CreationTime = this.GetCurrentTime();
+        this.ModificationTime = this.GetCurrentTime();
+    }
+
+    public virtual DateTime GetCurrentTime() => DateTime.UtcNow;
 }
 
-public class AuditAggregateRoot<TKey, TUserId> : AuditEntity<TKey, TUserId>, IAggregateRoot<TKey>
+public abstract class AuditAggregateRoot<TKey, TUserId> : AggregateRoot<TKey>, IAuditAggregateRoot<TKey, TUserId>
 {
+    public TUserId Creator { get; protected set; } = default!;
 
+    public DateTime CreationTime { get; protected set; }
+
+    public TUserId Modifier { get; protected set; } = default!;
+
+    public DateTime ModificationTime { get; protected set; }
+
+    public AuditAggregateRoot() => Initialize();
+
+    public void Initialize()
+    {
+        this.CreationTime = this.GetCurrentTime();
+        this.ModificationTime = this.GetCurrentTime();
+    }
+
+    public virtual DateTime GetCurrentTime() => DateTime.UtcNow;
 }

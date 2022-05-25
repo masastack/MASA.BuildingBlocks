@@ -14,3 +14,17 @@ public abstract class BaseResponse : BaseMessage
     {
     }
 }
+
+public abstract class BaseResponse<T> : BaseResponse
+{
+    T? Data { get; set; }
+
+    public BaseResponse(Guid correlationId)
+        : base(correlationId)
+    {
+    }
+
+    public BaseResponse()
+    {
+    }
+}
