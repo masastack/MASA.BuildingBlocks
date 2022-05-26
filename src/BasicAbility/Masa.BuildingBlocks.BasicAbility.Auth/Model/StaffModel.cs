@@ -17,6 +17,12 @@ public class StaffModel
 
     public UserModel User { get; set; }
 
+    public StaffModel()
+    {
+        JobNumber = "";
+        User = new();
+    }
+
     public StaffModel(string jobNumber, StaffTypes staffType, UserModel user)
     {
         JobNumber = jobNumber;
