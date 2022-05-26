@@ -21,6 +21,12 @@ public class AddUserModel
 
     public GenderTypes Gender { get; set; }
 
+    public AddUserModel()
+    {
+        Account = "";
+        Name = "";
+    }
+
     public AddUserModel(string account, string name)
     {
         Account = account;
