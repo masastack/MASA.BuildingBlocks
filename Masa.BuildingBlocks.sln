@@ -85,6 +85,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Http", "Http", "{06C741A8-D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masa.BuildingBlocks.Http.Parser", "src\Http\Masa.BuildingBlocks.Http.Parser\Masa.BuildingBlocks.Http.Parser.csproj", "{C5C0062F-2D73-433A-9242-7E1D2C8817B2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{BAABD8D1-BBB9-4F7B-9FD5-A71602BB4695}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masa.BuildingBlocks.Identity", "src\Identity\Masa.BuildingBlocks.Identity\Masa.BuildingBlocks.Identity.csproj", "{AF85A2FB-4656-4925-96E9-D67F847C855E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -171,6 +175,10 @@ Global
 		{C5C0062F-2D73-433A-9242-7E1D2C8817B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5C0062F-2D73-433A-9242-7E1D2C8817B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5C0062F-2D73-433A-9242-7E1D2C8817B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF85A2FB-4656-4925-96E9-D67F847C855E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF85A2FB-4656-4925-96E9-D67F847C855E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF85A2FB-4656-4925-96E9-D67F847C855E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF85A2FB-4656-4925-96E9-D67F847C855E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -210,6 +218,8 @@ Global
 		{775797E2-8576-4050-8649-18AAD00D0A87} = {593A3114-D1E0-47ED-BC37-58E08886175B}
 		{06C741A8-D233-4DA5-B003-C31712F97FF5} = {77D17E30-CB7C-4DD7-8CF1-9D5350FF2304}
 		{C5C0062F-2D73-433A-9242-7E1D2C8817B2} = {06C741A8-D233-4DA5-B003-C31712F97FF5}
+		{BAABD8D1-BBB9-4F7B-9FD5-A71602BB4695} = {77D17E30-CB7C-4DD7-8CF1-9D5350FF2304}
+		{AF85A2FB-4656-4925-96E9-D67F847C855E} = {BAABD8D1-BBB9-4F7B-9FD5-A71602BB4695}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40383055-CC50-4600-AD9A-53C14F620D03}
