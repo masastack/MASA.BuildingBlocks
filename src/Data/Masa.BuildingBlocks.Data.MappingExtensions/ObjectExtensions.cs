@@ -5,12 +5,15 @@ namespace System;
 
 public static class ObjectExtensions
 {
+    private static Mapper? _mapper;
+    private static Mapper GetMapper() => _mapper ??= MapperConfiguration.Instance.CreateMapper();
+
     public static TDestination Map<TSource, TDestination>(this TSource source, MapOptions? options = null)
-        => Mapper.Map<TSource, TDestination>(source, options);
+        => GetMapper().Map<TSource, TDestination>(source, options);
 
     public static TDestination Map<TDestination>(this object obj, MapOptions? options = null)
-        => Mapper.Map<TDestination>(obj, options);
+        => GetMapper().Map<TDestination>(obj, options);
 
     public static TDestination Map<TSource, TDestination>(this TSource source, TDestination destination, MapOptions? options = null)
-        => Mapper.Map(source, destination, options);
+        => GetMapper().Map(source, destination, options);
 }
