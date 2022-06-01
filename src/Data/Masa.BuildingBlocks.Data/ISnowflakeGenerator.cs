@@ -3,7 +3,9 @@
 
 namespace Masa.BuildingBlocks.Data;
 
-public interface IIdGenerator<T> where T : notnull
+public interface ISnowflakeGenerator : IIdGenerator<long>
 {
-    public T Create();
+    public long Generate(int workerId);
+
+    public long Generate(TimestampType timestampType, int workerId);
 }

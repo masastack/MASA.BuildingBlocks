@@ -1,9 +1,10 @@
 ﻿// Copyright (c) MASA Stack All rights reserved.
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
-namespace Masa.BuildingBlocks.Data;
+namespace Masa.BuildingBlocks.Data.Enum;
 
-public interface IIdGenerator<T> where T : notnull
+public enum TimestampType
 {
-    public T Create();
+    Milliseconds = 1,
+    Seconds
 }

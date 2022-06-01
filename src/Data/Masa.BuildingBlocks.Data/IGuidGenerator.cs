@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.Data;
 
-public interface IIdGenerator<T> where T : notnull
+public interface IGuidGenerator : IIdGenerator<Guid>
 {
-    public T Create();
+
 }
