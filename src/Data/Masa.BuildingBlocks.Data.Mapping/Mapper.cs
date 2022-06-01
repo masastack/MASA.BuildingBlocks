@@ -7,6 +7,8 @@ public sealed class Mapper
 {
     private readonly IMapper _mapper;
 
+    public static Mapper? Instance { get; internal set; }
+
     public Mapper(IServiceCollection services) => _mapper = services.BuildServiceProvider().GetRequiredService<IMapper>();
 
     public TDestination Map<TSource, TDestination>(TSource source, MapOptions? options = null)

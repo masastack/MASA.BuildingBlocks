@@ -18,6 +18,8 @@ public class MapperFactory
     public Mapper CreateMapper()
     {
         Extension.AddService(_services);
-        return new(_services);
+        var mapper = new Mapper(_services);
+        Mapper.Instance ??= mapper;
+        return mapper;
     }
 }

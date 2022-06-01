@@ -6,7 +6,7 @@ namespace System;
 public static class ObjectExtensions
 {
     private static Mapper? _mapper;
-    private static Mapper GetMapper() => _mapper ??= MapperFactory.Instance.CreateMapper();
+    private static Mapper GetMapper() => _mapper ??= Mapper.Instance ?? throw new Exception("Please use MapperFactory to initialize Mapper");
 
     public static TDestination Map<TSource, TDestination>(this TSource source, MapOptions? options = null)
         => GetMapper().Map<TSource, TDestination>(source, options);
