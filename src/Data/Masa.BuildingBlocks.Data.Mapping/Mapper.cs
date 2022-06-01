@@ -5,9 +5,9 @@ namespace Masa.BuildingBlocks.Data.Mapping;
 
 public sealed class Mapper
 {
-    private readonly IMapper _mapper;
+    public static Mapper? Instance { get; set; }
 
-    public static Mapper? Instance { get; internal set; }
+    private readonly IMapper _mapper;
 
     public Mapper(IServiceCollection services) => _mapper = services.BuildServiceProvider().GetRequiredService<IMapper>();
 
