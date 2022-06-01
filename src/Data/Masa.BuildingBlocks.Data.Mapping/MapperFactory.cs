@@ -3,17 +3,17 @@
 
 namespace Masa.BuildingBlocks.Data.Mapping;
 
-public class MapperConfiguration
+public class MapperFactory
 {
     private readonly IServiceCollection _services;
 
-    internal IMapperOptionsExtension Extension { get; set; } = default!;
+    internal IMapperExtension Extension { get; set; } = default!;
 
-    public static MapperConfiguration Instance = new();
+    public static MapperFactory Instance = new();
 
-    public MapperConfiguration() => _services = new ServiceCollection();
+    public MapperFactory() => _services = new ServiceCollection();
 
-    public void ConfigurationMapperOptions(IMapperOptionsExtension extension) => Extension = extension;
+    public void ConfigurationMapperOptions(IMapperExtension extension) => Extension = extension;
 
     public Mapper CreateMapper()
     {

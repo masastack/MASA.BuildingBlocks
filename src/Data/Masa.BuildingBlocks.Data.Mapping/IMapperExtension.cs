@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.Data.Mapping;
 
-public interface IMapperOptionsExtension
+public interface IMapperExtension
 {
     void AddService(IServiceCollection services);
 }
