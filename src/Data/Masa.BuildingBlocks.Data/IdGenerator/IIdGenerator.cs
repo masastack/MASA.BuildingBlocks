@@ -3,7 +3,9 @@
 
 namespace Masa.BuildingBlocks.Data;
 
-public interface IIdGenerator<T> where T : notnull
+public interface IIdGenerator<in T,out T2>
+    where T : notnull
+    where T2 : notnull
 {
-    public T Create();
+    public T2 Create();
 }

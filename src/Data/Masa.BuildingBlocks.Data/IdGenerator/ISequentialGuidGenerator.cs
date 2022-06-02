@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.Data;
 
-public interface ISequentialGuidGenerator : IGuidGenerator
+public interface ISequentialGuidGenerator : IIdGenerator<SequentialGuid, Guid>
 {
     Guid Create(SequentialGuidType guidType);
 }
