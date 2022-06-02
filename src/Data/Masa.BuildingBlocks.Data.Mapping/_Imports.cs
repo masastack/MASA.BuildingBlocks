@@ -3,3 +3,4 @@
 
 global using Masa.BuildingBlocks.Data.Mapping.Options;
 global using Masa.BuildingBlocks.Data.Mapping.Options.Enum;
+global using Microsoft.Extensions.DependencyInjection;

@@ -34,7 +34,15 @@ public abstract class AuditAggregateRoot<TKey, TUserId> : AggregateRoot<TKey>, I
 
     public DateTime ModificationTime { get; protected set; }
 
-    public AuditAggregateRoot() => Initialize();
+    public AuditAggregateRoot() : base()
+    {
+        Initialize();
+    }
+
+    public AuditAggregateRoot(TKey id) : base(id)
+    {
+        Initialize();
+    }
 
     public void Initialize()
     {

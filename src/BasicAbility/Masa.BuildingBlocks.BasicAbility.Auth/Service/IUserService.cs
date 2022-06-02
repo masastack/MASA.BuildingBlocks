@@ -12,5 +12,9 @@ public interface IUserService
     Task<List<StaffModel>> GetListByDepartmentAsync(Guid departmentId);
 
     Task<UserModel?> AddAsync(AddUserModel user);
+
+    Task<bool> ValidateCredentialsByAccountAsync(string account, string password);
+
+    Task<UserModel> FindByAccountAsync(string account);
 }
 
