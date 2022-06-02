@@ -13,4 +13,12 @@ public abstract class FullEntity<TKey, TUserId>
     : AuditEntity<TKey, TUserId>, IFullEntity<TKey, TUserId>
 {
     public bool IsDeleted { get; protected set; }
+
+    public FullEntity() : base()
+    {
+    }
+
+    public FullEntity(TKey id) : base(id)
+    {
+    }
 }

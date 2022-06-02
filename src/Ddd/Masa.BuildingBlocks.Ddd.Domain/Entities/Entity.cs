@@ -61,9 +61,15 @@ public abstract class Entity : IEntity, IEquatable<Entity>, IEquatable<object>
     }
 }
 
-public class Entity<TKey> : Entity, IEntity<TKey>
+public abstract class Entity<TKey> : Entity, IEntity<TKey>
 {
     public TKey Id { get; protected set; } = default!;
+
+    protected Entity()
+    {
+    }
+
+    protected Entity(TKey id) : this() => Id = id;
 
     public override IEnumerable<(string Name, object Value)> GetKeys()
     {
