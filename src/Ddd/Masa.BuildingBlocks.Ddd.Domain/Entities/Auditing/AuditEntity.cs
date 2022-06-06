@@ -24,7 +24,7 @@ public abstract class AuditEntity<TUserId> : Entity, IAuditEntity<TUserId>
     public virtual DateTime GetCurrentTime() => DateTime.UtcNow;
 }
 
-public class AuditEntity<TKey, TUserId> : Entity<TKey>, IAuditEntity<TUserId>
+public abstract class AuditEntity<TKey, TUserId> : Entity<TKey>, IAuditEntity<TKey, TUserId>
 {
     public TUserId Creator { get; protected set; } = default!;
 
@@ -34,7 +34,15 @@ public class AuditEntity<TKey, TUserId> : Entity<TKey>, IAuditEntity<TUserId>
 
     public DateTime ModificationTime { get; protected set; }
 
-    public AuditEntity() => Initialize();
+    public AuditEntity() : base()
+    {
+        Initialize();
+    }
+
+    public AuditEntity(TKey id) : base(id)
+    {
+        Initialize();
+    }
 
     public void Initialize()
     {
