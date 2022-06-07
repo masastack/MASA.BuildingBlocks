@@ -6,7 +6,7 @@ namespace Masa.BuildingBlocks.Oidc.Storage.Models;
 /// <summary>
 /// Represents data needed for device flow.
 /// </summary>
-public class DeviceCode
+public class DeviceCodeModel
 {
     /// <summary>
     /// Gets or sets the creation time.
@@ -88,7 +88,7 @@ public class DeviceCode
     /// </value>
     public string SessionId { get; set; }
 
-    public DeviceCode(DateTime creationTime, int lifetime, string clientId, string description, bool isOpenId, bool isAuthorized, IEnumerable<string> requestedScopes, IEnumerable<string> authorizedScopes, ClaimsPrincipal subject, string sessionId)
+    public DeviceCodeModel(DateTime creationTime, int lifetime, string clientId, string description, bool isOpenId, bool isAuthorized, IEnumerable<string> requestedScopes, IEnumerable<string> authorizedScopes, ClaimsPrincipal subject, string sessionId)
     {
         CreationTime = creationTime;
         Lifetime = lifetime;

@@ -1,6 +1,6 @@
 namespace Masa.BuildingBlocks.Oidc.Storage.Models;
 
-public abstract class Resource
+public abstract class ResourceModel
 {
     public bool Enabled { get; set; } = true;
 

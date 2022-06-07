@@ -12,6 +12,6 @@ namespace Masa.BuildingBlocks.Oidc.Storage.Stores
         /// </summary>
         /// <param name="clientId">The client id</param>
         /// <returns>The client</returns>
-        Task<Client?> FindClientByIdAsync(string clientId);
+        Task<ClientModel?> FindClientByIdAsync(string clientId);
     }
 }

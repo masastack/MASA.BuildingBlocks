@@ -15,21 +15,21 @@ public interface IPersistedGrantStore
     /// </summary>
     /// <param name="grant">The grant.</param>
     /// <returns></returns>
-    Task StoreAsync(PersistedGrant grant);
+    Task StoreAsync(PersistedGrantModel grant);
 
     /// <summary>
     /// Gets the grant.
     /// </summary>
     /// <param name="key">The key.</param>
     /// <returns></returns>
-    Task<PersistedGrant> GetAsync(string key);
+    Task<PersistedGrantModel> GetAsync(string key);
 
     /// <summary>
     /// Gets all grants based on the filter.
     /// </summary>
     /// <param name="filter">The filter.</param>
     /// <returns></returns>
-    Task<IEnumerable<PersistedGrant>> GetAllAsync(PersistedGrantFilter filter);
+    Task<IEnumerable<PersistedGrantModel>> GetAllAsync(PersistedGrantFilter filter);
 
     /// <summary>
     /// Removes the grant by key.

@@ -9,33 +9,33 @@ public interface IResourceStore
     /// </summary>
     /// <param name="scopeNames"></param>
     /// <returns></returns>
-    Task<IEnumerable<IdentityResource>> FindIdentityResourcesByScopeNameAsync(IEnumerable<string> scopeNames);
+    Task<IEnumerable<IdentityResourceModel>> FindIdentityResourcesByScopeNameAsync(IEnumerable<string> scopeNames);
 
     /// <summary>
     /// Gets API scopes by scope name.
     /// </summary>
     /// <param name="scopeNames"></param>
     /// <returns></returns>
-    Task<IEnumerable<ApiScope>> FindApiScopesByNameAsync(IEnumerable<string> scopeNames);
+    Task<IEnumerable<ApiScopeModel>> FindApiScopesByNameAsync(IEnumerable<string> scopeNames);
 
     /// <summary>
     /// Gets API resources by scope name.
     /// </summary>
     /// <param name="scopeNames"></param>
     /// <returns></returns>
-    Task<IEnumerable<ApiResource>> FindApiResourcesByScopeNameAsync(IEnumerable<string> scopeNames);
+    Task<IEnumerable<ApiResourceModel>> FindApiResourcesByScopeNameAsync(IEnumerable<string> scopeNames);
 
     /// <summary>
     /// Gets API resources by API resource name.
     /// </summary>
     /// <param name="apiResourceNames"></param>
     /// <returns></returns>
-    Task<IEnumerable<ApiResource>> FindApiResourcesByNameAsync(IEnumerable<string> apiResourceNames);
+    Task<IEnumerable<ApiResourceModel>> FindApiResourcesByNameAsync(IEnumerable<string> apiResourceNames);
 
     /// <summary>
     /// Gets all resources.
     /// </summary>
     /// <returns></returns>
-    Task<Resources> GetAllResourcesAsync();
+    Task<ResourcesModel> GetAllResourcesAsync();
 }
 

@@ -2,7 +2,7 @@ using Masa.BuildingBlocks.Oidc.Storage.Enums;
 
 namespace Masa.BuildingBlocks.Oidc.Storage.Models;
 
-public class Client
+public class ClientModel
 {
     private IEnumerable<string>? _allowedGrantTypes;
     private IEnumerable<string>? _apiScopes;
@@ -17,7 +17,7 @@ public class Client
 
     public string LogoUri { get; set; }
 
-    public IEnumerable<Secret>? ClientSecrets { get; set; }
+    public IEnumerable<SecretModel>? ClientSecrets { get; set; }
 
     public IEnumerable<string> RedirectUris { get; set; }
 
@@ -52,7 +52,7 @@ public class Client
     /// <summary>
     /// Allows settings claims for the client (will be included in the access token)
     /// </summary>
-    public ICollection<ClientClaim>? Claims { get; set; }
+    public ICollection<ClientClaimModel>? Claims { get; set; }
 
     /// <summary>
     /// Gets or sets the allowed CORS origins for JavaScript clients.
@@ -195,7 +195,7 @@ public class Client
     /// </summary>
     public string? UserCodeType { get; set; }
 
-    public Client(string clientId, string clientName, string description, string clientUri, string logoUri, IEnumerable<string> redirectUris, IEnumerable<string> postLogoutRedirectUris, IEnumerable<string> allowedGrantTypes, IEnumerable<string> allowedScopes)
+    public ClientModel(string clientId, string clientName, string description, string clientUri, string logoUri, IEnumerable<string> redirectUris, IEnumerable<string> postLogoutRedirectUris, IEnumerable<string> allowedGrantTypes, IEnumerable<string> allowedScopes)
     {
         ClientId = clientId;
         ClientName = clientName;

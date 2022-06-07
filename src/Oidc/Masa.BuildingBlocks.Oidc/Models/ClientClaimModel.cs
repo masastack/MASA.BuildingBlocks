@@ -1,6 +1,6 @@
 namespace Masa.BuildingBlocks.Oidc.Storage.Models;
 
-public class ClientClaim
+public class ClientClaimModel
 {
     /// <summary>
     /// The claim type
@@ -15,14 +15,14 @@ public class ClientClaim
     /// <summary>
     /// The claim value type
     /// </summary>
-    public string ValueType { get; set; } = "http://www.w3.org/2001/XMLSchema#string";
+    public string ValueType { get; set; } = ClaimValueTypes.String;
 
     /// <summary>
     /// ctor
     /// </summary>
     /// <param name="type"></param>
     /// <param name="value"></param>
-    public ClientClaim(string type, string value, string? valueType = null)
+    public ClientClaimModel(string type, string value, string? valueType = null)
     {
         Type = type;
         Value = value;
@@ -45,7 +45,7 @@ public class ClientClaim
     public override bool Equals(object obj)
     {
         if (obj is null) return false;
-        if (obj is ClientClaim c)
+        if (obj is ClientClaimModel c)
         {
             return string.Equals(Type, c.Type, StringComparison.Ordinal) &&
                     string.Equals(Value, c.Value, StringComparison.Ordinal) &&

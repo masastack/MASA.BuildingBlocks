@@ -6,7 +6,7 @@ namespace Masa.BuildingBlocks.Oidc.Storage.Models;
 /// <summary>
 /// A model for a persisted grant
 /// </summary>
-public class PersistedGrant
+public class PersistedGrantModel
 {
     /// <summary>
     /// Gets or sets the key.
@@ -88,7 +88,7 @@ public class PersistedGrant
     /// </value>
     public string Data { get; set; }
 
-    public PersistedGrant(string key, string type, string subjectId, string sessionId, string clientId, string description, DateTime creationTime, DateTime? expiration, DateTime? consumedTime, string data)
+    public PersistedGrantModel(string key, string type, string subjectId, string sessionId, string clientId, string description, DateTime creationTime, DateTime? expiration, DateTime? consumedTime, string data)
     {
         Key = key;
         Type = type;

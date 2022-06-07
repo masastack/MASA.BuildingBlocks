@@ -1,6 +1,6 @@
 namespace Masa.BuildingBlocks.Oidc.Storage.Models;
 
-public class IdentityResource : Resource
+public class IdentityResourceModel : ResourceModel
 {
     public bool Required { get; set; }
 
@@ -8,18 +8,18 @@ public class IdentityResource : Resource
 
     public override ICollection<string> UserClaims { get; set; }
 
-    public IdentityResource(string name, string displayName, ICollection<string> userClaims)
+    public IdentityResourceModel(string name, string displayName, ICollection<string> userClaims)
     {
         Name = name;
         DisplayName = displayName;
         UserClaims = userClaims;
     }
 
-    public IdentityResource(string name, ICollection<string> userClaims) : this(name, name, userClaims)
+    public IdentityResourceModel(string name, ICollection<string> userClaims) : this(name, name, userClaims)
     {
     }
 
-    public IdentityResource(string name, string displayName, string? description, bool enabled, bool showInDiscoveryDocument, bool required, bool emphasize, ICollection<string> userClaims, IDictionary<string, string>? properties) : this(name, displayName, userClaims)
+    public IdentityResourceModel(string name, string displayName, string? description, bool enabled, bool showInDiscoveryDocument, bool required, bool emphasize, ICollection<string> userClaims, IDictionary<string, string>? properties) : this(name, displayName, userClaims)
     {
         Description = description;
         Enabled = enabled;

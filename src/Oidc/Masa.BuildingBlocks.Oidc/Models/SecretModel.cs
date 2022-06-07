@@ -1,6 +1,6 @@
 namespace Masa.BuildingBlocks.Oidc.Storage.Models;
 
-public class Secret
+public class SecretModel
 {
     public string? Value { get; set; }
 
@@ -10,7 +10,7 @@ public class Secret
 
     public string Type { get; set; } = "SharedSecret";
 
-    public Secret(string? value = null, string? description = null, DateTime? expiration = null)
+    public SecretModel(string? value = null, string? description = null, DateTime? expiration = null)
     {
         Value = value;
         Description = description;
@@ -25,7 +25,7 @@ public class Secret
     public override bool Equals(object? obj)
     {
         if (obj is null) return false;
-        if (obj is Secret secret)
+        if (obj is SecretModel secret)
         {
             if (secret == this) return true;
             return string.Equals(secret.Type, Type, StringComparison.Ordinal) && string.Equals(secret.Value, Value, StringComparison.Ordinal);
