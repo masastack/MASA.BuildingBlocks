@@ -3,7 +3,6 @@
 
 namespace Masa.BuildingBlocks.Oidc.Domain.Repositories;
 
-public interface IApiResourceRepository : IRepository<ApiResource, int>
+public interface IApiResourceRepository: IRepositoryBase<ApiResource>
 {
-    Task<ApiResource?> GetDetailAsync(int id);
 }

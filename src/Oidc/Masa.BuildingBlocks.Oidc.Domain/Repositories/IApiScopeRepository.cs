@@ -3,7 +3,6 @@
 
 namespace Masa.BuildingBlocks.Oidc.Domain.Repositories;
 
-public interface IApiScopeRepository : IRepository<ApiScope, int>
+public interface IApiScopeRepository : IRepositoryBase<ApiScope>
 {
-    Task<ApiScope?> GetDetailAsync(int id);
 }

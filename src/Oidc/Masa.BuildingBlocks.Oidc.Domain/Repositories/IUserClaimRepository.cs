@@ -3,6 +3,6 @@
 
 namespace Masa.BuildingBlocks.Oidc.Domain.Repositories;
 
-public interface IUserClaimRepository : IRepository<UserClaim, int>
+public interface IUserClaimRepository : IRepositoryBase<UserClaim>
 {
 }

@@ -3,7 +3,6 @@
 
 namespace Masa.BuildingBlocks.Oidc.Domain.Repositories;
 
-public interface IIdentityResourceRepository : IRepository<IdentityResource, int>
+public interface IIdentityResourceRepository : IRepositoryBase<IdentityResource>
 {
-    Task<IdentityResource?> GetDetailAsync(int id);
 }

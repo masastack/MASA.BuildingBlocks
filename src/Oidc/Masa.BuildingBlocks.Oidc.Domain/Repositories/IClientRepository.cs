@@ -3,7 +3,6 @@
 
 namespace Masa.BuildingBlocks.Oidc.Domain.Repositories;
 
-public interface IClientRepository : IRepository<Client, int>
+public interface IClientRepository : IRepositoryBase<Client>
 {
-    Task<Client> GetByIdAsync(int id);
 }
