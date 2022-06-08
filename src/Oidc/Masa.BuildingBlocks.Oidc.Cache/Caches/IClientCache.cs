@@ -5,6 +5,8 @@ namespace Masa.BuildingBlocks.Oidc.Cache.Caches;
 
 public interface IClientCache
 {
+    Task<ClientModel?> GetAsync(string id);
+
     Task<List<ClientModel>> GetListAsync();
 
     Task AddOrUpdateAsync(Client client);

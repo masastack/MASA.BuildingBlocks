@@ -1,6 +1,6 @@
-using Masa.BuildingBlocks.Oidc.Storage.Enums;
+using Masa.BuildingBlocks.Oidc.Models.Enums;
 
-namespace Masa.BuildingBlocks.Oidc.Storage.Models;
+namespace Masa.BuildingBlocks.Oidc.Models.Models;
 
 public class ClientModel
 {

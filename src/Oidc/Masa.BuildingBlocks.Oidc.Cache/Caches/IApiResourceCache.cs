@@ -5,6 +5,8 @@ namespace Masa.BuildingBlocks.Oidc.Cache.Caches;
 
 public interface IApiResourceCache
 {
+    Task<List<ApiResourceModel>> GetListAsync(IEnumerable<string> names);
+
     Task<List<ApiResourceModel>> GetListAsync();
 
     Task AddOrUpdateAsync(ApiResource ApiResource);

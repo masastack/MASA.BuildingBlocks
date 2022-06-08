@@ -5,6 +5,8 @@ namespace Masa.BuildingBlocks.Oidc.Cache.Caches;
 
 public interface IIdentityResourceCache
 {
+    Task<List<IdentityResourceModel>> GetListAsync(IEnumerable<string> names);
+
     Task<List<IdentityResourceModel>> GetListAsync();
 
     Task AddOrUpdateAsync(IdentityResource identityResource);

@@ -1,4 +1,4 @@
-namespace Masa.BuildingBlocks.Oidc.Storage.Enums;
+namespace Masa.BuildingBlocks.Oidc.Models.Enums;
 
 public enum TokenExpiration
 {

@@ -1,4 +1,4 @@
-namespace Masa.BuildingBlocks.Oidc.Storage.Models;
+namespace Masa.BuildingBlocks.Oidc.Models.Models;
 
 public class IdentityResourceModel : ResourceModel
 {
@@ -7,6 +7,10 @@ public class IdentityResourceModel : ResourceModel
     public bool Emphasize { get; set; }
 
     public override ICollection<string> UserClaims { get; set; }
+
+    public IdentityResourceModel()
+    {
+    }
 
     public IdentityResourceModel(string name, string displayName, ICollection<string> userClaims)
     {

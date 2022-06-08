@@ -1,4 +1,4 @@
-using Masa.BuildingBlocks.Oidc.Storage.Models;
+using Masa.BuildingBlocks.Oidc.Models.Models;
 
 namespace Masa.BuildingBlocks.Oidc.Storage.Stores;
 

@@ -5,6 +5,8 @@ namespace Masa.BuildingBlocks.Oidc.Cache.Caches;
 
 public interface IApiScopeCache
 {
+    Task<List<ApiScopeModel>> GetListAsync(IEnumerable<string> names);
+
     Task<List<ApiScopeModel>> GetListAsync();
 
     Task AddOrUpdateAsync(ApiScope ApiScope);

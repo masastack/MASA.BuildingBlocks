@@ -1,4 +1,4 @@
-namespace Masa.BuildingBlocks.Oidc.Storage.Models;
+namespace Masa.BuildingBlocks.Oidc.Models.Models;
 
 public class GrantType
 {
