@@ -12,4 +12,6 @@ public interface IIdentityResourceCache
     Task AddOrUpdateAsync(IdentityResource identityResource);
 
     Task RemoveAsync(IdentityResource identityResource);
+
+    Task AddAllAsync(List<IdentityResource> identityResources);
 }

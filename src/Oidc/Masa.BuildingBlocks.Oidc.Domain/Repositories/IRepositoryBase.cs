@@ -5,7 +5,7 @@ namespace Masa.BuildingBlocks.Oidc.Domain.Repositories;
 
 public interface IRepositoryBase<TEntity> where TEntity : class, IEntity
 {
-    Task<PaginatedList<TEntity>> GetPaginatedListAsync(Expression<Func<TEntity, bool>> condition, PaginatedOptions options);
+    Task<PaginatedList<TEntity>> GetPaginatedListAsync(int page, int pageSize);
 
     Task<TEntity?> GetDetailAsync(int id);
 

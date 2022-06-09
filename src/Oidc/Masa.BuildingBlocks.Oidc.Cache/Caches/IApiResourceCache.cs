@@ -12,4 +12,6 @@ public interface IApiResourceCache
     Task AddOrUpdateAsync(ApiResource ApiResource);
 
     Task RemoveAsync(ApiResource ApiResource);
+
+    Task AddAllAsync(List<ApiResource> identityResources);
 }
