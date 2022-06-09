@@ -6,5 +6,7 @@ namespace Masa.BuildingBlocks.BasicAbility.Auth.Service;
 public interface ITeamService
 {
     Task<TeamDetailModel?> GetDetailAsync(Guid id);
+
+    Task<List<TeamModel>> GetListAsync(Guid userId = default);
 }
 
