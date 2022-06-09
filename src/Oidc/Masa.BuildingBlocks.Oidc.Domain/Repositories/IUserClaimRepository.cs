@@ -5,4 +5,5 @@ namespace Masa.BuildingBlocks.Oidc.Domain.Repositories;
 
 public interface IUserClaimRepository : IRepositoryBase<UserClaim>
 {
+    Task AddStandardUserClaimsAsync();
 }

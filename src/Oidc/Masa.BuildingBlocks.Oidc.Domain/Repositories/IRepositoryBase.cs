@@ -5,11 +5,15 @@ namespace Masa.BuildingBlocks.Oidc.Domain.Repositories;
 
 public interface IRepositoryBase<TEntity> where TEntity : class, IEntity
 {
-    Task<PaginatedList<TEntity>> GetPaginatedListAsync(int page, int pageSize);
+    Task<PaginatedList<TEntity>> GetPaginatedListAsync(int page, int pageSize, Expression<Func<TEntity, bool>>? condition = null);
 
     Task<TEntity?> GetDetailAsync(int id);
 
     Task<List<TEntity>> GetListAsync();
+
+    Task<TEntity?> FindAsync(Expression<Func<TEntity, bool>> predicate);
+
+    Task<long> GetCountAsync(Expression<Func<TEntity, bool>> predicate);
 
     ValueTask<TEntity> AddAsync(TEntity entity);
 

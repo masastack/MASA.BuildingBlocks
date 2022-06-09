@@ -5,4 +5,5 @@ namespace Masa.BuildingBlocks.Oidc.Domain.Repositories;
 
 public interface IIdentityResourceRepository : IRepositoryBase<IdentityResource>
 {
+    Task AddStandardIdentityResourcesAsync();
 }
