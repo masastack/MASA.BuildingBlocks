@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.Identity;
 
-public interface IUserSetter<TUserId> where TUserId : IComparable
+public interface IUserSetter<in TUserId> where TUserId : IComparable
 {
     void SetUserId(TUserId id);
 }

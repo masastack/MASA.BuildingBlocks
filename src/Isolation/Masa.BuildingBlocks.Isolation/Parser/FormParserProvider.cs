@@ -1,18 +1,21 @@
-﻿// Copyright (c) MASA Stack All rights reserved.
+// Copyright (c) MASA Stack All rights reserved.
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
-namespace Masa.BuildingBlocks.Http.Parser;
+namespace Masa.BuildingBlocks.Isolation.Parser;
 
-public class QueryStringParserProvider : IParserProvider
+public class FormParserProvider : IParserProvider
 {
-    public string Name => "QueryString";
+    public string Name => "Form";
 
     public Task<bool> ResolveAsync(IServiceProvider serviceProvider, string key, Action<string> action)
     {
         var httpContext = serviceProvider.GetRequiredService<IHttpContextAccessor>().HttpContext;
-        if (httpContext?.Request.Query.ContainsKey(key) ?? false)
+        if (!(httpContext?.Request.HasFormContentType ?? false))
+            return Task.FromResult(false);
+
+        if (httpContext?.Request.Form.ContainsKey(key) ?? false)
         {
-            var value = httpContext.Request.Query[key].ToString();
+            var value = httpContext.Request.Form[key].ToString();
             if (!string.IsNullOrEmpty(value))
             {
                 action.Invoke(value);

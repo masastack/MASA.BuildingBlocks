@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.Identity;
 
-public interface IUserContext<TUserId> where TUserId : IComparable
+public interface IUserContext<out TUserId> where TUserId : IComparable
 {
     TUserId? GetUserId();
 }
