@@ -37,9 +37,17 @@ public abstract class AggregateRoot : Entity, IAggregateRoot, IGenerateDomainEve
     }
 }
 
-public class AggregateRoot<TKey> : Entity<TKey>, IAggregateRoot<TKey>, IGenerateDomainEvents
+public abstract class AggregateRoot<TKey> : Entity<TKey>, IAggregateRoot<TKey>, IGenerateDomainEvents
 {
     protected readonly List<IDomainEvent> _domainEvents = new();
+
+    public AggregateRoot() : base()
+    {
+    }
+
+    public AggregateRoot(TKey id) : base(id)
+    {
+    }
 
     public virtual void AddDomainEvent(IDomainEvent domainEvent)
     {

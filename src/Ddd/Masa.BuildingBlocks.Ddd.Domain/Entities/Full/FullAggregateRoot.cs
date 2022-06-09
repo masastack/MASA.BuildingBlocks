@@ -13,4 +13,12 @@ public abstract class FullAggregateRoot<TKey, TUserId>
     : AuditAggregateRoot<TKey, TUserId>, IFullAggregateRoot<TKey, TUserId>
 {
     public bool IsDeleted { get; protected set; }
+
+    public FullAggregateRoot() : base()
+    {
+    }
+
+    public FullAggregateRoot(TKey id) : base(id)
+    {
+    }
 }
