@@ -26,6 +26,11 @@ public class ApiScope : FullAggregateRoot<int, Guid>
 
     public IReadOnlyCollection<ApiScopeProperty> Properties => _properties;
 
+    public ApiScope(string name) : this(name, name, "", true, true, true, true)
+    {
+
+    }
+
     public ApiScope(string name, string displayName, string description, bool required, bool emphasize, bool showInDiscoveryDocument, bool enabled)
     {
         Enabled = enabled;

@@ -1,3 +1,6 @@
+// Copyright (c) MASA Stack All rights reserved.
+// Licensed under the MIT License. See LICENSE.txt in the project root for license information.
+
 namespace Masa.BuildingBlocks.Oidc.Models.Models;
 
 public abstract class ResourceModel
@@ -13,8 +16,8 @@ public abstract class ResourceModel
     public bool ShowInDiscoveryDocument { get; set; } = true;
 
     [DisallowNull]
-    public virtual ICollection<string>? UserClaims { get; set; }
+    public virtual ICollection<string> UserClaims { get; set; } = new HashSet<string>();
 
-    public IDictionary<string, string>? Properties { get; set; }
+    public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
 }
 

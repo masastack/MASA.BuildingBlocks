@@ -122,7 +122,7 @@ public class Client : FullAggregateRoot<int, Guid>
             case ClientTypes.Web:
                 AllowedGrantTypes = GrantTypeConsts.Code.Select(x => new ClientGrantType(x)).ToList();
                 RequirePkce = true;
-                RequireClientSecret = true;
+                RequireClientSecret = false;
                 break;
             case ClientTypes.Spa:
             case ClientTypes.Native:
