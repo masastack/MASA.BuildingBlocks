@@ -106,5 +106,56 @@ public class Client : FullAggregateRoot<int, Guid>
     public int DeviceCodeLifetime { get; private set; } = 300;
 
     public bool NonEditable { get; private set; }
+
+    public Client(ClientTypes clientType, string clientId, string clientName)
+    {
+        SetClientType(clientType);
+        ClientId = clientId;
+        ClientName = clientName;
+    }
+
+    public void SetClientType(ClientTypes clientType)
+    {
+        ClientType = clientType;
+        switch (clientType)
+        {
+            case ClientTypes.Web:
+                AllowedGrantTypes = GrantTypeConsts.Code.Select(x => new ClientGrantType(x)).ToList();
+                RequirePkce = true;
+                RequireClientSecret = true;
+                break;
+            case ClientTypes.Spa:
+            case ClientTypes.Native:
+                AllowedGrantTypes = GrantTypeConsts.Code.Select(x => new ClientGrantType(x)).ToList();
+                RequirePkce = true;
+                RequireClientSecret = false;
+                break;
+            case ClientTypes.Machine:
+                AllowedGrantTypes = GrantTypeConsts.ClientCredentials.Select(x => new ClientGrantType(x)).ToList();
+                RequireClientSecret = true;
+                break;
+            case ClientTypes.Device:
+                AllowedGrantTypes = GrantTypeConsts.DeviceFlow.Select(x => new ClientGrantType(x)).ToList();
+                RequireClientSecret = false;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
+    public void SetRedirectUris(List<string> redirectUris)
+    {
+        RedirectUris = redirectUris.Select(x => new ClientRedirectUri(x)).ToList();
+    }
+
+    public void SetPostLogoutRedirectUris(List<string> postLogoutRedirectUris)
+    {
+        PostLogoutRedirectUris = postLogoutRedirectUris.Select(x => new ClientPostLogoutRedirectUri(x)).ToList();
+    }
+
+    public void SetAllowedScopes(List<string> allowedScopes)
+    {
+        AllowedScopes = allowedScopes.Select(x => new ClientScope(x)).ToList();
+    }
 }
 
