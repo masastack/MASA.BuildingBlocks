@@ -8,7 +8,7 @@ public class DefaultTypeConvertProvider : ITypeConvertProvider
     public T ConvertTo<T>(string value)
     {
         if (typeof(T) == typeof(Guid))
-            return (T)(object)Guid.Parse(value);
+            return (T)TypeDescriptor.GetConverter(typeof(T)).ConvertFromInvariantString(value)!;
 
         return (T)Convert.ChangeType(value, typeof(T));
     }
