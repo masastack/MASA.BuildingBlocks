@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.IdentityModel;
 
-public interface IIdentityMultiTenantUser : IIdentityUser
+public interface IMultiTenantIdentityUser : IIdentityUser
 {
     string? TenantId { get; set; }
 }

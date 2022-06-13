@@ -3,25 +3,21 @@
 
 namespace Masa.BuildingBlocks.IdentityModel;
 
+[Flags]
 public enum IdentityType
 {
     /// <summary>
     /// Only use user information
     /// </summary>
-    Simple = 1,
+    Basic = 0x01,
 
     /// <summary>
-    /// User Information + Multi-tenant
+    /// Multi-tenant
     /// </summary>
-    MultiTenant,
+    MultiTenant = 0x02,
 
     /// <summary>
-    /// User Information + Multi-Environment
+    /// Multi-Environment
     /// </summary>
-    MultiEnvironment,
-
-    /// <summary>
-    /// User Information + Multi-tenant + Multi-Environment
-    /// </summary>
-    Isolation
+    MultiEnvironment = 0x04,
 }

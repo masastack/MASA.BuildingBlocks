@@ -3,6 +3,6 @@
 
 namespace Masa.BuildingBlocks.IdentityModel;
 
-public interface IIdentityIsolationUser : IIdentityMultiTenantUser, IIdentityMultiEnvironmentUser
+public interface IIsolatedIdentityUser : IMultiTenantIdentityUser, IMultiEnvironmentIdentityUser
 {
 }

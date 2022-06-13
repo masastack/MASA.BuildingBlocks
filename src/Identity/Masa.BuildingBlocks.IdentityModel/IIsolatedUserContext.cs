@@ -3,7 +3,8 @@
 
 namespace Masa.BuildingBlocks.IdentityModel;
 
-public interface IIdentityMultiEnvironmentUser : IIdentityUser
+public interface IIsolatedUserContext : IMultiTenantUserContext,
+    IMultiEnvironmentUserContext
 {
-    string? Environment { get; set; }
+
 }

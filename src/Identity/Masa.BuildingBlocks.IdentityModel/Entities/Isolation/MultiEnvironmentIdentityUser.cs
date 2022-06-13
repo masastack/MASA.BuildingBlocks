@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.IdentityModel;
 
-public class IdentityMultiTenantUser : IdentityUser, IIdentityMultiTenantUser
+public class MultiEnvironmentIdentityUser : IdentityUser
 {
-    public string? TenantId { get; set; }
+    public string? Environment { get; set; }
 }
