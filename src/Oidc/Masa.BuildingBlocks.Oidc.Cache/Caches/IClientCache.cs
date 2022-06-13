@@ -7,8 +7,6 @@ public interface IClientCache
 {
     Task<ClientModel?> GetAsync(string clientId);
 
-    Task<List<ClientModel>> GetListAsync();
-
     Task AddOrUpdateAsync(Client client);
 
     Task RemoveAsync(Client client);
