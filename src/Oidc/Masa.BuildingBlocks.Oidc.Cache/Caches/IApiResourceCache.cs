@@ -9,9 +9,11 @@ public interface IApiResourceCache
 
     Task<List<ApiResourceModel>> GetListAsync();
 
-    Task AddOrUpdateAsync(ApiResource ApiResource);
+    Task SetAsync(ApiResource apiResource);
 
-    Task RemoveAsync(ApiResource ApiResource);
+    Task SetRangeAsync(IEnumerable<ApiResource> apiResources);
 
-    Task AddAllAsync(List<ApiResource> identityResources);
+    Task RemoveAsync(ApiResource apiResource);
+
+    Task AddAllAsync(IEnumerable<ApiResource> identityResources);
 }

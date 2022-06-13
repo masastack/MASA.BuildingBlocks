@@ -9,9 +9,11 @@ public interface IApiScopeCache
 
     Task<List<ApiScopeModel>> GetListAsync();
 
-    Task AddOrUpdateAsync(ApiScope ApiScope);
+    Task SetAsync(ApiScope apiScope);
 
-    Task RemoveAsync(ApiScope ApiScope);
+    Task SetRangeAsync(IEnumerable<ApiScope> apiScopes);
 
-    Task AddAllAsync(List<ApiScope> identityResources);
+    Task RemoveAsync(ApiScope apiScope);
+
+    Task AddAllAsync(IEnumerable<ApiScope> identityResources);
 }

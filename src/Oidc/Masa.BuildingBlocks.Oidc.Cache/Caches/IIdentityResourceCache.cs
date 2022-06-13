@@ -9,9 +9,11 @@ public interface IIdentityResourceCache
 
     Task<List<IdentityResourceModel>> GetListAsync();
 
-    Task AddOrUpdateAsync(IdentityResource identityResource);
+    Task SetAsync(IdentityResource identityResource);
+
+    Task SetRangeAsync(IEnumerable<IdentityResource> identityResources);
 
     Task RemoveAsync(IdentityResource identityResource);
 
-    Task AddAllAsync(List<IdentityResource> identityResources);
+    Task AddAllAsync(IEnumerable<IdentityResource> identityResources);
 }

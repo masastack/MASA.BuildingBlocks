@@ -7,7 +7,9 @@ public interface IClientCache
 {
     Task<ClientModel?> GetAsync(string clientId);
 
-    Task AddOrUpdateAsync(Client client);
+    Task SetAsync(Client client);
+
+    Task SetRangeAsync(IEnumerable<Client> clients);
 
     Task RemoveAsync(Client client);
 }
