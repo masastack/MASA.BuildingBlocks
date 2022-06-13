@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.Dispatcher.IntegrationEvents.Logs;
 
-public class IntegrationEventLog
+public class IntegrationEventLog : IHasConcurrencyStamp
 {
     public Guid Id { get; private set; }
 
@@ -45,7 +45,6 @@ public class IntegrationEventLog
         EventTypeName = @event.GetType().FullName!;
         Content = System.Text.Json.JsonSerializer.Serialize((object)@event);
         TransactionId = transactionId;
-        RowVersion = Guid.NewGuid().ToString();
     }
 
     public void Initialize()
@@ -61,5 +60,13 @@ public class IntegrationEventLog
         Event?.SetEventId(this.EventId);
         Event?.SetCreationTime(this.CreationTime);
         return this;
+    }
+
+    public void SetRowVersion(string rowVersion)
+    {
+        if (string.IsNullOrEmpty(rowVersion))
+            throw new ArgumentNullException(nameof(rowVersion));
+
+        RowVersion = rowVersion;
     }
 }
