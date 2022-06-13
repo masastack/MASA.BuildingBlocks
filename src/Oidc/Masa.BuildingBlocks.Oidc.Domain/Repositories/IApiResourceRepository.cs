@@ -3,6 +3,6 @@
 
 namespace Masa.BuildingBlocks.Oidc.Domain.Repositories;
 
-public interface IApiResourceRepository: IRepositoryBase<ApiResource>
+public interface IApiResourceRepository : IRepositoryBase<ApiResource>
 {
 }
