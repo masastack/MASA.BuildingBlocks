@@ -5,5 +5,5 @@ namespace Masa.BuildingBlocks.IdentityModel;
 
 public interface IUserSetter
 {
-    IDisposable Change(IdentityUser identityUser);
+    IDisposable Change<TIdentityUser>(TIdentityUser identityUser) where TIdentityUser : IIdentityUser;
 }

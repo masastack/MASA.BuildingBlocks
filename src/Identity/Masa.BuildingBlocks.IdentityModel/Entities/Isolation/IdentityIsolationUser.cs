@@ -3,13 +3,7 @@
 
 namespace Masa.BuildingBlocks.IdentityModel;
 
-public class IdentityUser
+public class IdentityIsolationUser : IdentityMultiTenantUser, IIdentityIsolationUser
 {
-    public virtual string Id { get; set; }
-
-    public virtual string? UserName { get; set; }
-
-    public string? TenantId { get; set; }
-
     public string? Environment { get; set; }
 }

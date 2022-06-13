@@ -5,25 +5,19 @@ namespace Masa.BuildingBlocks.IdentityModel;
 
 public abstract class UserContext : IUserSetter, IUserContext
 {
-    private readonly AsyncLocal<IdentityUser?> _currentUser = new();
+    private readonly AsyncLocal<object?> _currentUser = new();
 
-    public IdentityUser? User => _currentUser.Value ?? GetUser();
+    public bool IsAuthenticated => GetUserSimple() != null;
 
-    public bool IsAuthenticated => User != null;
+    public string? UserId => GetUserSimple()?.Id;
 
-    public string? UserId => User?.Id;
+    public string? UserName => GetUserSimple()?.UserName;
 
-    public string? UserName => User?.UserName;
+    protected ITypeConvertProvider TypeConvertProvider { get; }
 
-    public string? TenantId => User?.TenantId;
+    public UserContext(ITypeConvertProvider typeConvertProvider) => TypeConvertProvider = typeConvertProvider;
 
-    public string? Environment => User?.Environment;
-
-    private readonly ITypeConvertProvider _typeConvertProvider;
-
-    public UserContext(ITypeConvertProvider typeConvertProvider) => _typeConvertProvider = typeConvertProvider;
-
-    protected abstract IdentityUser? GetUser();
+    protected abstract object? GetUser();
 
     public TUserId? GetUserId<TUserId>()
     {
@@ -31,21 +25,20 @@ public abstract class UserContext : IUserSetter, IUserContext
         if (userId == null)
             return default;
 
-        return _typeConvertProvider.ConvertTo<TUserId>(userId);
+        return TypeConvertProvider.ConvertTo<TUserId>(userId);
     }
 
-    public virtual TTenantId? GetTenantId<TTenantId>()
+    public TIdentityUser? GetUser<TIdentityUser>() where TIdentityUser : IIdentityUser
     {
-        var tenantId = TenantId;
-        if (tenantId == null)
-            return default;
-
-        return _typeConvertProvider.ConvertTo<TTenantId>(tenantId);
+        var user = _currentUser.Value ?? GetUser();
+        return user == null ? default : (TIdentityUser)user;
     }
 
-    public IDisposable Change(IdentityUser identityUser)
+    public IIdentityUser? GetUserSimple() => GetUser<IdentityUser>();
+
+    public IDisposable Change<TIdentityUser>(TIdentityUser identityUser) where TIdentityUser : IIdentityUser
     {
-        var user = User;
+        var user = GetUser();
         _currentUser.Value = identityUser;
         return new DisposeAction(() => _currentUser.Value = user);
     }

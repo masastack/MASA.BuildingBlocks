@@ -5,19 +5,13 @@ namespace Masa.BuildingBlocks.IdentityModel;
 
 public interface IUserContext
 {
-    IdentityUser? User { get; }
-
     bool IsAuthenticated { get; }
 
     string? UserId { get; }
 
     string? UserName { get; }
 
-    string? TenantId { get; }
-
-    string? Environment { get; }
-
     TUserId? GetUserId<TUserId>();
 
-    TTenantId? GetTenantId<TTenantId>();
+    TIdentityUser? GetUser<TIdentityUser>() where TIdentityUser : IIdentityUser;
 }
