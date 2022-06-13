@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Masa.BuildingBlocks.Oidc.Domain\Masa.BuildingBlocks.Oidc.Domain.csproj" />
-    <ProjectReference Include="..\Masa.BuildingBlocks.Oidc\Masa.BuildingBlocks.Oidc.Storage.csproj" />
+    <ProjectReference Include="..\Masa.BuildingBlocks.Oidc.Models\Masa.BuildingBlocks.Oidc.Models.csproj" />
   </ItemGroup>
 
 </Project>
