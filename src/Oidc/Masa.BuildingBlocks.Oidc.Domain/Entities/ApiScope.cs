@@ -61,6 +61,6 @@ public class ApiScope : FullAggregateRoot<int, Guid>
     public void BindProperties(Dictionary<string, string> properties)
     {
         _properties.Clear();
-        //Todo add Properties;
+        _properties.AddRange(properties.Select(property => new ApiScopeProperty(property.Key, property.Value)));
     }
 }

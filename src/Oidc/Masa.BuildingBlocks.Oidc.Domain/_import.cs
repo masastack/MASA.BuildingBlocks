@@ -3,9 +3,9 @@
 
 global using Masa.BuildingBlocks.Ddd.Domain.Entities;
 global using Masa.BuildingBlocks.Ddd.Domain.Entities.Full;
+global using Masa.BuildingBlocks.Ddd.Domain.Repositories;
 global using Masa.BuildingBlocks.Oidc.Domain.Constants;
+global using Masa.BuildingBlocks.Oidc.Domain.Entities;
 global using Masa.BuildingBlocks.Oidc.Domain.Entities.Abstract;
 global using Masa.BuildingBlocks.Oidc.Domain.Enums;
-global using Masa.BuildingBlocks.Oidc.Domain.Entities;
-global using Masa.BuildingBlocks.Ddd.Domain.Repositories;
 global using System.Linq.Expressions;

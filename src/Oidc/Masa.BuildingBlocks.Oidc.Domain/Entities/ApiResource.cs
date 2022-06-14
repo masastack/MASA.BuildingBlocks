@@ -66,7 +66,7 @@ public class ApiResource : FullAggregateRoot<int, Guid>
     public void BindProperties(Dictionary<string, string> properties)
     {
         _properties.Clear();
-        //Todo add Properties;
+        _properties.AddRange(properties.Select(property => new ApiResourceProperty(property.Key, property.Value)));
     }
 
     public void BindApiScopes(List<int> apiScopes)

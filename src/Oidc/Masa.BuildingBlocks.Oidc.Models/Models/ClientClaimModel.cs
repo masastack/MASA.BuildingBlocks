@@ -23,8 +23,6 @@ public class ClientClaimModel
     /// <summary>
     /// ctor
     /// </summary>
-    /// <param name="type"></param>
-    /// <param name="value"></param>
     public ClientClaimModel(string type, string value, string? valueType = null)
     {
         Type = type;
@@ -45,7 +43,7 @@ public class ClientClaimModel
         }
     }
 
-    public override bool Equals(object obj)
+    public override bool Equals(object? obj)
     {
         if (obj is null) return false;
         if (obj is ClientClaimModel c)

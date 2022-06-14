@@ -8,4 +8,10 @@ public class ApiScopeProperty : Property
     public int ScopeId { get; private set; }
 
     public ApiScope Scope { get; private set; } = null!;
+
+    public ApiScopeProperty(string key, string value)
+    {
+        Key = key;
+        Value = value;
+    }
 }

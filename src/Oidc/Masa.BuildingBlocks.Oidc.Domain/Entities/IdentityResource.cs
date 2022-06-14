@@ -49,7 +49,7 @@ public class IdentityResource : FullAggregateRoot<int, Guid>
     public void BindProperties(Dictionary<string, string> properties)
     {
         _properties.Clear();
-        //Todo add Properties;
+        _properties.AddRange(properties.Select(property => new IdentityResourceProperty(property.Key, property.Value)));
     }
 
     public void Update(string displayName, string description, bool enabled, bool required, bool emphasize, bool showInDiscoveryDocument, bool nonEditable)

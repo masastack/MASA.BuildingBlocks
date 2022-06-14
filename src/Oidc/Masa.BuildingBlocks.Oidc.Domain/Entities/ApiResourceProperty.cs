@@ -8,5 +8,11 @@ public class ApiResourceProperty : Property
     public int ApiResourceId { get; private set; }
 
     public ApiResource ApiResource { get; private set; } = null!;
+
+    public ApiResourceProperty(string key, string value)
+    {
+        Key = key;
+        Value = value;
+    }
 }
 

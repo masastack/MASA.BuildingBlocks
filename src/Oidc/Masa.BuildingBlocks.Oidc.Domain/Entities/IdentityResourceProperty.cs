@@ -8,5 +8,11 @@ namespace Masa.BuildingBlocks.Oidc.Domain.Entities
         public int IdentityResourceId { get; private set; }
 
         public IdentityResource IdentityResource { get; private set; } = null!;
+
+        public IdentityResourceProperty(string key, string value)
+        {
+            Key = key;
+            Value = value;
+        }
     }
 }

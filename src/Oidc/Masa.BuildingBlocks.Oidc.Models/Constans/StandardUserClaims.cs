@@ -6,61 +6,61 @@ namespace Masa.BuildingBlocks.Oidc.Models.Constans;
 public static class StandardUserClaims
 {
     [Description("subject 的缩写，唯一标识，一般为用户 ID")]
-    public readonly static string Subject = "sub";
+    public static readonly string Subject = "sub";
     [Description("姓名")]
-    public readonly static string Name = "name";
+    public static readonly string Name = "name";
     [Description("名字")]
-    public readonly static string GivenName = "given_name";
+    public static readonly string GivenName = "given_name";
     [Description("姓")]
-    public readonly static string FamilyName = "family_name";
+    public static readonly string FamilyName = "family_name";
     [Description("中间名")]
-    public readonly static string MiddleName = "middle_name";
+    public static readonly string MiddleName = "middle_name";
     [Description("昵称")]
-    public readonly static string NickName = "nickname";
+    public static readonly string NickName = "nickname";
     [Description("希望被称呼的名字")]
-    public readonly static string PreferredUserName = "preferred_username";
+    public static readonly string PreferredUserName = "preferred_username";
     [Description("基础资料")]
-    public readonly static string Profile = "profile";
+    public static readonly string Profile = "profile";
     [Description("头像")]
-    public readonly static string Picture = "picture";
+    public static readonly string Picture = "picture";
     [Description("网站链接")]
-    public readonly static string WebSite = "website";
+    public static readonly string WebSite = "website";
     [Description("电子邮箱")]
-    public readonly static string Email = "email";
+    public static readonly string Email = "email";
     [Description("邮箱是否被认证")]
-    public readonly static string EmailVerified = "email_verified";
+    public static readonly string EmailVerified = "email_verified";
     [Description("性别")]
-    public readonly static string Gender = "gender";
+    public static readonly string Gender = "gender";
     [Description("生日")]
-    public readonly static string BirthDate = "birthdate";
+    public static readonly string BirthDate = "birthdate";
     [Description("时区")]
-    public readonly static string ZoneInfo = "zoneinfo";
+    public static readonly string ZoneInfo = "zoneinfo";
     [Description("区域")]
-    public readonly static string Locale = "locale";
+    public static readonly string Locale = "locale";
     [Description("手机号")]
-    public readonly static string PhoneNumber = "phone_number";
+    public static readonly string PhoneNumber = "phone_number";
     [Description("认证手机号")]
-    public readonly static string PhoneNumberVerified = "phone_number_verified";
+    public static readonly string PhoneNumberVerified = "phone_number_verified";
     [Description("地址")]
-    public readonly static string Address = "address";
+    public static readonly string Address = "address";
     [Description("详细地址")]
-    public readonly static string Formatted = "formatted";
+    public static readonly string Formatted = "formatted";
     [Description("街道地址")]
-    public readonly static string StreetAddress = "street_address";
+    public static readonly string StreetAddress = "street_address";
     [Description("城市")]
-    public readonly static string Locality = "locality";
+    public static readonly string Locality = "locality";
     [Description("省")]
-    public readonly static string Region = "region";
+    public static readonly string Region = "region";
     [Description("邮编")]
-    public readonly static string PostalCode = "postal_code";
+    public static readonly string PostalCode = "postal_code";
     [Description("国家")]
-    public readonly static string Country = "country";
+    public static readonly string Country = "country";
     [Description("信息更新时间")]
-    public readonly static string UpdatedAt = "updated_at";
+    public static readonly string UpdatedAt = "updated_at";
 
     static Dictionary<string, string>? _claims;
 
-    public static Dictionary<string, string> Claims => _claims ?? (_claims = GetClaims());
+    public static Dictionary<string, string> Claims => _claims ??= GetClaims();
 
     static Dictionary<string, string> GetClaims()
     {
