@@ -15,9 +15,8 @@ public class UserClaim : FullAggregateRoot<int, Guid>
         Description = description;
     }
 
-    public void Update(string name, string description)
+    public void Update(string description)
     {
-        Name = name;
         Description = description;
     }
 }

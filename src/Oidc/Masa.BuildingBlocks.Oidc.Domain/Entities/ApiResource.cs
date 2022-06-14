@@ -46,10 +46,9 @@ public class ApiResource : FullAggregateRoot<int, Guid>
         NonEditable = nonEditable;
     }
 
-    public void Update(string name, string displayName, string description, string allowedAccessTokenSigningAlgorithms, bool showInDiscoveryDocument, DateTime? lastAccessed, bool nonEditable, bool enabled)
+    public void Update(string displayName, string description, string allowedAccessTokenSigningAlgorithms, bool showInDiscoveryDocument, DateTime? lastAccessed, bool nonEditable, bool enabled)
     {
         Enabled = enabled;
-        Name = name;
         DisplayName = displayName;
         Description = description;
         AllowedAccessTokenSigningAlgorithms = allowedAccessTokenSigningAlgorithms;

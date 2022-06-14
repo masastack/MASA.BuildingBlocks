@@ -42,10 +42,9 @@ public class ApiScope : FullAggregateRoot<int, Guid>
         ShowInDiscoveryDocument = showInDiscoveryDocument;
     }
 
-    public void Update(string name, string displayName, string description, bool required, bool emphasize, bool showInDiscoveryDocument, bool enabled)
+    public void Update(string displayName, string description, bool required, bool emphasize, bool showInDiscoveryDocument, bool enabled)
     {
         Enabled = enabled;
-        Name = name;
         DisplayName = displayName;
         Description = description;
         Required = required;
