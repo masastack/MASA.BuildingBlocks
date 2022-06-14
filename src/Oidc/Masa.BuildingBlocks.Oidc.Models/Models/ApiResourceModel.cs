@@ -11,6 +11,11 @@ public class ApiResourceModel : ResourceModel
 
     public ICollection<string>? AllowedAccessTokenSigningAlgorithms { get; set; }
 
+    public ApiResourceModel()
+    {
+
+    }
+
     public ApiResourceModel(string name, string? displayName = null, ICollection<string>? userClaims = null)
     {
         Name = name;
@@ -18,7 +23,7 @@ public class ApiResourceModel : ResourceModel
         if (userClaims is not null) UserClaims = userClaims;
     }
 
-    public ApiResourceModel(string name, string displayName, string? description, bool enabled, bool showInDiscoveryDocument, ICollection<string>? userClaims, ICollection<string>? scopes, IDictionary<string, string>? properties, ICollection<SecretModel>? apiSecrets, ICollection<string>? allowedAccessTokenSigningAlgorithms) : this(name, displayName, userClaims)
+    public ApiResourceModel(string name, string displayName, string? description, bool enabled, bool showInDiscoveryDocument, ICollection<string>? userClaims, ICollection<string>? scopes, IDictionary<string, string> properties, ICollection<SecretModel>? apiSecrets, ICollection<string>? allowedAccessTokenSigningAlgorithms) : this(name, displayName, userClaims)
     {
         Description = description;
         Enabled = enabled;

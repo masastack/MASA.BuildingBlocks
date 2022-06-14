@@ -15,5 +15,5 @@ public interface IApiScopeCache
 
     Task RemoveAsync(ApiScope apiScope);
 
-    Task AddAllAsync(IEnumerable<ApiScope> identityResources);
+    Task ResetAsync(IEnumerable<ApiScope> identityResources);
 }
