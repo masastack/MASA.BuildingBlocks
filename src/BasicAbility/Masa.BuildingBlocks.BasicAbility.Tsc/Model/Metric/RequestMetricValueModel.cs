@@ -3,9 +3,7 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Tsc.Model;
 
-public class RequestLogAggregationHistoryModel : RequestLogAggregationModel
+public class RequestMetricValueModel
 {
-    public string Interval { get; set; }
-
-    public bool IsDesc { get; set; }
+   
 }
