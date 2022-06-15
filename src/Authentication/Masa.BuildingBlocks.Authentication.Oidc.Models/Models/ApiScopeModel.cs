@@ -14,14 +14,26 @@ public class ApiScopeModel : ResourceModel
 
     }
 
-    public ApiScopeModel(string name, string? displayName = null, ICollection<string>? userClaims = null)
+    public ApiScopeModel(
+        string name,
+        string? displayName = null,
+        ICollection<string>? userClaims = null)
     {
         Name = name;
         DisplayName = displayName ?? name;
         if (userClaims is not null) UserClaims = userClaims;
     }
 
-    public ApiScopeModel(string name, string displayName, string? description, bool enabled, bool showInDiscoveryDocument, bool required, bool emphasize, ICollection<string>? userClaims, Dictionary<string, string> properties) : this(name, displayName, userClaims)
+    public ApiScopeModel(
+        string name,
+        string displayName,
+        string? description,
+        bool enabled,
+        bool showInDiscoveryDocument,
+        bool required,
+        bool emphasize,
+        ICollection<string>? userClaims,
+        Dictionary<string, string> properties) : this(name, displayName, userClaims)
     {
         Description = description;
         Enabled = enabled;

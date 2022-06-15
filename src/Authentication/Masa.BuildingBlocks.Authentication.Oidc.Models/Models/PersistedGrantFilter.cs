@@ -30,7 +30,11 @@ public class PersistedGrantFilter
     /// </summary>
     public string Type { get; set; }
 
-    public PersistedGrantFilter(string subjectId, string sessionId, string clientId, string type)
+    public PersistedGrantFilter(
+        string subjectId,
+        string sessionId,
+        string clientId,
+        string type)
     {
         SubjectId = subjectId;
         SessionId = sessionId;

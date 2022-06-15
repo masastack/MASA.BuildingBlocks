@@ -16,14 +16,27 @@ public class ApiResourceModel : ResourceModel
 
     }
 
-    public ApiResourceModel(string name, string? displayName = null, ICollection<string>? userClaims = null)
+    public ApiResourceModel(
+        string name,
+        string? displayName = null,
+        ICollection<string>? userClaims = null)
     {
         Name = name;
         DisplayName = displayName ?? name;
         if (userClaims is not null) UserClaims = userClaims;
     }
 
-    public ApiResourceModel(string name, string displayName, string? description, bool enabled, bool showInDiscoveryDocument, ICollection<string>? userClaims, ICollection<string>? scopes, IDictionary<string, string> properties, ICollection<SecretModel>? apiSecrets, ICollection<string>? allowedAccessTokenSigningAlgorithms) : this(name, displayName, userClaims)
+    public ApiResourceModel(
+        string name,
+        string displayName,
+        string? description,
+        bool enabled,
+        bool showInDiscoveryDocument,
+        ICollection<string>? userClaims,
+        ICollection<string>? scopes,
+        IDictionary<string, string> properties,
+        ICollection<SecretModel>? apiSecrets,
+        ICollection<string>? allowedAccessTokenSigningAlgorithms) : this(name, displayName, userClaims)
     {
         Description = description;
         Enabled = enabled;

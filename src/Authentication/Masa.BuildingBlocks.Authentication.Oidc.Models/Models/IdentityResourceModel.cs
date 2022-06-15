@@ -26,8 +26,15 @@ public class IdentityResourceModel : ResourceModel
     {
     }
 
-    public IdentityResourceModel(string name, string displayName, string? description, bool enabled,
-        bool showInDiscoveryDocument, bool required, bool emphasize, ICollection<string> userClaims,
+    public IdentityResourceModel(
+        string name,
+        string displayName,
+        string? description,
+        bool enabled,
+        bool showInDiscoveryDocument,
+        bool required,
+        bool emphasize,
+        ICollection<string> userClaims,
         IDictionary<string, string> properties) : this(name, displayName, userClaims)
     {
         Description = description;

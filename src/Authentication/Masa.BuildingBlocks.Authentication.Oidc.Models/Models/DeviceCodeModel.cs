@@ -88,7 +88,16 @@ public class DeviceCodeModel
     /// </value>
     public string SessionId { get; set; }
 
-    public DeviceCodeModel(DateTime creationTime, int lifetime, string clientId, string description, bool isOpenId, bool isAuthorized, IEnumerable<string> requestedScopes, IEnumerable<string> authorizedScopes, ClaimsPrincipal subject, string sessionId)
+    public DeviceCodeModel(
+        DateTime creationTime,
+        int lifetime,
+        string clientId,
+        string description,
+        bool isOpenId,
+        bool isAuthorized,
+        IEnumerable<string> requestedScopes,
+        IEnumerable<string> authorizedScopes,
+        ClaimsPrincipal subject, string sessionId)
     {
         CreationTime = creationTime;
         Lifetime = lifetime;

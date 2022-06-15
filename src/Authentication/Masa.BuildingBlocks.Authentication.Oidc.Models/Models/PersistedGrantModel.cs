@@ -88,9 +88,17 @@ public class PersistedGrantModel
     /// </value>
     public string Data { get; set; }
 
-    public PersistedGrantModel(string key, string type, string subjectId, string sessionId,
-        string clientId, string description, DateTime creationTime, DateTime? expiration,
-        DateTime? consumedTime, string data)
+    public PersistedGrantModel(
+        string key,
+        string type,
+        string subjectId,
+        string sessionId,
+        string clientId,
+        string description,
+        DateTime creationTime,
+        DateTime? expiration,
+        DateTime? consumedTime,
+        string data)
     {
         Key = key;
         Type = type;

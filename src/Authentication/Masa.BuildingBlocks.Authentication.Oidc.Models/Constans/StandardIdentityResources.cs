@@ -87,7 +87,7 @@ public class StandardIdentityResources
 
     static List<IdentityResourceModel>? _identityResources;
 
-    public static List<IdentityResourceModel> IdentityResources => _identityResources ?? (_identityResources = GetIdentityResources());
+    public static List<IdentityResourceModel> IdentityResources => _identityResources ??= GetIdentityResources();
 
     static List<IdentityResourceModel> GetIdentityResources()
     {
