@@ -3,9 +3,11 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Tsc.Model;
 
-public class LogAggregationModel
+public class RequestMetricModel
 {
-    public string Field { get; set; }
+    public IEnumerable<string> Values { get; set; }
 
-    public double Value { get; set; }
+    public DateTime Start { get; set; }
+
+    public DateTime End { get; set; }
 }
