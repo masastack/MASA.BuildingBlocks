@@ -9,4 +9,6 @@ public interface IUnitOfWorkAccessor
     /// Only exists after the DbContext is confirmed to be created
     /// </summary>
     MasaDbContextConfigurationOptions? CurrentDbContextOptions { get; set; }
+
+    IDisposable SetTemporaryCurrentDbContextOptions(MasaDbContextConfigurationOptions options);
 }
