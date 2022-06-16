@@ -5,9 +5,19 @@ namespace Masa.BuildingBlocks.BasicAbility.Auth.Service;
 
 public interface IPermissionService
 {
-    Task<List<MenuModel>> GetMenusAsync(string appId, Guid userId);
+    /// <summary>
+    /// Get menus for the appid with current user
+    /// </summary>
+    /// <param name="appId"></param>
+    /// <returns></returns>
+    Task<List<MenuModel>> GetMenusAsync(string appId);
 
-    Task<List<string>> GetElementPermissionsAsync(string appId, Guid userId);
+    /// <summary>
+    /// Get element permissions for the appid with current user
+    /// </summary>
+    /// <param name="appId"></param>
+    /// <returns></returns>
+    Task<List<string>> GetElementPermissionsAsync(string appId);
 
-    Task<bool> AuthorizedAsync(string appId, string code, Guid userId);
+    Task<bool> AuthorizedAsync(string appId, string code);
 }
