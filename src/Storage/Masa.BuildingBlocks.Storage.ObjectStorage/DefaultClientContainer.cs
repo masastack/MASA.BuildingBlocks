@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.Storage.ObjectStorage;
 
-public class DefaultClientContainer<TContainer> : DefaultClientContainer, IClientContainer where TContainer : class
+public class DefaultClientContainer<TContainer> : DefaultClientContainer, IClientContainer<TContainer> where TContainer : class
 {
     public DefaultClientContainer(IClient client) : base(client, BucketNameAttribute.GetBucketName<TContainer>())
     {
