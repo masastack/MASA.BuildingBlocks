@@ -20,4 +20,10 @@ public interface IPermissionService
     Task<List<string>> GetElementPermissionsAsync(string appId);
 
     Task<bool> AuthorizedAsync(string appId, string code);
+
+    Task<bool> CollectMenuAsync(Guid menuId);
+
+    Task<bool> UnCollectMenuAsync(Guid menuId);
+
+    Task<List<CollectMenuModel>> GetCollectMenuListAsync();
 }
