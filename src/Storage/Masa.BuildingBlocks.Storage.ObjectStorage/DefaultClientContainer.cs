@@ -3,9 +3,11 @@
 
 namespace Masa.BuildingBlocks.Storage.ObjectStorage;
 
-public class DefaultClientContainer<TContainer> : DefaultClientContainer, IClientContainer<TContainer> where TContainer : class
+public class DefaultClientContainer<TContainer>
+    : DefaultClientContainer, IClientContainer<TContainer> where TContainer : class
 {
-    public DefaultClientContainer(IClient client) : base(client, BucketNameAttribute.GetBucketName<TContainer>())
+    public DefaultClientContainer(IClient client, IBucketNameProvider<TContainer> bucketNameProvider)
+        : base(client, bucketNameProvider)
     {
     }
 }
@@ -13,12 +15,13 @@ public class DefaultClientContainer<TContainer> : DefaultClientContainer, IClien
 public class DefaultClientContainer : IClientContainer
 {
     private readonly IClient _client;
-    private readonly string _bucketName;
+    private readonly IBucketNameProvider _bucketNameProvider;
+    private string _bucketName => _bucketNameProvider.BucketName;
 
-    public DefaultClientContainer(IClient client, string bucketName)
+    public DefaultClientContainer(IClient client, IBucketNameProvider bucketNameProvider)
     {
         _client = client;
-        _bucketName = bucketName;
+        _bucketNameProvider = bucketNameProvider;
     }
 
     public TemporaryCredentialsResponse GetSecurityToken() => _client.GetSecurityToken();
