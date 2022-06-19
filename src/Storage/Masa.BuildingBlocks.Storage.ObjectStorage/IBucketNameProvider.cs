@@ -3,12 +3,9 @@
 
 namespace Masa.BuildingBlocks.Storage.ObjectStorage;
 
-public interface IBucketNameProvider<TContainer> : IBucketNameProvider where TContainer : class
-{
-
-}
-
 public interface IBucketNameProvider
 {
-    string BucketName { get; }
+    string GetBucketName();
+
+    string GetBucketName<TContainer>() where TContainer : class;
 }

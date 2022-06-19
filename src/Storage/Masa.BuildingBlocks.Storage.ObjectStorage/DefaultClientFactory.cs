@@ -14,6 +14,6 @@ public class DefaultClientFactory : IClientFactory
         if (string.IsNullOrWhiteSpace(bucketName))
             throw new AggregateException($"{nameof(bucketName)} cannot be empty");
 
-        return new DefaultClientContainer(_client, new DefaultBucketNameProvider(bucketName));
+        return new DefaultClientContainer(_client, bucketName);
     }
 }
