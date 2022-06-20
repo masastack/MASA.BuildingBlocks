@@ -6,32 +6,32 @@ namespace Masa.BuildingBlocks.Authentication.Oidc.Models.Constans;
 public class GrantTypes
 {
     public static ICollection<string> Implicit =>
-        new[] { GrantType.Implicit };
+        new[] { GrantType.IMPLICIT };
 
     public static ICollection<string> ImplicitAndClientCredentials =>
-        new[] { GrantType.Implicit, GrantType.ClientCredentials };
+        new[] { GrantType.IMPLICIT, GrantType.CLIENT_CREDENTIALS };
 
     public static ICollection<string> Code =>
-        new[] { GrantType.AuthorizationCode };
+        new[] { GrantType.AUTHORIZATION_CODE };
 
     public static ICollection<string> CodeAndClientCredentials =>
-        new[] { GrantType.AuthorizationCode, GrantType.ClientCredentials };
+        new[] { GrantType.AUTHORIZATION_CODE, GrantType.CLIENT_CREDENTIALS };
 
     public static ICollection<string> Hybrid =>
-        new[] { GrantType.Hybrid };
+        new[] { GrantType.HYBRID };
 
     public static ICollection<string> HybridAndClientCredentials =>
-        new[] { GrantType.Hybrid, GrantType.ClientCredentials };
+        new[] { GrantType.HYBRID, GrantType.CLIENT_CREDENTIALS };
 
     public static ICollection<string> ClientCredentials =>
-        new[] { GrantType.ClientCredentials };
+        new[] { GrantType.CLIENT_CREDENTIALS };
 
     public static ICollection<string> ResourceOwnerPassword =>
-        new[] { GrantType.ResourceOwnerPassword };
+        new[] { GrantType.RESOURCE_OWNER_PASSWORD };
 
     public static ICollection<string> ResourceOwnerPasswordAndClientCredentials =>
-        new[] { GrantType.ResourceOwnerPassword, GrantType.ClientCredentials };
+        new[] { GrantType.RESOURCE_OWNER_PASSWORD, GrantType.CLIENT_CREDENTIALS };
 
     public static ICollection<string> DeviceFlow =>
-        new[] { GrantType.DeviceFlow };
+        new[] { GrantType.DEVICE_FLOW };
 }
