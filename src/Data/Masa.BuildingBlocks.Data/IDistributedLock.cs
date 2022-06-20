@@ -5,7 +5,7 @@ namespace Masa.BuildingBlocks.Data;
 
 public interface IDistributedLock
 {
-    IDisposable? TryLockTake(string key, TimeSpan timeout);
+    IDisposable? TryGet(string key, TimeSpan timeout);
 
-    Task<IAsyncDisposable?> TryLockTakeAsync(string key, TimeSpan timeout, CancellationToken cancellationToken = default);
+    Task<IAsyncDisposable?> TryGetAsync(string key, TimeSpan timeout, CancellationToken cancellationToken = default);
 }
