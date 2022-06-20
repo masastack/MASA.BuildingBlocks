@@ -120,10 +120,6 @@ public class Client : FullAggregateRoot<int, Guid>
         switch (clientType)
         {
             case ClientTypes.Web:
-                AllowedGrantTypes = GrantTypeConsts.Code.Select(x => new ClientGrantType(x)).ToList();
-                RequirePkce = true;
-                RequireClientSecret = false;
-                break;
             case ClientTypes.Spa:
             case ClientTypes.Native:
                 AllowedGrantTypes = GrantTypeConsts.Code.Select(x => new ClientGrantType(x)).ToList();

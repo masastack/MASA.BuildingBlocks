@@ -18,12 +18,12 @@ public class StandardIdentityResources
         }
     };
 
-    [Description("Your postal address")]
-    public static IdentityResourceModel Adress = new()
+    [Description("Your address")]
+    public static IdentityResourceModel Address = new()
     {
-        Name = "adress",
-        DisplayName = "Your postal address",
-        Description = "Your postal address",
+        Name = "address",
+        DisplayName = "Your address",
+        Description = "Your address",
         Emphasize = true,
         UserClaims = new List<string>()
         {

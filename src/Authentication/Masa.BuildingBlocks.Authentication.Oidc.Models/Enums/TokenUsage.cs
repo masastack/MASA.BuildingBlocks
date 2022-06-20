@@ -6,7 +6,7 @@ namespace Masa.BuildingBlocks.Authentication.Oidc.Models.Enums;
 public enum TokenUsage
 {
     [Description("Re-use the refresh token handle")]
-    ReUse,
+    Reuse,
     [Description("Issue a new refresh token handle every time")]
     OneTimeOnly
 }
