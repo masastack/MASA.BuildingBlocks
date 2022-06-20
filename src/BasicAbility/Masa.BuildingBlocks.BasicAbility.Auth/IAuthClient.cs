@@ -12,5 +12,7 @@ public interface IAuthClient
     ITeamService TeamService { get; }
 
     IPermissionService PermissionService { get; }
+
+    IProjectService ProjectService { get; }
 }
 
