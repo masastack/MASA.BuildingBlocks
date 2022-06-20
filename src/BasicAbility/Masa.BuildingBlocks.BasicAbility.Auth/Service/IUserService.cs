@@ -16,5 +16,9 @@ public interface IUserService
     Task<bool> ValidateCredentialsByAccountAsync(string account, string password);
 
     Task<UserModel> FindByAccountAsync(string account);
+
+    Task VisitedAsync(string url);
+
+    Task<List<UserVisitedModel>> GetUserVisitedListAsync();
 }
 
