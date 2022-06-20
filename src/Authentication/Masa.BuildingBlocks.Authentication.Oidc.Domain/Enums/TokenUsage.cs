@@ -11,7 +11,7 @@ public enum TokenUsage
     /// <summary>
     /// Re-use the refresh token handle
     /// </summary>
-    ReUse = 0,
+    Reuse = 0,
 
     /// <summary>
     /// Issue a new refresh token handle every time
