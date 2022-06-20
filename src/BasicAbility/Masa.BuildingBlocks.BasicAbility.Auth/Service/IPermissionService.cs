@@ -21,9 +21,9 @@ public interface IPermissionService
 
     Task<bool> AuthorizedAsync(string appId, string code);
 
-    Task<bool> CollectMenuAsync(Guid menuId);
+    Task<bool> AddFavoriteMenuAsync(Guid menuId);
 
-    Task<bool> UnCollectMenuAsync(Guid menuId);
+    Task<bool> RemoveFavoriteMenuAsync(Guid menuId);
 
-    Task<List<CollectMenuModel>> GetCollectMenuListAsync();
+    Task<List<CollectMenuModel>> GetFavoriteMenuListAsync();
 }
