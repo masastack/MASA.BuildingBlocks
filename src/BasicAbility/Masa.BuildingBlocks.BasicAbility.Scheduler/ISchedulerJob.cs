@@ -5,7 +5,7 @@ namespace Masa.BuildingBlocks.BasicAbility.Scheduler;
 
 public interface ISchedulerJob
 {
-    Action<JobContext> BeforeExcute { get; }
+    Task BeforeExcute(JobContext context);
 
-    Action<JobContext> AfterExcute { get; }
+    Task AfterExcute(JobContext context);
 }
