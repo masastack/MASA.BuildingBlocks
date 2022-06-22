@@ -8,4 +8,8 @@ public class JobContext
     public DateTimeOffset ExcuteTime { get; set; }
 
     public string ExcuteMethodName { get; set; } = string.Empty;
+
+    public List<string> ExcuteParameters { get; set; } = new();
+
+    public string ExcuteResult { get; set; } = string.Empty;
 }
