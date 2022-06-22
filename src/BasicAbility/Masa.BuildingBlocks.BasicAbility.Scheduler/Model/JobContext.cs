@@ -11,5 +11,5 @@ public class JobContext
 
     public List<string> ExcuteParameters { get; set; } = new();
 
-    public string ExcuteResult { get; set; } = string.Empty;
+    public object ExcuteResult { get; set; } = string.Empty;
 }
