@@ -5,7 +5,7 @@ namespace Masa.BuildingBlocks.BasicAbility.Scheduler.Model;
 
 public class JobContext
 {
-    public DateTimeOffset ExcuteTime { get; set; }
+    public DateTimeOffset ExecutionTime { get; set; }
 
     public string ExcuteMethodName { get; set; } = string.Empty;
 
