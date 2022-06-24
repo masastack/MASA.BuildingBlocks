@@ -5,9 +5,9 @@ namespace Masa.BuildingBlocks.BasicAbility.Tsc.Service;
 
 public interface IMetricService
 {
-    Task<IEnumerable<string>> GetMetricsAsync();
+    Task<IEnumerable<string>> GetMetricsAsync(IEnumerable<string>? match);
 
-    Task<IEnumerable<KeyValuePair<string,IEnumerable<string>>>> GetLabelAndValuesAsync();
+    Task<Dictionary<string, List<string>>> GetLabelAndValuesAsync(MetricLableValuesRequest query);
 
-    Task<IEnumerable<KeyValuePair<string,string>>> QueryAsync();
+    Task<string> GetMetricAggAsync(MetricAggRequest query);
 }

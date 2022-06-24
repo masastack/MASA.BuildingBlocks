@@ -7,7 +7,7 @@ public interface ILogService
 {
     Task<IEnumerable<string>> GetFieldsAsync();
 
-    Task<IEnumerable<KeyValuePair<string, string>>> GetAggregationAsync(RequestLogAggregationModel query);
+    Task<IEnumerable<KeyValuePair<string, string>>> GetAggregationAsync(LogAggregationRequest query);
 
-    Task<object> GetLatestAsync(RequestLogAggregationModel query);
+    Task<object> GetLatestAsync(LogAggregationRequest query);
 }

@@ -3,13 +3,11 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Tsc.Model;
 
-public class RequestLogAggregationModel
+public class MetricLableValuesRequest
 {
-    public string Query { get; set; }
+    public string Match { get; set; }    
 
     public DateTime Start { get; set; }
 
     public DateTime End { get; set; }
-
-    public bool IsDesc { get; set; } = false;
 }
