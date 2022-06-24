@@ -3,9 +3,11 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Tsc.Model;
 
-public class RequestMetricModel
+public class MetricAggRequest
 {
-    public IEnumerable<string> Values { get; set; }
+    public string Match { get; set; }
+
+    public IEnumerable<string> Lables { get; set; }
 
     public DateTime Start { get; set; }
 
