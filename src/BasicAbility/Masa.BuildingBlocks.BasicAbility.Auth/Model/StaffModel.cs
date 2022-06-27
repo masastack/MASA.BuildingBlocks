@@ -7,27 +7,58 @@ public class StaffModel
 {
     public Guid Id { get; set; }
 
-    public string? Department { get; set; }
+    public Guid UserId { get; set; }
 
-    public string? Position { get; set; }
+    public string Department { get; set; } = "";
 
-    public string JobNumber { get; set; }
+    public string Position { get; set; } = "";
+
+    public string JobNumber { get; set; } = "";
 
     public StaffTypes StaffType { get; set; }
 
-    public UserModel User { get; set; }
+    public string Name { get; set; } = "";
+
+    public string DisplayName { get; set; } = "";
+
+    public string Avatar { get; set; } = "";
+
+    public string IdCard { get; set; } = "";
+
+    public string Account { get; set; } = "";
+
+    public string CompanyName { get; set; } = "";
+
+    public string PhoneNumber { get; set; } = "";
+
+    public string Email { get; set; } = "";
+
+    public AddressValueModel Address { get; set; } = new();
+
+    public GenderTypes Gender { get; set; }
 
     public StaffModel()
     {
-        JobNumber = "";
-        User = new();
     }
 
-    public StaffModel(string jobNumber, StaffTypes staffType, UserModel user)
+    public StaffModel(Guid id, Guid userId, string department, string position, string jobNumber, StaffTypes staffType, string name, string displayName, string avatar, string idCard, string account, string companyName, string phoneNumber, string email, AddressValueModel address, GenderTypes gender)
     {
+        Id = id;
+        UserId = userId;
+        Department = department;
+        Position = position;
         JobNumber = jobNumber;
         StaffType = staffType;
-        User = user;
+        Name = name;
+        DisplayName = displayName;
+        Avatar = avatar;
+        IdCard = idCard;
+        Account = account;
+        CompanyName = companyName;
+        PhoneNumber = phoneNumber;
+        Email = email;
+        Address = address;
+        Gender = gender;
     }
 }
 
