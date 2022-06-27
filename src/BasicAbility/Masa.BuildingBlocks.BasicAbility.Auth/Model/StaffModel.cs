@@ -41,7 +41,23 @@ public class StaffModel
     {
     }
 
-    public StaffModel(Guid id, Guid userId, string department, string position, string jobNumber, StaffTypes staffType, string name, string displayName, string avatar, string idCard, string account, string companyName, string phoneNumber, string email, AddressValueModel address, GenderTypes gender)
+    public StaffModel(
+        Guid id,
+        Guid userId,
+        string department,
+        string position,
+        string jobNumber,
+        StaffTypes staffType,
+        string name,
+        string displayName,
+        string avatar,
+        string idCard,
+        string account,
+        string companyName,
+        string phoneNumber,
+        string email,
+        AddressValueModel address,
+        GenderTypes gender)
     {
         Id = id;
         UserId = userId;
