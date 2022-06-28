@@ -12,4 +12,6 @@ public interface IClientCache
     Task SetRangeAsync(IEnumerable<Client> clients);
 
     Task RemoveAsync(Client client);
+
+    Task ResetAsync(IEnumerable<Client> clients);
 }

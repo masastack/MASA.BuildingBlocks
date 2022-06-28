@@ -38,7 +38,20 @@ public class UserModel
         Account = "";
     }
 
-    public UserModel(Guid id, string name, string? displayName, string account, GenderTypes gender, string avatar, string? idCard, string? phoneNumber, string? email, string? companyName, string? department, string? position, AddressValueModel? address)
+    public UserModel(
+        Guid id,
+        string name,
+        string? displayName,
+        string account,
+        GenderTypes gender,
+        string avatar,
+        string? idCard,
+        string? phoneNumber,
+        string? email,
+        string? companyName,
+        string? department,
+        string? position,
+        AddressValueModel? address)
     {
         Id = id;
         Name = name;

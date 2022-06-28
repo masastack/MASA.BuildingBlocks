@@ -28,7 +28,14 @@ public class TeamDetailModel
         Members = new();
     }
 
-    public TeamDetailModel(Guid id, string name, string avatar, string description, TeamTypes teamType, List<StaffModel> admins, List<StaffModel> members)
+    public TeamDetailModel(
+        Guid id,
+        string name,
+        string avatar,
+        string description,
+        TeamTypes teamType,
+        List<StaffModel> admins,
+        List<StaffModel> members)
     {
         Id = id;
         Name = name;
