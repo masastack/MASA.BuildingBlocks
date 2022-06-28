@@ -5,6 +5,8 @@ namespace Masa.BuildingBlocks.BasicAbility.Scheduler.Model;
 
 public class JobContext
 {
+    public Guid TaskId { get; set; }
+
     public DateTimeOffset ExecutionTime { get; set; }
 
     public string ExcuteMethodName { get; set; } = string.Empty;
