@@ -5,13 +5,13 @@ namespace Masa.BuildingBlocks.BasicAbility.Scheduler.Service;
 
 public interface ISchedulerJobService
 {
-    Task<Guid> AddSchedulerJobAsync(AddSchedulerJobRequest job);
+    Task<Guid> AddbAsync(AddSchedulerJobRequest job);
 
-    Task<bool> StartSchedulerJobAsync(BaseSchedulerJobRequest request);
+    Task<bool> StartAsync(BaseSchedulerJobRequest request);
 
-    Task<bool> RemoveSchedulerJobAsync(BaseSchedulerJobRequest request);
+    Task<bool> RemoveAsync(BaseSchedulerJobRequest request);
 
-    Task<bool> EnableSchedulerJob(BaseSchedulerJobRequest request);
+    Task<bool> EnableAsync(BaseSchedulerJobRequest request);
 
-    Task<bool> DisableSchedulerJob(BaseSchedulerJobRequest request);
+    Task<bool> DisableAsync(BaseSchedulerJobRequest request);
 }

@@ -5,7 +5,7 @@ namespace Masa.BuildingBlocks.BasicAbility.Scheduler.Service;
 
 public interface ISchedulerTaskService
 {
-    Task<bool> StopSchedulerTaskAsync(BaseSchedulerTaskRequest request);
+    Task<bool> StopAsync(BaseSchedulerTaskRequest request);
 
-    Task<bool> StartSchedulerTaskAsync(BaseSchedulerTaskRequest request);
+    Task<bool> StartAsync(BaseSchedulerTaskRequest request);
 }
