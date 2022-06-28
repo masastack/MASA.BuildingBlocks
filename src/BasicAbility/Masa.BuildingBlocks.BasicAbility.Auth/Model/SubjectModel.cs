@@ -24,7 +24,14 @@ public class SubjectModel
         Name = "";
     }
 
-    public SubjectModel(Guid subjectId, string name, string? displayName, string? avatar, string? phoneNumber, string? email, SubjectTypes subjectType)
+    public SubjectModel(
+        Guid subjectId,
+        string name,
+        string? displayName,
+        string? avatar,
+        string? phoneNumber,
+        string? email,
+        SubjectTypes subjectType)
     {
         SubjectId = subjectId;
         Name = name;
