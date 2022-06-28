@@ -9,9 +9,9 @@ public class SchedulerJobHttpConfig
 
     public string RequestUrl { get; set; } = string.Empty;
 
-    public List<KeyValuePair<string, string>> HttpParameters { get; set; } = new List<KeyValuePair<string, string>>();
+    public List<KeyValuePair<string, string>> HttpParameters { get; set; } = new();
 
-    public List<KeyValuePair<string, string>> HttpHeaders { get; set; } = new List<KeyValuePair<string, string>>();
+    public List<KeyValuePair<string, string>> HttpHeaders { get; set; } = new();
 
     public string HttpBody { get; set; } = string.Empty;
 
