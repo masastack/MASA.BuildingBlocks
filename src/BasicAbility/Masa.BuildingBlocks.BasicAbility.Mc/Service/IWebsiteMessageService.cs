@@ -7,6 +7,8 @@ public interface IWebsiteMessageService
 {
     Task<PaginatedList<WebsiteMessageModel>> GetListAsync(GetWebsiteMessageModel options);
 
+    Task<WebsiteMessageModel?> GetAsync(Guid id);
+
     Task<List<WebsiteMessageChannelModel>> GetChannelListAsync();
 
     Task SetAllReadAsync(ReadAllWebsiteMessageModel options);

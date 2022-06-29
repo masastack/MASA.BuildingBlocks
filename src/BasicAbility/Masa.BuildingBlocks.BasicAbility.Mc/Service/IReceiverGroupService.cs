@@ -6,4 +6,6 @@ namespace Masa.BuildingBlocks.BasicAbility.Mc.Service;
 public interface IReceiverGroupService
 {
     Task<ReceiverGroupModel?> GetAsync(Guid id);
+
+    Task<PaginatedList<ReceiverGroupModel>> GetListAsync(GetReceiverGroupModel inputDto);
 }

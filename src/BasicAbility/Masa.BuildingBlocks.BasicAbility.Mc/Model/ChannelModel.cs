@@ -13,11 +13,5 @@ public class ChannelModel : AuditEntity<Guid, Guid>
 
     public string Description { get; set; } = string.Empty;
 
-    public bool IsStatic { get; set; }
-
-    public ExtraPropertyDictionary ExtraProperties { get; set; } = new();
-
-    public string ModifierName { get; set; } = string.Empty;
-
     public string Color { get; set; } = string.Empty;
 }

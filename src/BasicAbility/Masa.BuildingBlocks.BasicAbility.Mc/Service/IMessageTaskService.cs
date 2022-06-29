@@ -8,4 +8,6 @@ public interface IMessageTaskService
     Task<MessageTaskModel?> GetAsync(Guid id);
 
     Task SendTemplateMessageAsync(SendTemplateMessageModel options);
+
+    Task SendOrdinaryMessageAsync(SendOrdinaryMessageModel options);
 }

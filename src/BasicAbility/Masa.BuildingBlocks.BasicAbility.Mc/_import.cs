@@ -10,3 +10,4 @@ global using Masa.BuildingBlocks.BasicAbility.Mc.Infrastructure.Helper;
 global using System.Globalization;
 global using Masa.BuildingBlocks.Ddd.Domain.Entities.Auditing;
 global using Masa.BuildingBlocks.Ddd.Domain.Repositories;
+global using Masa.BuildingBlocks.BasicAbility.Mc.Service;

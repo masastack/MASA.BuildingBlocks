@@ -6,4 +6,6 @@ namespace Masa.BuildingBlocks.BasicAbility.Mc.Service;
 public interface IChannelService
 {
     Task<ChannelModel?> GetAsync(Guid id);
+
+    Task<PaginatedList<ChannelModel>> GetListAsync(GetChannelModel options);
 }
