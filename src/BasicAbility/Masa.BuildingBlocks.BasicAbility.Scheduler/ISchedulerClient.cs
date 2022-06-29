@@ -6,4 +6,6 @@ namespace Masa.BuildingBlocks.BasicAbility.Scheduler;
 public interface ISchedulerClient
 {
     ISchedulerJobService SchedulerJobService { get; }
+
+    ISchedulerTaskService SchedulerTaskService { get; }
 }
