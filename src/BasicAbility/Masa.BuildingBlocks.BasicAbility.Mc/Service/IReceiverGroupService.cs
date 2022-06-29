@@ -7,5 +7,5 @@ public interface IReceiverGroupService
 {
     Task<ReceiverGroupModel?> GetAsync(Guid id);
 
-    Task<PaginatedList<ReceiverGroupModel>> GetListAsync(GetReceiverGroupModel inputDto);
+    Task<PaginatedListModel<ReceiverGroupModel>> GetListAsync(GetReceiverGroupModel inputDto);
 }

@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Mc.Model;
 
-public class WebsiteMessageModel : AuditEntity<Guid, Guid>
+public class WebsiteMessageModel : AuditEntityModel<Guid, Guid>
 {
     public Guid ChannelId { get; set; }
 

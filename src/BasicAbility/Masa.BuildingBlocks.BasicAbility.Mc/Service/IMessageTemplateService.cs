@@ -7,5 +7,5 @@ public interface IMessageTemplateService
 {
     Task<MessageTemplateModel?> GetAsync(Guid id);
 
-    Task<PaginatedList<MessageTemplateModel>> GetListAsync(GetMessageTemplateModel options);
+    Task<PaginatedListModel<MessageTemplateModel>> GetListAsync(GetMessageTemplateModel options);
 }

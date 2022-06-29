@@ -3,14 +3,8 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Mc.Model;
 
-public class GetWebsiteMessageModel 
+public class GetWebsiteMessageModel : PaginatedOptionsModel
 {
-    public int Page { get; set; } = 1;
-
-    public int PageSize { get; set; } = 10;
-
-    public string Sorting { get; set; }
-
     public string Filter { get; set; } = string.Empty;
 
     public WebsiteMessageFilterType? FilterType { get; set; }

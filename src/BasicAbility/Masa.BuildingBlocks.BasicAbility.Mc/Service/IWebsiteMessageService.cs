@@ -5,7 +5,7 @@ namespace Masa.BuildingBlocks.BasicAbility.Mc.Service;
 
 public interface IWebsiteMessageService
 {
-    Task<PaginatedList<WebsiteMessageModel>> GetListAsync(GetWebsiteMessageModel options);
+    Task<PaginatedListModel<WebsiteMessageModel>> GetListAsync(GetWebsiteMessageModel options);
 
     Task<WebsiteMessageModel?> GetAsync(Guid id);
 

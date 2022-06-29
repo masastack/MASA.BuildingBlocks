@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Mc.Model;
 
-public class ChannelModel : AuditEntity<Guid, Guid>
+public class ChannelModel : AuditEntityModel<Guid, Guid>
 {
     public string DisplayName { get; set; } = string.Empty;
 

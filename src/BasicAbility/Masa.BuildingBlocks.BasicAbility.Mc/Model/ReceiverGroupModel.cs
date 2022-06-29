@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Mc.Model;
 
-public class ReceiverGroupModel : AuditEntity<Guid, Guid>
+public class ReceiverGroupModel : AuditEntityModel<Guid, Guid>
 {
     public string DisplayName { get; set; } = string.Empty;
 

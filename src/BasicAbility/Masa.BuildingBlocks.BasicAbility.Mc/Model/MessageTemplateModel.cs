@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Mc.Model;
 
-public class MessageTemplateModel : AuditEntity<Guid, Guid>
+public class MessageTemplateModel : AuditEntityModel<Guid, Guid>
 {
     public MessageTemplateModel()
     {
