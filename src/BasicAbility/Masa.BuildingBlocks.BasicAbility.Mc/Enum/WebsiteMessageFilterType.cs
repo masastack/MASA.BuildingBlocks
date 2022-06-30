@@ -5,6 +5,6 @@ namespace Masa.BuildingBlocks.BasicAbility.Mc.Enum;
 
 public enum WebsiteMessageFilterType
 {
-    MessageTitle = 1,
-    MessageContent,
+    Title = 1,
+    Content,
 }

@@ -107,12 +107,12 @@ public static class TypeHelper
                type == typeof(Guid);
     }
 
-    public static T GetDefaultValue<T>()
+    public static T? GetDefaultValue<T>()
     {
         return default;
     }
 
-    public static object GetDefaultValue(Type type)
+    public static object? GetDefaultValue(Type type)
     {
         if (type.IsValueType)
         {

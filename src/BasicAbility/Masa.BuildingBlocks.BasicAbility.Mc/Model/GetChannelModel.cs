@@ -6,6 +6,8 @@ namespace Masa.BuildingBlocks.BasicAbility.Mc.Model;
 public class GetChannelModel : PaginatedOptions
 {
     public string Filter { get; set; } = string.Empty;
+
     public ChannelTypes? Type { get; set; }
+
     public string DisplayName { get; set; } = string.Empty;
 }

@@ -5,7 +5,7 @@ namespace Masa.BuildingBlocks.BasicAbility.Mc.Enum;
 
 public enum MessageTemplateAuditStatuses
 {
-    WaitAudit = 1,
-    Adopt,
-    Fail,
+    Waited = 1,
+    Approved,
+    Failed,
 }

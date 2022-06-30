@@ -6,11 +6,18 @@ namespace Masa.BuildingBlocks.BasicAbility.Mc.Model;
 public class GetMessageTemplateModel : PaginatedOptions
 {
     public string Filter { get; set; } = string.Empty;
-    public MessageTemplateStatuses? Status { get; set; }
+
+    public MessageTemplateStates? Status { get; set; }
+
     public MessageTemplateAuditStatuses? AuditStatus { get; set; }
+
     public ChannelTypes? ChannelType { get; set; }
+
     public Guid? ChannelId { get; set; }
+
     public DateTime? StartTime { get; set; }
+
     public DateTime? EndTime { get; set; }
+
     public int TemplateType { get; set; }
 }

@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Mc.Enum;
 
-public enum MessageTemplateStatuses
+public enum MessageTemplateStates
 {
     Normal = 1,
     Invalid

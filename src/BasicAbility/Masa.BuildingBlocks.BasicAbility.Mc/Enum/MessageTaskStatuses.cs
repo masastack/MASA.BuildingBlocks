@@ -5,10 +5,10 @@ namespace Masa.BuildingBlocks.BasicAbility.Mc.Enum;
 
 public enum MessageTaskStatuses
 {
-    WaitSend = 1,
-    Sending,
-    Withdrawn,
-    Success,
-    Fail,
-    PartialFailure
+    NotPublished = 1,
+    InProgress,
+    Cancel,
+    Published,
+    PublishedFailed,
+    PartialFailed
 }
