@@ -1,7 +1,7 @@
 // Copyright (c) MASA Stack All rights reserved.
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
-namespace Masa.BuildingBlocks.BasicAbility.Auth.Model;
+namespace Masa.BuildingBlocks.BasicAbility.Auth.Contracts.Model;
 
 public class TeamDetailModel
 {
@@ -28,7 +28,14 @@ public class TeamDetailModel
         Members = new();
     }
 
-    public TeamDetailModel(Guid id, string name, string avatar, string description, TeamTypes teamType, List<StaffModel> admins, List<StaffModel> members)
+    public TeamDetailModel(
+        Guid id,
+        string name,
+        string avatar,
+        string description,
+        TeamTypes teamType,
+        List<StaffModel> admins,
+        List<StaffModel> members)
     {
         Id = id;
         Name = name;

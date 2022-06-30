@@ -1,7 +1,7 @@
 // Copyright (c) MASA Stack All rights reserved.
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
-namespace Masa.BuildingBlocks.BasicAbility.Auth.Model;
+namespace Masa.BuildingBlocks.BasicAbility.Auth.Contracts.Model;
 
 public class UserModel
 {
@@ -17,7 +17,7 @@ public class UserModel
 
     public string Avatar { get; set; }
 
-    public string? IdCard { get; set; }   
+    public string? IdCard { get; set; }
 
     public string? PhoneNumber { get; set; }
 
@@ -38,7 +38,20 @@ public class UserModel
         Account = "";
     }
 
-    public UserModel(Guid id, string name, string? displayName, string account, GenderTypes gender, string avatar, string? idCard, string? phoneNumber, string? email, string? companyName, string? department, string? position, AddressValueModel? address)
+    public UserModel(
+        Guid id,
+        string name,
+        string? displayName,
+        string account,
+        GenderTypes gender,
+        string avatar,
+        string? idCard,
+        string? phoneNumber,
+        string? email,
+        string? companyName,
+        string? department,
+        string? position,
+        AddressValueModel? address)
     {
         Id = id;
         Name = name;

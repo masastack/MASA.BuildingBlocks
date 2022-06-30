@@ -1,7 +1,7 @@
 // Copyright (c) MASA Stack All rights reserved.
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
-namespace Masa.BuildingBlocks.BasicAbility.Auth.Model;
+namespace Masa.BuildingBlocks.BasicAbility.Auth.Contracts.Model;
 
 public class SubjectModel
 {
@@ -24,7 +24,14 @@ public class SubjectModel
         Name = "";
     }
 
-    public SubjectModel(Guid subjectId, string name, string? displayName, string? avatar, string? phoneNumber, string? email, SubjectTypes subjectType)
+    public SubjectModel(
+        Guid subjectId,
+        string name,
+        string? displayName,
+        string? avatar,
+        string? phoneNumber,
+        string? email,
+        SubjectTypes subjectType)
     {
         SubjectId = subjectId;
         Name = name;

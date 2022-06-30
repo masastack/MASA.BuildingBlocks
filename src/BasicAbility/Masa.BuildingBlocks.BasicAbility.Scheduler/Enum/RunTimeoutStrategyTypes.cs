@@ -1,12 +1,10 @@
 // Copyright (c) MASA Stack All rights reserved.
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
-namespace Masa.BuildingBlocks.BasicAbility.Auth.Enum;
+namespace Masa.BuildingBlocks.BasicAbility.Scheduler.Enum;
 
-public enum SubjectTypes
+public enum RunTimeoutStrategyTypes
 {
-    User = 1,
-    Department,
-    Role,
-    Team,
+    RunFailedStrategy = 1,
+    IgnoreTimeout
 }

@@ -1,10 +1,13 @@
 // Copyright (c) MASA Stack All rights reserved.
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
-namespace Masa.BuildingBlocks.BasicAbility.Auth.Enum;
+namespace Masa.BuildingBlocks.BasicAbility.Scheduler.Enum;
 
-public enum GenderTypes
+public enum HttpMethods
 {
-    Male = 1,
-    Female,
+    GET = 1,
+    POST,
+    HEAD,
+    PUT,
+    DELETE
 }
