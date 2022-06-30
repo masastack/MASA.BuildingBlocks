@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.Authentication.Oidc.Domain.Entities;
 
-public class IdentityResourceClaim : Entity<int>
+public class IdentityResourceClaim : FullEntity<int, Guid>
 {
     public int UserClaimId { get; private set; }
 
