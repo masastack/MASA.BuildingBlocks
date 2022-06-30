@@ -29,7 +29,7 @@ public class UserModel
 
     public string? Position { get; set; }
 
-    public AddressValueModel? Address { get; set; }
+    public AddressValueModel Address { get; set; } = new();
 
     public UserModel()
     {

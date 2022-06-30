@@ -25,4 +25,9 @@ public class AddressValueModel
         CityCode = cityCode;
         DistrictCode = districtCode;
     }
+
+    public override string ToString()
+    {
+        return Address;
+    }
 }
