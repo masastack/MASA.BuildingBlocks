@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.Authentication.Oidc.Domain.Entities;
 
-public class ApiScopeClaim : Entity<int>
+public class ApiScopeClaim : FullEntity<int, Guid>
 {
     public int UserClaimId { get; private set; }
 
