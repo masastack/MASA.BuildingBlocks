@@ -10,4 +10,10 @@ public class TeamModel
     public string Name { get; set; }
 
     public string Avatar { get; set; }
+
+    public string Description { get; set; }
+
+    public string Role { get; set; }
+
+    public int MemberCount { get; set; }
 }
