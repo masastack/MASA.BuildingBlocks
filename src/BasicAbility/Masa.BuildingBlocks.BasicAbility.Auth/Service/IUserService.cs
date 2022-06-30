@@ -17,7 +17,7 @@ public interface IUserService
 
     Task<UserModel> FindByAccountAsync(string account);
 
-    Task<UserModel> FindByIdAsync(Guid id);
+    Task<UserModel> GetCurrentUserAsync();
 
     Task VisitedAsync(string url);
 
