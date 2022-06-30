@@ -3,3 +3,4 @@
 
 global using Masa.BuildingBlocks.Data.UoW;
 global using Masa.BuildingBlocks.Dispatcher.Events;
+global using System.Text.Json.Serialization;
