@@ -25,7 +25,7 @@ public class SendOrdinaryMessageModel
         {
             ChannelId = model.ChannelId,
             ChannelType = model.ChannelType,
-            EntityType = MessageEntityTypes.Ordinary,
+            EntityType = MessageTypes.Ordinary,
             IsDraft = false,
             IsEnabled = true,
             ReceiverType = model.ReceiverType,

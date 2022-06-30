@@ -11,7 +11,7 @@ public class MessageTaskModel : AuditEntityModel<Guid, Guid>
 
     public ChannelModel Channel { get; set; } = new();
 
-    public MessageEntityTypes EntityType { get; set; }
+    public MessageTypes EntityType { get; set; }
 
     public Guid EntityId { get; set; }
 

@@ -27,7 +27,7 @@ public class SendTemplateMessageModel
         {
             ChannelId = model.ChannelId,
             ChannelType = model.ChannelType,
-            EntityType = MessageEntityTypes.Template,
+            EntityType = MessageTypes.Template,
             EntityId = model.EntityId,
             IsDraft = false,
             IsEnabled = true,

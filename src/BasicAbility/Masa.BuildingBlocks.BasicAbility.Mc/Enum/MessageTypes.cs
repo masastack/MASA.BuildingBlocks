@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Mc.Enum;
 
-public enum MessageEntityTypes
+public enum MessageTypes
 {
     Ordinary = 1,
     Template
