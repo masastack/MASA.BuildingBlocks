@@ -11,7 +11,7 @@ public class SendTemplateMessageModel
 
     public Guid EntityId { get; set; }
 
-    public ReceiverTypes ReceiverType { get; set; }
+    public SendTargets ReceiverType { get; set; }
 
     public string Sign { get; set; } = string.Empty;
 

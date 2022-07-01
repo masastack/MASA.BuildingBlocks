@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Mc.Enum;
 
-public enum ReceiverTypes
+public enum SendTargets
 {
     Assign = 1,
     Broadcast

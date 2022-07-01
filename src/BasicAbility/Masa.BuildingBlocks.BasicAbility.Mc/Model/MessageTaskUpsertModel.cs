@@ -19,7 +19,7 @@ public class MessageTaskUpsertModel
 
     public bool IsEnabled { get; set; }
 
-    public ReceiverTypes ReceiverType { get; set; }
+    public SendTargets ReceiverType { get; set; }
 
     public MessageTaskSelectRecipientTypes SelectReceiverType { get; set; } = MessageTaskSelectRecipientTypes.ManualSelection;
 

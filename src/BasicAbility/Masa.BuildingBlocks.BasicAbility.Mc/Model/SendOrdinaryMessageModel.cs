@@ -9,7 +9,7 @@ public class SendOrdinaryMessageModel
 
     public ChannelTypes? ChannelType { get; set; }
 
-    public ReceiverTypes ReceiverType { get; set; }
+    public SendTargets ReceiverType { get; set; }
 
     public List<MessageTaskReceiverModel> Receivers { get; set; } = new();
 
