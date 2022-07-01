@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Mc.Enum;
 
-public enum MessageTaskSelectReceiverTypes
+public enum MessageTaskSelectRecipientTypes
 {
     ManualSelection = 1,
     BatchUpload

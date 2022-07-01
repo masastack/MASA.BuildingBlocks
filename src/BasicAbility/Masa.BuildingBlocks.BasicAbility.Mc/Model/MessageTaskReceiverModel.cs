@@ -15,7 +15,7 @@ public class MessageTaskReceiverModel
 
     public string Email { get; set; } = string.Empty;
 
-    public MessageTaskReceiverTypes Type { get; set; }
+    public MessageTaskRecipientTypes Type { get; set; }
 
     public ExtraPropertyDictionary Variables { get; set; } = new();
 }

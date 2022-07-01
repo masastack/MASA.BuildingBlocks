@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Mc.Enum;
 
-public enum MessageTaskReceiverTypes
+public enum MessageTaskRecipientTypes
 {
     User = 1,
     Organization,

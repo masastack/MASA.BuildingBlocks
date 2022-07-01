@@ -21,7 +21,7 @@ public class MessageTaskModel : AuditEntityModel<Guid, Guid>
 
     public ReceiverTypes ReceiverType { get; set; }
 
-    public MessageTaskSelectReceiverTypes SelectReceiverType { get; set; }
+    public MessageTaskSelectRecipientTypes SelectReceiverType { get; set; }
 
     public DateTimeOffset? SendTime { get; set; }
 

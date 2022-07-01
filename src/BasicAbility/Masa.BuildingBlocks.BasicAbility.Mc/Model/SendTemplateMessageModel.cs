@@ -32,7 +32,7 @@ public class SendTemplateMessageModel
             IsDraft = false,
             IsEnabled = true,
             ReceiverType = model.ReceiverType,
-            SelectReceiverType = MessageTaskSelectReceiverTypes.ManualSelection,
+            SelectReceiverType = MessageTaskSelectRecipientTypes.ManualSelection,
             Sign = model.Sign,
             Receivers = model.Receivers,
             SendRules = model.SendRules,
