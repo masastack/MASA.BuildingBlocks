@@ -9,7 +9,13 @@ public delegate Task EventHandlerDelegate();
 /// Middleware is assembled into an event pipeline to handle invoke event and result
 /// </summary>
 public interface IMiddleware<TEvent>
-    where TEvent : notnull, IEvent
+    where TEvent : IEvent
 {
     Task HandleAsync(TEvent @event, EventHandlerDelegate next);
+
+    /// <summary>
+    /// If loops are not supported, execute only once
+    /// If looping is supported, EventBus will be executed multiple times when nested
+    /// </summary>
+    bool SupportLoop { get; }
 }
