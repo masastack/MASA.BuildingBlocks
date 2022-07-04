@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Tsc.Model;
 
-public class MetricAggRequest
+public class MetricRangeValueRequest
 {
     public string Match { get; set; }
 
