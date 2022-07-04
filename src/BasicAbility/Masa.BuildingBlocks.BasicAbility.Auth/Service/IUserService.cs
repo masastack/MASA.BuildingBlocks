@@ -17,8 +17,14 @@ public interface IUserService
 
     Task<UserModel> FindByAccountAsync(string account);
 
+    Task<UserModel> GetCurrentUserAsync();
+
     Task VisitedAsync(string url);
 
-    Task<List<UserVisitedModel>> GetUserVisitedListAsync();
+    Task<List<UserVisitedModel>> GetVisitedListAsync();
+
+    Task UpdatePasswordAsync(UpdateUserPasswordModel user);
+
+    Task UpdateBasicInfoAsync(UpdateUserBasicInfoModel user);
 }
 

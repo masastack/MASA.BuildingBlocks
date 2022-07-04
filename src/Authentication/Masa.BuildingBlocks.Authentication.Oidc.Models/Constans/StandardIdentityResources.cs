@@ -8,7 +8,7 @@ public class StandardIdentityResources
     [Description("Your user identifier")]
     public static IdentityResourceModel OpenId = new()
     {
-        Name = "openId",
+        Name = "openid",
         DisplayName = "Your user identifier",
         Description = "Your user identifier",
         Required = true,
