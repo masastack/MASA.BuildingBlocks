@@ -9,4 +9,6 @@ public interface IDomainEventBus : IEventBus
         where TDomainEvent : IDomainEvent;
 
     Task PublishQueueAsync();
+
+    Task<bool> AnyQueueAsync();
 }

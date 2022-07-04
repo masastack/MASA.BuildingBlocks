@@ -5,7 +5,7 @@ namespace Masa.BuildingBlocks.Dispatcher.Events;
 
 public abstract class Middleware<TEvent> : IMiddleware<TEvent> where TEvent : IEvent
 {
-    public virtual bool SupportLoop => true;
+    public virtual bool SupportRecursive => true;
 
     public abstract Task HandleAsync(TEvent @event, EventHandlerDelegate next);
 }
