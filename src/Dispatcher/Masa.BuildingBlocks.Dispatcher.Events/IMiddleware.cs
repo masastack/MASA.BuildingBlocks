@@ -14,8 +14,8 @@ public interface IMiddleware<TEvent>
     Task HandleAsync(TEvent @event, EventHandlerDelegate next);
 
     /// <summary>
-    /// If looping is not supported, the current Middleware only executes once
-    /// If looping is supported, Middleware will be executed multiple times when EventBus is nested
+    /// If Recursive is not supported, the current Middleware only executes once
+    /// If Recursive is supported, Middleware will be executed everytime when EventBus is nested
     /// </summary>
     bool SupportRecursive { get; }
 }
