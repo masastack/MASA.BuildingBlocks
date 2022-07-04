@@ -21,7 +21,7 @@ public class MessageTaskUpsertModel
 
     public SendTargets ReceiverType { get; set; }
 
-    public MessageTaskSelectRecipientTypes SelectReceiverType { get; set; } = MessageTaskSelectRecipientTypes.ManualSelection;
+    public MessageTaskSelectReceiverTypes SelectReceiverType { get; set; } = MessageTaskSelectReceiverTypes.ManualSelection;
 
     public string Sign { get; set; } = string.Empty;
 

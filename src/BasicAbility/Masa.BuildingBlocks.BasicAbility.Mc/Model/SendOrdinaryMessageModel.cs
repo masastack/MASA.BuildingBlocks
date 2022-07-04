@@ -29,7 +29,7 @@ public class SendOrdinaryMessageModel
             IsDraft = false,
             IsEnabled = true,
             ReceiverType = model.ReceiverType,
-            SelectReceiverType = MessageTaskSelectRecipientTypes.ManualSelection,
+            SelectReceiverType = MessageTaskSelectReceiverTypes.ManualSelection,
             Receivers = model.Receivers,
             SendRules = model.SendRules,
             MessageInfo = model.MessageInfo,
