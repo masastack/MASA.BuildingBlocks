@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Auth.Contracts.Model;
 
-public class UpdateUserBaseInfoModel
+public class UpdateUserBasicInfoModel
 {
     public Guid Id { get; set; }
 
