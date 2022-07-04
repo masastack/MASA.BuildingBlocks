@@ -5,11 +5,11 @@ namespace Masa.BuildingBlocks.BasicAbility.Tsc.Model;
 
 public class LogAggregationRequest
 {
+    public IEnumerable<FieldAggregationRequest> FieldMaps { get; set; }
+
     public string Query { get; set; }
 
     public DateTime Start { get; set; }
 
     public DateTime End { get; set; }
-
-    public bool IsDesc { get; set; } = false;
 }
