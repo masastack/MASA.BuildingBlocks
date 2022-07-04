@@ -21,10 +21,10 @@ public interface IUserService
 
     Task VisitedAsync(string url);
 
-    Task<List<UserVisitedModel>> GetUserVisitedListAsync();
+    Task<List<UserVisitedModel>> GetVisitedListAsync();
 
-    Task UpdateUserPasswordAsync(UpdateUserPasswordModel user);
+    Task UpdatePasswordAsync(UpdateUserPasswordModel user);
 
-    Task UpdateUserBaseInfoAsync(UpdateUserBaseInfoModel user);
+    Task UpdateBaseInfoAsync(UpdateUserBaseInfoModel user);
 }
 
