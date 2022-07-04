@@ -3,11 +3,9 @@
 
 namespace Masa.BuildingBlocks.Identity.IdentityModel;
 
-public interface IIdentityUser
+public class IdentityRole<T>
 {
-    string Id { get; set; }
+    public T Id { get; set; }
 
-    string? UserName { get; set; }
-
-    IEnumerable<IdentityRole<string>> Roles { get; set; }
+    public string Name { get; set; }
 }

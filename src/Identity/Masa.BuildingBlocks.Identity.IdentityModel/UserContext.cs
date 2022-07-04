@@ -19,6 +19,8 @@ public abstract class UserContext : IUserSetter, IUserContext
 
     protected abstract object? GetUser();
 
+    protected abstract IdentityUser? GetUserBasicInfo();
+
     public TUserId? GetUserId<TUserId>()
     {
         var userId = UserId;
@@ -41,5 +43,14 @@ public abstract class UserContext : IUserSetter, IUserContext
         var user = GetUser();
         _currentUser.Value = identityUser;
         return new DisposeAction(() => _currentUser.Value = user);
+    }
+
+    public IEnumerable<IdentityRole<TRoleId>> GetUserRoles<TRoleId>()
+    {
+        return GetUserSimple()?.Roles.Select(r => new IdentityRole<TRoleId>
+        {
+            Id = TypeConvertProvider.ConvertTo<TRoleId>(r.Id),
+            Name = r.Name
+        }) ?? new List<IdentityRole<TRoleId>>();
     }
 }
