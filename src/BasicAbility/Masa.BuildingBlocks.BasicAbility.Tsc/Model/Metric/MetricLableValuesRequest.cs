@@ -5,7 +5,13 @@ namespace Masa.BuildingBlocks.BasicAbility.Tsc.Model;
 
 public class MetricLableValuesRequest
 {
-    public string Match { get; set; }    
+    [JsonIgnore]
+    public string Match { get { return _match[0]; } set { _match[0] = value; } }
+
+    private string[] _match = new string[1];
+
+    [JsonPropertyName("match")]
+    public IEnumerable<string> Matches { get { return _match; } }
 
     public DateTime Start { get; set; }
 
