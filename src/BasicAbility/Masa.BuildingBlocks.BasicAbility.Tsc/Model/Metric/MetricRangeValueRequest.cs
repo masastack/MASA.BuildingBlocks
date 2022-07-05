@@ -7,6 +7,7 @@ public class MetricRangeValueRequest
 {
     public string Match { get; set; }
 
+    [JsonIgnore]
     public IEnumerable<string> Lables { get; set; }
 
     public DateTime Start { get; set; }
