@@ -9,7 +9,13 @@ public delegate Task EventHandlerDelegate();
 /// Middleware is assembled into an event pipeline to handle invoke event and result
 /// </summary>
 public interface IMiddleware<TEvent>
-    where TEvent : notnull, IEvent
+    where TEvent : IEvent
 {
     Task HandleAsync(TEvent @event, EventHandlerDelegate next);
+
+    /// <summary>
+    /// If Recursive is not supported, the current Middleware only executes once
+    /// If Recursive is supported, Middleware will be executed everytime when EventBus is nested
+    /// </summary>
+    bool SupportRecursive { get; }
 }

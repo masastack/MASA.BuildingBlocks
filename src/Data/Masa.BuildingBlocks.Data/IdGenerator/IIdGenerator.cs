@@ -7,5 +7,5 @@ public interface IIdGenerator<in T,out TOut>
     where T : notnull
     where TOut : notnull
 {
-    public TOut Create();
+    public TOut NewId();
 }

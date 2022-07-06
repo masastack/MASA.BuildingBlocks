@@ -4,9 +4,27 @@
 namespace Masa.BuildingBlocks.Ddd.Domain.Repositories;
 
 public abstract class BaseRepository<TEntity> :
-    IRepository<TEntity>, IUnitOfWork
+    IRepository<TEntity>
     where TEntity : class, IEntity
 {
+    public IServiceProvider ServiceProvider { get; }
+
+    public virtual EntityState EntityState
+    {
+        get => UnitOfWork.EntityState;
+        set => UnitOfWork.EntityState = value;
+    }
+
+    public virtual CommitState CommitState
+    {
+        get => UnitOfWork.CommitState;
+        protected set => UnitOfWork.CommitState = value;
+    }
+
+    protected BaseRepository(IServiceProvider serviceProvider) => ServiceProvider = serviceProvider;
+
+    public abstract IUnitOfWork UnitOfWork { get; }
+
     #region IRepository<TEntity>
 
     public abstract ValueTask<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken = default);
@@ -142,44 +160,4 @@ public abstract class BaseRepository<TEntity> :
     }
 
     #endregion
-
-    #region IUnitOfWork
-
-    public IServiceProvider ServiceProvider { get; }
-
-    public abstract DbTransaction Transaction { get; }
-
-    public abstract bool TransactionHasBegun { get; }
-
-    public abstract bool UseTransaction { get; set; }
-
-    public bool DisableRollbackOnFailure { get; set; }
-
-    public virtual EntityState EntityState
-    {
-        get => UnitOfWork.EntityState;
-        set => UnitOfWork.EntityState = value;
-    }
-
-    public virtual CommitState CommitState
-    {
-        get => UnitOfWork.CommitState;
-        set => UnitOfWork.CommitState = value;
-    }
-
-    public abstract IUnitOfWork UnitOfWork { get; }
-
-    public abstract Task CommitAsync(CancellationToken cancellationToken = default);
-
-    public abstract ValueTask DisposeAsync();
-
-    public abstract void Dispose();
-
-    public abstract Task RollbackAsync(CancellationToken cancellationToken = default);
-
-    public abstract Task SaveChangesAsync(CancellationToken cancellationToken = default);
-
-    #endregion
-
-    protected BaseRepository(IServiceProvider serviceProvider) => ServiceProvider = serviceProvider;
 }
