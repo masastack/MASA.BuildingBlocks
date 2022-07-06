@@ -3,8 +3,7 @@
 
 namespace Masa.BuildingBlocks.Configuration;
 
-public enum SectionTypes
+public interface IConfigurationApi
 {
-    Local = 1,
-    ConfigurationApi
+    public IConfiguration Get(string appId);
 }
