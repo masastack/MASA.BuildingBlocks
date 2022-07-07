@@ -13,6 +13,8 @@ public class AppModel
 
     public int ProjectId { get; set; }
 
+    public AppTypes Type { get; set; }
+
     public AppModel()
     {
     }

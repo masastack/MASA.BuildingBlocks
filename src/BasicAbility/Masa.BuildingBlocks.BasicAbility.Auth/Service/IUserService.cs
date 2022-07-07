@@ -26,5 +26,7 @@ public interface IUserService
     Task UpdatePasswordAsync(UpdateUserPasswordModel user);
 
     Task UpdateBasicInfoAsync(UpdateUserBasicInfoModel user);
+
+    Task<List<UserPortraitModel>> GetUserPortraitsAsync(params Guid[] userIds);
 }
 
