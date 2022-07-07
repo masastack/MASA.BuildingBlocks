@@ -29,7 +29,9 @@ public class UserModel
 
     public string? Position { get; set; }
 
-    public AddressValueModel? Address { get; set; } = new();
+    public AddressValueModel Address { get; set; } = new();
+
+    public List<RoleModel> Roles { get; set; } = new();
 
     public UserModel()
     {
@@ -51,7 +53,7 @@ public class UserModel
         string? companyName,
         string? department,
         string? position,
-        AddressValueModel? address)
+        AddressValueModel address)
     {
         Id = id;
         Name = name;
