@@ -4,11 +4,15 @@
 namespace Masa.BuildingBlocks.Configuration;
 public interface IConfigurationApiClient
 {
-    Task<(string Raw, ConfigurationTypes ConfigurationType)> GetRawAsync(string environment, string cluster, string appId, string configObject, Action<string> valueChanged);
+    Task<(string Raw, ConfigurationTypes ConfigurationType)> GetRawAsync(string configObject, Action<string>? valueChanged = null);
 
-    Task<T> GetAsync<T>(string environment, string cluster, string appId, string configObject, Action<T> valueChanged);
+    Task<(string Raw, ConfigurationTypes ConfigurationType)> GetRawAsync(string environment, string cluster, string appId, string configObject, Action<string>? valueChanged = null);
 
-    Task<dynamic> GetDynamicAsync(string environment, string cluster, string appId, string configObject, Action<dynamic> valueChanged);
+    Task<T> GetAsync<T>(string configObject, Action<T>? valueChanged = null);
+
+    Task<T> GetAsync<T>(string environment, string cluster, string appId, string configObject, Action<T>? valueChanged = null);
+
+    Task<dynamic> GetDynamicAsync(string environment, string cluster, string appId, string configObject, Action<dynamic>? valueChanged = null);
 
     Task<dynamic> GetDynamicAsync(string key);
 }
