@@ -34,7 +34,7 @@ public class SendOrdinaryMessageModel
             SendRules = model.SendRules,
             MessageInfo = model.MessageInfo,
             Variables = model.Variables,
-            Source = MessageTaskSources.SDK
+            Source = MessageTaskSources.Sdk
         };
     }
 }

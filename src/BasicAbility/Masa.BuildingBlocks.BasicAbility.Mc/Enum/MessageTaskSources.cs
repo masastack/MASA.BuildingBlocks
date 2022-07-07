@@ -6,5 +6,5 @@ namespace Masa.BuildingBlocks.BasicAbility.Mc.Enum;
 public enum MessageTaskSources
 {
     Management = 1,
-    SDK,
+    Sdk,
 }
