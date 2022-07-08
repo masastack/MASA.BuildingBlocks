@@ -11,11 +11,21 @@ public interface IUserService
 
     Task<List<StaffModel>> GetListByDepartmentAsync(Guid departmentId);
 
+    Task<long> GetTotalByDepartmentAsync(Guid departmentId);
+
+    Task<long> GetTotalByRoleAsync(Guid roleId);
+
+    Task<long> GetTotalByTeamAsync(Guid teamId);
+
     Task<UserModel?> AddAsync(AddUserModel user);
 
     Task<bool> ValidateCredentialsByAccountAsync(string account, string password);
 
     Task<UserModel> FindByAccountAsync(string account);
+
+    Task<UserModel?> FindByPhoneNumberAsync(string phoneNumber);
+
+    Task<UserModel?> FindByEmailAsync(string email);
 
     Task<UserModel> GetCurrentUserAsync();
 
