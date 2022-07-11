@@ -7,6 +7,10 @@ public class ValuesRequest
 {
     public string Match { get; set; }
 
+    /// <summary>
+    /// for parameter `match` child,  for example
+    /// Match = "up", Lables=new string[]{ "instance=\"k8s-hz-001\"" }, last result is 'up{instance="k8s-hz-001"} for `Match`'
+    /// </summary>
     [JsonIgnore]
     public IEnumerable<string> Lables { get; set; }
 
