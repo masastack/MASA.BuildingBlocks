@@ -7,6 +7,11 @@ public class LableValuesRequest
 {
     private string[] _match = new string[1];
 
+    /// <summary>
+    /// it for the parameter `match` whitch is IEnumerable<string>
+    /// and in this case only support single mode,for example:
+    /// Match="up", last `Matches` result is (IEnumerable<string>){"up"}
+    /// </summary>
     [JsonIgnore]
     public string Match { get { return _match[0]; } set { _match[0] = value; } }
 
