@@ -19,6 +19,8 @@ public interface IUserService
 
     Task<UserModel?> AddAsync(AddUserModel user);
 
+    Task<UserModel?> UpsertAsync(UpsertUserModel user);
+
     Task<bool> ValidateCredentialsByAccountAsync(string account, string password);
 
     Task<UserModel> FindByAccountAsync(string account);
