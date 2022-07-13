@@ -11,7 +11,7 @@ public class JobContext
 
     public DateTimeOffset ExecutionTime { get; set; }
 
-    public string ExcuteMethodName { get; set; } = string.Empty;
+    public string ExcuteClassName { get; set; } = string.Empty;
 
     public List<string> ExcuteParameters { get; set; } = new();
 

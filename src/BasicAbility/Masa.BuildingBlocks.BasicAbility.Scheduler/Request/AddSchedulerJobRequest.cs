@@ -27,7 +27,7 @@ public class AddSchedulerJobRequest
     /// <summary>
     /// Default Parallel
     /// </summary>
-    public ScheduleBlockStrategyTypes ScheduleBlockStrategy { get; set; } = ScheduleBlockStrategyTypes.Parallel;
+    public ScheduleBlockStrategyTypes ScheduleBlockStrategy { get; set; } = ScheduleBlockStrategyTypes.Serial;
 
     /// <summary>
     /// Default IgnoreTimeout
