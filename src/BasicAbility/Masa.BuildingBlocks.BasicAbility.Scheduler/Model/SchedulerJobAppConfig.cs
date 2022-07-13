@@ -9,7 +9,7 @@ public class SchedulerJobAppConfig
 
     public string JobEntryAssembly { get; set; } = string.Empty;
 
-    public string JobEntryMethod { get; set; } = string.Empty;
+    public string JobEntryClassName { get; set; } = string.Empty;
 
     public string JobParams { get; set; } = string.Empty;
 
