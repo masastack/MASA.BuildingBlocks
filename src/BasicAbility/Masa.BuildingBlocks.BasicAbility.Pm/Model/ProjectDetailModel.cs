@@ -9,7 +9,7 @@ public class ProjectDetailModel : BaseModel
 
     public string Identity { get; set; } = "";
 
-    public int LabelId { get; set; }
+    public string LabelCode { get; set; }
 
     public string Name { get; set; } = "";
 
