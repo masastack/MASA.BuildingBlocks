@@ -14,4 +14,6 @@ public interface IMcClient
     IReceiverGroupService ReceiverGroupService { get; }
 
     IWebsiteMessageService WebsiteMessageService { get; }
+
+    INotificationService NotificationService { get; }
 }
