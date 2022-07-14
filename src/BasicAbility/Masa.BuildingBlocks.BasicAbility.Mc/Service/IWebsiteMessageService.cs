@@ -20,8 +20,4 @@ public interface IWebsiteMessageService
     Task CheckAsync();
 
     Task<List<WebsiteMessageModel>> GetNoticeListAsync(GetNoticeListModel options);
-
-    Task SendCheckNotificationAsync();
-
-    Task SendGetNotificationAsync(List<string> userIds);
 }
