@@ -107,6 +107,10 @@ public class Client : FullAggregateRoot<int, Guid>
 
     public bool NonEditable { get; private set; }
 
+    private Client()
+    {
+    }
+
     public Client(ClientTypes clientType, string clientId, string clientName)
     {
         SetClientType(clientType);
