@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.BasicAbility.Tsc.Enums;
 
-public enum LogAggTypes
+public enum AggregationTypes
 {
     Count = 1,
     Sum,

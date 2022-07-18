@@ -9,5 +9,5 @@ public class FieldAggregationRequest
 
     public string Alias { get; set; }
 
-    public LogAggTypes AggType { get; set; }
+    public AggregationTypes AggregationType { get; set; }
 }
