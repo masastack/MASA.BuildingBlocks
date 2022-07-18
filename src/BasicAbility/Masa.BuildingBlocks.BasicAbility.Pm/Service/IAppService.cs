@@ -12,4 +12,6 @@ public interface IAppService
     Task<AppDetailModel> GetWithEnvironmentClusterAsync(int Id);
 
     Task<AppDetailModel> GetAsync(int Id);
+
+    Task<AppDetailModel> GetByIdentityAsync(string identity);
 }

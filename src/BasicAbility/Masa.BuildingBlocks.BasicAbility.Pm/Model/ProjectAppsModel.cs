@@ -11,18 +11,18 @@ public class ProjectAppsModel
 
     public string Name { get; set; }
 
-    public int LabelId { get; set; }
+    public string LabelCode { get; set; }
 
     public Guid TeamId { get; set; }
 
     public List<AppModel> Apps { get; set; } = new();
 
-    public ProjectAppsModel(int id, string identity, string name, int labelId, Guid teamId)
+    public ProjectAppsModel(int id, string identity, string name, string labelCode, Guid teamId)
     {
         Id = id;
         Identity = identity;
         Name = name;
-        LabelId = labelId;
+        LabelCode = labelCode;
         TeamId = teamId;
     }
 }

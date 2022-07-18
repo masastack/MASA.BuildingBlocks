@@ -32,4 +32,6 @@ public class MessageTaskUpsertModel
     public MessageInfoUpsertModel MessageInfo { get; set; } = new();
 
     public ExtraPropertyDictionary Variables { get; set; } = new();
+
+    public MessageTaskSources Source { get; set; }
 }

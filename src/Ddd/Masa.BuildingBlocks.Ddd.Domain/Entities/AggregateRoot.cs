@@ -5,7 +5,7 @@ namespace Masa.BuildingBlocks.Ddd.Domain.Entities;
 
 public abstract class AggregateRoot : Entity, IAggregateRoot, IGenerateDomainEvents
 {
-    protected readonly List<IDomainEvent> _domainEvents = new();
+    private readonly List<IDomainEvent> _domainEvents = new();
 
     public virtual void AddDomainEvent(IDomainEvent domainEvent)
     {
@@ -39,7 +39,7 @@ public abstract class AggregateRoot : Entity, IAggregateRoot, IGenerateDomainEve
 
 public abstract class AggregateRoot<TKey> : Entity<TKey>, IAggregateRoot<TKey>, IGenerateDomainEvents
 {
-    protected readonly List<IDomainEvent> _domainEvents = new();
+    private readonly List<IDomainEvent> _domainEvents = new();
 
     public AggregateRoot() : base()
     {

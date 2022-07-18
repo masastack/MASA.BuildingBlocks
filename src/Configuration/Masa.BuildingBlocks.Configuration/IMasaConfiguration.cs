@@ -5,5 +5,7 @@ namespace Masa.BuildingBlocks.Configuration;
 
 public interface IMasaConfiguration
 {
-    IConfiguration GetConfiguration(SectionTypes sectionType);
+    public IConfiguration Local { get; }
+
+    public IConfigurationApi ConfigurationApi { get; }
 }

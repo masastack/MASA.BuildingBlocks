@@ -9,9 +9,11 @@ public interface IProjectService
 
     Task<List<ProjectModel>> GetListByEnvironmentClusterIdAsync(int envClusterId);
 
-    Task<List<ProjectModel>> GetListByTeamIdAsync(Guid teamId);
+    Task<List<ProjectModel>> GetListByTeamIdsAsync(List<Guid> teamIds);
 
-    Task<ProjectDetailModel> GetAsync(int Id);
+    Task<ProjectDetailModel> GetAsync(int id);
+
+    Task<ProjectDetailModel> GetByIdentityAsync(string identity);
 
     Task<List<ProjectTypeModel>> GetProjectTypesAsync();
 }

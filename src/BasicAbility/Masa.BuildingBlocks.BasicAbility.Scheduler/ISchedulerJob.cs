@@ -7,5 +7,7 @@ public interface ISchedulerJob
 {
     Task BeforeExcuteAsync(JobContext context);
 
+    Task<object?> ExcuteAsync(JobContext context);
+
     Task AfterExcuteAsync(JobContext context);
 }

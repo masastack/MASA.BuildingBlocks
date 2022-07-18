@@ -37,6 +37,7 @@ public class SendTemplateMessageModel
             Receivers = model.Receivers,
             SendRules = model.SendRules,
             Variables = model.Variables,
+            Source = MessageTaskSources.Sdk
         };
     }
 }

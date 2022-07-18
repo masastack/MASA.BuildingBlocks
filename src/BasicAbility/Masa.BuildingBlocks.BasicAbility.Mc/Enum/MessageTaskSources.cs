@@ -1,10 +1,10 @@
 // Copyright (c) MASA Stack All rights reserved.
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
-namespace Masa.BuildingBlocks.Configuration;
+namespace Masa.BuildingBlocks.BasicAbility.Mc.Enum;
 
-public enum SectionTypes
+public enum MessageTaskSources
 {
-    Local = 1,
-    ConfigurationApi
+    Management = 1,
+    Sdk,
 }
