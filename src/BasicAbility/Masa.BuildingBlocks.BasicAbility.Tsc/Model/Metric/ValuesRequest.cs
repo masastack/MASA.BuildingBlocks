@@ -12,7 +12,7 @@ public class ValuesRequest
     /// Match = "up", Lables=new string[]{ "instance=\"k8s-hz-001\"" }, last result is 'up{instance="k8s-hz-001"} for `Match`'
     /// </summary>
     [JsonIgnore]
-    public IEnumerable<string> Lables { get; set; }
+    public IEnumerable<string>? Lables { get; set; }
 
     public DateTime Start { get; set; }
 
