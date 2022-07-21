@@ -20,7 +20,7 @@ public abstract class BaseAutoCompleteClient : IAutoCompleteClient
     public virtual Task<GetResponse<TAudoCompleteDocument>> GetAsync<TAudoCompleteDocument, TValue>(
         string keyword,
         AutoCompleteOptions? options = null,
-        CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument<TValue> where TValue : notnull
+        CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument
         => GetBySpecifyDocumentAsync<TAudoCompleteDocument>(keyword, options, cancellationToken);
 
     public abstract Task<GetResponse<TAudoCompleteDocument>> GetBySpecifyDocumentAsync<TAudoCompleteDocument>(
@@ -55,13 +55,13 @@ public abstract class BaseAutoCompleteClient : IAutoCompleteClient
     public virtual Task<SetResponse> SetAsync<TAudoCompleteDocument, TValue>(
         TAudoCompleteDocument document,
         SetOptions? options = null,
-        CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument<TValue> where TValue : notnull
+        CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument
         => SetAsync<TAudoCompleteDocument, TValue>(new List<TAudoCompleteDocument> { document }, options, cancellationToken);
 
     public virtual Task<SetResponse> SetAsync<TAudoCompleteDocument, TValue>(
         IEnumerable<TAudoCompleteDocument> documents,
         SetOptions? options = null,
-        CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument<TValue> where TValue : notnull
+        CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument
         => SetBySpecifyDocumentAsync(documents, options, cancellationToken);
 
     public virtual Task<SetResponse> SetBySpecifyDocumentAsync<TAudoCompleteDocument>(

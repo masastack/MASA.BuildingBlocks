@@ -20,7 +20,7 @@ public interface IAutoCompleteClient
         string keyword,
         AutoCompleteOptions? options = null,
         CancellationToken cancellationToken = default)
-        where TAudoCompleteDocument : AutoCompleteDocument<TValue> where TValue : notnull;
+        where TAudoCompleteDocument : AutoCompleteDocument;
 
     Task<GetResponse<TAudoCompleteDocument>> GetBySpecifyDocumentAsync<TAudoCompleteDocument>(
         string keyword,
@@ -52,12 +52,13 @@ public interface IAutoCompleteClient
     Task<SetResponse> SetAsync<TAudoCompleteDocument, TValue>(
         TAudoCompleteDocument document,
         SetOptions? options = null,
-        CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument<TValue> where TValue : notnull;
+        CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument;
 
+    [Obsolete($"{nameof(SetAsync)} expired, please use {nameof(SetBySpecifyDocumentAsync)}")]
     Task<SetResponse> SetAsync<TAudoCompleteDocument, TValue>(
         IEnumerable<TAudoCompleteDocument> documents,
         SetOptions? options = null,
-        CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument<TValue> where TValue : notnull;
+        CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument;
 
     Task<SetResponse> SetBySpecifyDocumentAsync<TAudoCompleteDocument>(
         TAudoCompleteDocument document,

@@ -6,7 +6,21 @@ namespace Masa.BuildingBlocks.SearchEngine.AutoComplete;
 public class AutoCompleteDocument
 {
     private string? _documentId;
-    public string Text { get; set; }
+
+    private string? _text;
+
+    public string Text
+    {
+        get
+        {
+            return _text ??= GetText();
+        }
+        init
+        {
+            if (value != null!)
+                _text = value;
+        }
+    }
 
     public AutoCompleteDocument()
     {
@@ -18,6 +32,8 @@ public class AutoCompleteDocument
     }
 
     public virtual string GetDocumentId() => _documentId ??= Guid.NewGuid().ToString();
+
+    protected virtual string GetText() => string.Empty;
 }
 
 public class AutoCompleteDocument<TValue> : AutoCompleteDocument where TValue : notnull
