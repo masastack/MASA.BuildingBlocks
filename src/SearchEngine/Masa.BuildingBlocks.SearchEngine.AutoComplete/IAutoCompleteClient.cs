@@ -5,21 +5,28 @@ namespace Masa.BuildingBlocks.SearchEngine.AutoComplete;
 
 public interface IAutoCompleteClient
 {
-    Task<GetResponse<AutoCompleteDocument<Guid>, Guid>> GetAsync(
+    Task<GetResponse<AutoCompleteDocument<Guid>>> GetAsync(
         string keyword,
         AutoCompleteOptions? options = null,
         CancellationToken cancellationToken = default);
 
-    Task<GetResponse<AutoCompleteDocument<TValue>, TValue>> GetAsync<TValue>(
+    Task<GetResponse<AutoCompleteDocument<TValue>>> GetAsync<TValue>(
         string keyword,
         AutoCompleteOptions? options = null,
         CancellationToken cancellationToken = default) where TValue : notnull;
 
-    Task<GetResponse<TAudoCompleteDocument, TValue>> GetAsync<TAudoCompleteDocument, TValue>(
+    [Obsolete($"{nameof(GetAsync)} expired, please use {nameof(GetBySpecifyDocumentAsync)}")]
+    Task<GetResponse<TAudoCompleteDocument>> GetAsync<TAudoCompleteDocument, TValue>(
         string keyword,
         AutoCompleteOptions? options = null,
         CancellationToken cancellationToken = default)
-        where TAudoCompleteDocument : AutoCompleteDocument<TValue> where TValue : notnull;
+        where TAudoCompleteDocument : AutoCompleteDocument;
+
+    Task<GetResponse<TAudoCompleteDocument>> GetBySpecifyDocumentAsync<TAudoCompleteDocument>(
+        string keyword,
+        AutoCompleteOptions? options = null,
+        CancellationToken cancellationToken = default)
+        where TAudoCompleteDocument : AutoCompleteDocument;
 
     Task<SetResponse> SetAsync(
         AutoCompleteDocument<Guid> document,
@@ -41,15 +48,27 @@ public interface IAutoCompleteClient
         SetOptions? options = null,
         CancellationToken cancellationToken = default) where TValue : notnull;
 
+    [Obsolete($"{nameof(SetAsync)} expired, please use {nameof(SetBySpecifyDocumentAsync)}")]
     Task<SetResponse> SetAsync<TAudoCompleteDocument, TValue>(
         TAudoCompleteDocument document,
         SetOptions? options = null,
-        CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument<TValue> where TValue : notnull;
+        CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument;
 
+    [Obsolete($"{nameof(SetAsync)} expired, please use {nameof(SetBySpecifyDocumentAsync)}")]
     Task<SetResponse> SetAsync<TAudoCompleteDocument, TValue>(
         IEnumerable<TAudoCompleteDocument> documents,
         SetOptions? options = null,
-        CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument<TValue> where TValue : notnull;
+        CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument;
+
+    Task<SetResponse> SetBySpecifyDocumentAsync<TAudoCompleteDocument>(
+        TAudoCompleteDocument document,
+        SetOptions? options = null,
+        CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument;
+
+    Task<SetResponse> SetBySpecifyDocumentAsync<TAudoCompleteDocument>(
+        IEnumerable<TAudoCompleteDocument> documents,
+        SetOptions? options = null,
+        CancellationToken cancellationToken = default) where TAudoCompleteDocument : AutoCompleteDocument;
 
     Task<DeleteResponse> DeleteAsync(string id, CancellationToken cancellationToken = default);
 
