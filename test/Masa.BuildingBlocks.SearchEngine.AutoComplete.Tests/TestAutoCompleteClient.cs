@@ -7,17 +7,6 @@ namespace Masa.BuildingBlocks.SearchEngine.AutoComplete.Tests;
 public class TestAutoCompleteClient
 {
     [TestMethod]
-    public async Task TestDeleteMultiAsyncReturnThrowNotSupportedException()
-    {
-        var client = new CustomAutoCompleteClient();
-        List<int> ids = new List<int>()
-        {
-            1,2
-        };
-        await Assert.ThrowsExceptionAsync<NotSupportedException>(() => client.DeleteAsync(ids));
-    }
-
-    [TestMethod]
     public async Task TestDeleteMultiAsyncReturnSuccess()
     {
         var client = new CustomAutoCompleteClient();
