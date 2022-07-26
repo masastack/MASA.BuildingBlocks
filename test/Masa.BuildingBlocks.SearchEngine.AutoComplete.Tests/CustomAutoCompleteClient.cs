@@ -6,15 +6,13 @@ namespace Masa.BuildingBlocks.SearchEngine.AutoComplete.Tests;
 public class CustomAutoCompleteClient : BaseAutoCompleteClient
 {
 
-    public override Task<GetResponse<TAudoCompleteDocument, TValue>> GetAsync<TAudoCompleteDocument, TValue>(string keyword,
-        AutoCompleteOptions? options = null,
+    public override Task<GetResponse<TAudoCompleteDocument>> GetBySpecifyDocumentAsync<TAudoCompleteDocument>(string keyword, AutoCompleteOptions? options = null,
         CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }
 
-    public override Task<SetResponse> SetAsync<TAudoCompleteDocument, TValue>(IEnumerable<TAudoCompleteDocument> documents,
-        SetOptions? options = null,
+    public override Task<SetResponse> SetBySpecifyDocumentAsync<TAudoCompleteDocument>(IEnumerable<TAudoCompleteDocument> documents, SetOptions? options = null,
         CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
