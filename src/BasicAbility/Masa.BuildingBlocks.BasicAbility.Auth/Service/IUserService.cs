@@ -40,5 +40,11 @@ public interface IUserService
     Task UpdateBasicInfoAsync(UpdateUserBasicInfoModel user);
 
     Task<List<UserPortraitModel>> GetUserPortraitsAsync(params Guid[] userIds);
+
+    Task SaveUserSystemDataAsync<T>(string systemId, T data);
+
+    Task<T?> GetUserSystemDataAsync<T>(string systemId);
+
+    Task<bool> DisableUserAsync(DisableUserModel user);
 }
 
