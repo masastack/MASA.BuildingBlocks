@@ -5,7 +5,7 @@ namespace Masa.BuildingBlocks.BasicAbility.Mc.Model;
 
 public class SendOrdinaryMessageModel
 {
-    public Guid ChannelId { get; set; }
+    public string ChannelCode { get; set; } = string.Empty;
 
     public ChannelTypes? ChannelType { get; set; }
 
@@ -18,23 +18,4 @@ public class SendOrdinaryMessageModel
     public MessageInfoUpsertModel MessageInfo { get; set; } = new();
 
     public ExtraPropertyDictionary Variables { get; set; } = new();
-
-    public static implicit operator MessageTaskUpsertModel(SendOrdinaryMessageModel model)
-    {
-        return new MessageTaskUpsertModel
-        {
-            ChannelId = model.ChannelId,
-            ChannelType = model.ChannelType,
-            EntityType = MessageTypes.Ordinary,
-            IsDraft = false,
-            IsEnabled = true,
-            ReceiverType = model.ReceiverType,
-            SelectReceiverType = MessageTaskSelectReceiverTypes.ManualSelection,
-            Receivers = model.Receivers,
-            SendRules = model.SendRules,
-            MessageInfo = model.MessageInfo,
-            Variables = model.Variables,
-            Source = MessageTaskSources.Sdk
-        };
-    }
 }
