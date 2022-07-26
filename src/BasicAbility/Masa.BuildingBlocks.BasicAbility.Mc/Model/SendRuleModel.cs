@@ -6,6 +6,8 @@ namespace Masa.BuildingBlocks.BasicAbility.Mc.Model;
 public class SendRuleModel
 {
     public bool IsCustom { get; set; }
+
     public string CronExpression { get; set; } = string.Empty;
+
     public long SendingCount { get; set; }
 }
