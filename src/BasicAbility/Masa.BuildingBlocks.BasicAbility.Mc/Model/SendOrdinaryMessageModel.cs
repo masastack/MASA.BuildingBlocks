@@ -18,4 +18,6 @@ public class SendOrdinaryMessageModel
     public MessageInfoUpsertModel MessageInfo { get; set; } = new();
 
     public ExtraPropertyDictionary Variables { get; set; } = new();
+
+    public Guid OperatorId { get; set; }
 }

@@ -20,4 +20,6 @@ public class SendTemplateMessageModel
     public SendRuleModel SendRules { get; set; } = new();
 
     public ExtraPropertyDictionary Variables { get; set; } = new();
+
+    public Guid OperatorId { get; set; }
 }
