@@ -31,6 +31,8 @@ public interface IUserService
 
     Task<UserModel> GetCurrentUserAsync();
 
+    Task<StaffDetailModel> GetCurrentStaffAsync();
+
     Task VisitedAsync(string url);
 
     Task<List<UserVisitedModel>> GetVisitedListAsync();
