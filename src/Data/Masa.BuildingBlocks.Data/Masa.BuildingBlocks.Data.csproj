@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="$(MicrosoftPackageVersion)" />
   </ItemGroup>
   
+  <ItemGroup>
+    <Folder Include="Serialization\Json" />
+  </ItemGroup>
+  
 </Project>

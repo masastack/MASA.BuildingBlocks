@@ -15,5 +15,7 @@ public interface IUserContext
 
     TIdentityUser? GetUser<TIdentityUser>() where TIdentityUser : IIdentityUser;
 
+    public IdentityUser? GetUserSimple();
+
     IEnumerable<IdentityRole<TRoleId>> GetUserRoles<TRoleId>();
 }
