@@ -44,5 +44,7 @@ public interface IUserService
     Task SaveUserSystemDataAsync<T>(string systemId, T data);
 
     Task<T?> GetUserSystemDataAsync<T>(string systemId);
+
+    Task<bool> DisableUserAsync(DisableUserModel user);
 }
 

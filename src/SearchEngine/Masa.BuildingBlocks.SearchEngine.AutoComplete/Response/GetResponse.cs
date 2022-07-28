@@ -3,8 +3,8 @@
 
 namespace Masa.BuildingBlocks.SearchEngine.AutoComplete.Response;
 
-public class GetResponse<TDropdownBox, TValue> : ResponseBase
-    where TDropdownBox : AutoCompleteDocument<TValue> where TValue : notnull
+public class GetResponse<TDropdownBox> : ResponseBase
+    where TDropdownBox : AutoCompleteDocument
 {
     public long Total { get; set; }
 
