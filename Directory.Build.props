@@ -4,6 +4,7 @@
     <MSTestPackageVersion>2.2.3</MSTestPackageVersion>
     <MicrosoftTeskSdkPackageVersion>16.9.4</MicrosoftTeskSdkPackageVersion>
     <CoverletPackageVersion>3.0.2</CoverletPackageVersion>
+    <GoogleProtobufPackageVersion>3.19.1</GoogleProtobufPackageVersion>
 	
     <PackageId>$(AssemblyName)</PackageId>
     <PackageIcon>packageIcon.png</PackageIcon>
