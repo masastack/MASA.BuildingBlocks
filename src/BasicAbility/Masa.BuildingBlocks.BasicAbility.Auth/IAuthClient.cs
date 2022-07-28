@@ -14,5 +14,7 @@ public interface IAuthClient
     IPermissionService PermissionService { get; }
 
     IProjectService ProjectService { get; }
+
+    IOssService OssService { get; }
 }
 
