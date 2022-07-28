@@ -31,6 +31,8 @@ public interface IUserService
 
     Task<UserModel> GetCurrentUserAsync();
 
+    Task<List<UserSimpleModel>> GetListByAccountAsync(IEnumerable<string> accounts);
+
     Task VisitedAsync(string url);
 
     Task<List<UserVisitedModel>> GetVisitedListAsync();
