@@ -5,7 +5,7 @@ namespace Masa.BuildingBlocks.Service.Caller;
 
 public interface ICallerFactory
 {
-    ICallerProvider CreateClient();
+    ICaller Create();
 
-    ICallerProvider CreateClient(string name);
+    ICaller Create(string name);
 }
