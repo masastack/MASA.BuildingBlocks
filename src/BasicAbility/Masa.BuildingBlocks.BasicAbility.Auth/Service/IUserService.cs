@@ -21,7 +21,7 @@ public interface IUserService
 
     Task<UserModel?> UpsertAsync(UpsertUserModel user);
 
-    Task<bool> ValidateCredentialsByAccountAsync(string account, string password);
+    Task<bool> ValidateCredentialsByAccountAsync(string account, string password, bool isLdap = false);
 
     Task<UserModel> FindByAccountAsync(string account);
 
@@ -30,6 +30,8 @@ public interface IUserService
     Task<UserModel?> FindByEmailAsync(string email);
 
     Task<UserModel> GetCurrentUserAsync();
+
+    Task<StaffDetailModel?> GetCurrentStaffAsync();
 
     Task VisitedAsync(string url);
 
