@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.Service.Caller;
 
-public interface ITypeConvert
+public interface ITypeConvertor
 {
     /// <summary>
     /// Convert custom object to dictionary
