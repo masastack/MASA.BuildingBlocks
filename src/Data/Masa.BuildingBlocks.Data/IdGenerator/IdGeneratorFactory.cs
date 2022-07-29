@@ -3,34 +3,62 @@
 
 namespace Masa.BuildingBlocks.Data;
 
-public class IdGeneratorFactory
+public class IdGeneratorFactory : IIdGeneratorFactory
 {
-    private static IGuidGenerator? _guidGenerator;
-    public static IGuidGenerator GuidGenerator => _guidGenerator ?? throw new Exception($"Unsupported {nameof(GuidGenerator)}");
+    private IGuidGenerator? _guidGenerator;
 
-    private static ISequentialGuidGenerator? _sequentialGuidGenerator;
-    public static ISequentialGuidGenerator SequentialGuidGenerator
-        => _sequentialGuidGenerator ?? throw new Exception($"Unsupported {nameof(SequentialGuidGenerator)}");
+    public IGuidGenerator GuidGenerator => _guidGenerator ??=
+        _serviceProvider.GetService<IGuidGenerator>() ?? throw new Exception($"Unsupported {nameof(GuidGenerator)}");
 
-    private static ISnowflakeGenerator? _snowflakeGenerator;
-    public static ISnowflakeGenerator SnowflakeGenerator
-        => _snowflakeGenerator ?? throw new Exception($"Unsupported {nameof(SnowflakeGenerator)}");
+    private ISequentialGuidGenerator? _sequentialGuidGenerator;
 
-    public static void SetGuidGenerator(IGuidGenerator guidGenerator)
+    public ISequentialGuidGenerator SequentialGuidGenerator => _sequentialGuidGenerator ??=
+        _serviceProvider.GetService<ISequentialGuidGenerator>() ?? throw new Exception($"Unsupported {nameof(SequentialGuidGenerator)}");
+
+    private ISnowflakeGenerator? _snowflakeGenerator;
+
+    public ISnowflakeGenerator SnowflakeGenerator => _snowflakeGenerator ??=
+        _serviceProvider.GetService<ISnowflakeGenerator>() ?? throw new Exception($"Unsupported {nameof(SnowflakeGenerator)}");
+
+    private readonly IServiceProvider _serviceProvider;
+    private readonly IOptions<IdGeneratorFactoryOptions> _idGeneratorFactoryOptions;
+    private readonly IdGeneratorOptions? _defaultIdGeneratorOptions;
+
+    public IdGeneratorFactory(IServiceProvider serviceProvider)
     {
-        ArgumentNullException.ThrowIfNull(guidGenerator, nameof(guidGenerator));
-        _guidGenerator = guidGenerator;
+        _serviceProvider = serviceProvider;
+        _idGeneratorFactoryOptions = serviceProvider.GetRequiredService<IOptions<IdGeneratorFactoryOptions>>();
+        _defaultIdGeneratorOptions =
+            _idGeneratorFactoryOptions.Value.IdGenerators.FirstOrDefault(generator => generator.IsDefault) ??
+            _idGeneratorFactoryOptions.Value.IdGenerators.FirstOrDefault();
     }
 
-    public static void SetSequentialGuidGenerator(ISequentialGuidGenerator sequentialGuidGenerator)
+    public IIdGenerator<TOut> Create<TOut>() where TOut : notnull
     {
-        ArgumentNullException.ThrowIfNull(sequentialGuidGenerator, nameof(sequentialGuidGenerator));
-        _sequentialGuidGenerator = sequentialGuidGenerator;
+        var idGenerator = Create();
+        return idGenerator as IIdGenerator<TOut> ?? throw new Exception($"Unsupported {nameof(IIdGenerator<TOut>)}");
     }
 
-    public static void SetSnowflakeGenerator(ISnowflakeGenerator snowflakeGenerator)
+    public IIdGenerator<TOut> Create<TOut>(string name) where TOut : notnull
     {
-        ArgumentNullException.ThrowIfNull(snowflakeGenerator, nameof(snowflakeGenerator));
-        _snowflakeGenerator = snowflakeGenerator;
+        var idGenerator = Create(name);
+        return idGenerator as IIdGenerator<TOut> ?? throw new Exception($"Unsupported {nameof(IIdGenerator<TOut>)}");
+    }
+
+    public IIdGenerator Create()
+    {
+        if (_defaultIdGeneratorOptions == null)
+            throw new NotImplementedException("No default IdGenerator found, you may need service.AddSimpleGuidGenerator()");
+
+        return _defaultIdGeneratorOptions.Func.Invoke(_serviceProvider);
+    }
+
+    public IIdGenerator Create(string name)
+    {
+        var idGeneratorOptions = _idGeneratorFactoryOptions.Value.IdGenerators.FirstOrDefault(generator => generator.Name == name);
+        if (idGeneratorOptions == null)
+            throw new NotImplementedException($"No IdGenerator found for name {name}");
+
+        return idGeneratorOptions.Func.Invoke(_serviceProvider);
     }
 }
