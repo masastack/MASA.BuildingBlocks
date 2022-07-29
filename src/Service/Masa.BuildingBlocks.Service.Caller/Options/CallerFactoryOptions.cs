@@ -9,10 +9,5 @@ public class CallerFactoryOptions
 
     public JsonSerializerOptions? JsonSerializerOptions { get; set; }
 
-    /// <summary>
-    /// Used to generate RequestId
-    /// </summary>
-    public Func<IServiceProvider, string>? IdGeneratorFunc { get; set; }
-
     public string? RequestIdKey { get; set; }
 }
