@@ -21,7 +21,7 @@ public interface IUserService
 
     Task<UserModel?> UpsertAsync(UpsertUserModel user);
 
-    Task<bool> ValidateCredentialsByAccountAsync(string account, string password);
+    Task<bool> ValidateCredentialsByAccountAsync(string account, string password, bool isLdap = false);
 
     Task<UserModel> FindByAccountAsync(string account);
 
