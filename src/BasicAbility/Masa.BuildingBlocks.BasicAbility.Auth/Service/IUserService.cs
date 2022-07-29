@@ -31,7 +31,7 @@ public interface IUserService
 
     Task<UserModel> GetCurrentUserAsync();
 
-    Task<StaffDetailModel> GetCurrentStaffAsync();
+    Task<StaffDetailModel?> GetCurrentStaffAsync();
 
     Task VisitedAsync(string url);
 
