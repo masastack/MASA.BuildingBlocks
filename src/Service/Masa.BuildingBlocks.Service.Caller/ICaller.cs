@@ -3,7 +3,7 @@
 
 namespace Masa.BuildingBlocks.Service.Caller;
 
-public interface ICallerProvider
+public interface ICaller
 {
     Task<TResponse?> SendAsync<TResponse>(
         HttpRequestMessage request,

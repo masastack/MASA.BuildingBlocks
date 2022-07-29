@@ -9,9 +9,9 @@ public class CallerRelationOptions
 
     public bool IsDefault { get; }
 
-    public Func<IServiceProvider, ICallerProvider> Func { get; } = default!;
+    public Func<IServiceProvider, ICaller> Func { get; } = default!;
 
-    public CallerRelationOptions(string name, bool isDefault, Func<IServiceProvider, ICallerProvider> func)
+    public CallerRelationOptions(string name, bool isDefault, Func<IServiceProvider, ICaller> func)
     {
         Name = name;
         IsDefault = isDefault;

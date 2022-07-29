@@ -9,9 +9,12 @@ public abstract class CallerBase
 
     protected CallerOptions CallerOptions { get; private set; } = default!;
 
-    private ICallerProvider? _callerProvider;
+    private ICaller? _caller;
 
-    protected ICallerProvider CallerProvider => _callerProvider ??= ServiceProvider.GetRequiredService<ICallerFactory>().CreateClient(Name);
+    protected ICaller Caller => _caller ??= ServiceProvider.GetRequiredService<ICallerFactory>().Create(Name);
+
+    [Obsolete("CallerProvider has expired, please use Caller")]
+    protected ICaller CallerProvider => Caller;
 
     private IServiceProvider ServiceProvider { get; }
 

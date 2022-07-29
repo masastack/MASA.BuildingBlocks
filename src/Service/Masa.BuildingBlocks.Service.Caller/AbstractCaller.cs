@@ -3,9 +3,9 @@
 
 namespace Masa.BuildingBlocks.Service.Caller;
 
-public abstract class AbstractCallerProvider : ICallerProvider
+public abstract class AbstractCaller : ICaller
 {
-    private readonly ITypeConvertProvider _typeConvertProvider;
+    private readonly ITypeConvert _typeConvert;
     public readonly IServiceProvider ServiceProvider;
 
     private IRequestMessage? _requestMessage;
@@ -13,9 +13,9 @@ public abstract class AbstractCallerProvider : ICallerProvider
     protected IRequestMessage RequestMessage => _requestMessage ??= ServiceProvider.GetRequiredService<IRequestMessage>();
     protected IResponseMessage ResponseMessage => _responseMessage ??= ServiceProvider.GetRequiredService<IResponseMessage>();
 
-    public AbstractCallerProvider(IServiceProvider serviceProvider)
+    public AbstractCaller(IServiceProvider serviceProvider)
     {
-        _typeConvertProvider = serviceProvider.GetRequiredService<ITypeConvertProvider>();
+        _typeConvert = serviceProvider.GetRequiredService<ITypeConvert>();
         ServiceProvider = serviceProvider;
     }
 
@@ -119,7 +119,7 @@ public abstract class AbstractCallerProvider : ICallerProvider
         bool autoThrowUserFriendlyException = true,
         CancellationToken cancellationToken = default) where TRequest : class
         => GetStringAsync(
-            GetUrl(methodName, _typeConvertProvider.ConvertToKeyValuePairs(data)),
+            GetUrl(methodName, _typeConvert.ConvertToKeyValuePairs(data)),
             autoThrowUserFriendlyException,
             cancellationToken);
 
@@ -146,7 +146,7 @@ public abstract class AbstractCallerProvider : ICallerProvider
         bool autoThrowUserFriendlyException = true,
         CancellationToken cancellationToken = default) where TRequest : class
         => GetByteArrayAsync(
-            GetUrl(methodName, _typeConvertProvider.ConvertToKeyValuePairs(data)),
+            GetUrl(methodName, _typeConvert.ConvertToKeyValuePairs(data)),
             autoThrowUserFriendlyException,
             cancellationToken);
 
@@ -173,7 +173,7 @@ public abstract class AbstractCallerProvider : ICallerProvider
         bool autoThrowUserFriendlyException = true,
         CancellationToken cancellationToken = default) where TRequest : class
         => GetStreamAsync(
-            GetUrl(methodName, _typeConvertProvider.ConvertToKeyValuePairs(data)),
+            GetUrl(methodName, _typeConvert.ConvertToKeyValuePairs(data)),
             autoThrowUserFriendlyException,
             cancellationToken);
 
@@ -211,7 +211,7 @@ public abstract class AbstractCallerProvider : ICallerProvider
         CancellationToken cancellationToken = default) where TRequest : class
     {
         HttpRequestMessage request =
-            await CreateRequestAsync(HttpMethod.Get, GetUrl(methodName, _typeConvertProvider.ConvertToKeyValuePairs(data)));
+            await CreateRequestAsync(HttpMethod.Get, GetUrl(methodName, _typeConvert.ConvertToKeyValuePairs(data)));
         return await SendAsync<TResponse>(request, cancellationToken);
     }
 
@@ -221,7 +221,7 @@ public abstract class AbstractCallerProvider : ICallerProvider
         CancellationToken cancellationToken = default)
     {
         HttpRequestMessage request =
-            await CreateRequestAsync(HttpMethod.Get, GetUrl(methodName, _typeConvertProvider.ConvertToKeyValuePairs(data)));
+            await CreateRequestAsync(HttpMethod.Get, GetUrl(methodName, _typeConvert.ConvertToKeyValuePairs(data)));
         return await SendAsync<TResponse>(request, cancellationToken);
     }
 
