@@ -3,7 +3,14 @@
 
 namespace Masa.BuildingBlocks.Data;
 
-public class IdGeneratorOptions : BaseOptions
+public class IdGeneratorOptions
 {
+    public string Name { get; set; }
+
     public Func<IServiceProvider, IIdGenerator> Func { get; set; }
+
+    public IdGeneratorOptions(string name)
+    {
+        Name = name;
+    }
 }

@@ -29,7 +29,7 @@ public class IdGeneratorFactory : IIdGeneratorFactory
         _serviceProvider = serviceProvider;
         _idGeneratorFactoryOptions = serviceProvider.GetRequiredService<IOptions<IdGeneratorFactoryOptions>>();
         _defaultIdGeneratorOptions =
-            _idGeneratorFactoryOptions.Value.IdGenerators.FirstOrDefault(generator => generator.IsDefault) ??
+            _idGeneratorFactoryOptions.Value.IdGenerators.FirstOrDefault(generator => generator.Name == string.Empty) ??
             _idGeneratorFactoryOptions.Value.IdGenerators.FirstOrDefault();
     }
 
