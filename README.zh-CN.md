@@ -1,6 +1,6 @@
 中 | [EN](README.md)
 
-# MASA.BuildingBlocks
+# MASA.BuildingBlocks [归档, 请看 [MASA.Framework](https://github.com/masastack/MASA.Framework)]
 MASA Stack的构建块，提供统一的接口标准，用于[MASA Contrib](https://github.com/masastack/MASA.Contrib/blob/main/README.zh-CN.md)的实现规约和流程衔接。
 
 
